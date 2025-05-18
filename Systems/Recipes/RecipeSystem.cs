@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Systems.Recipes {
     public class RecipeSystem : ModSystem {
-        private int _jellyfishBanners, _slimeBanners, _anvils;
+        private int _jellyfishBanners, _slimeBanners, _batBanners, _anvils;
         private int _copperAxes, _copperPickaxes, _copperSwords, _woodenBows, _woodenHammers;
 
         public override void AddRecipeGroups() {
@@ -25,6 +25,13 @@ namespace EverythingRenewableNow.Systems.Recipes {
                 ItemID.GastropodBanner, ItemID.IlluminantSlimeBanner, ItemID.RainbowSlimeBanner
             );
             _slimeBanners = RecipeGroup.RegisterGroup(nameof(ItemID.SlimeBanner), slimeBanners);
+
+            RecipeGroup batBanners = new(
+                () => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.BatBanner)}",
+                ItemID.BatBanner, ItemID.SporeBatBanner, ItemID.JungleBatBanner, ItemID.HellbatBanner, ItemID.IceBatBanner,
+                ItemID.GiantBatBanner, ItemID.IlluminantBatBanner, ItemID.LavaBatBanner
+            );
+            _batBanners = RecipeGroup.RegisterGroup(nameof(ItemID.BatBanner), batBanners);
 
             RecipeGroup anvils = new(
                 () => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.IronAnvil)}",
@@ -74,10 +81,14 @@ namespace EverythingRenewableNow.Systems.Recipes {
             AddOtherRecipes();
         }
 
+        public override void PostAddRecipes() {
+            ChangeShimmerTransmutations();
+        }
+
         private void AddStatuesRecipes() {
             List<StatueRecipeInfo> statuesInfo = [
                 new(ItemID.ZombieBanner, ItemID.ZombieArmStatue, requireGraveyard: true),
-                new(ItemID.BatBanner, ItemID.BatStatue, requireGraveyard: true),
+                new(_batBanners, ItemID.BatStatue, requireGraveyard: true, itemIsGroup: true),
                 new(ItemID.BloodZombieBanner, ItemID.BloodZombieStatue, requireGraveyard: true),
                 new(ItemID.SkeletonBanner, ItemID.SkeletonStatue, requireGraveyard: true),
                 new(ItemID.MimicBanner, ItemID.ChestStatue, requireGraveyard: true),
@@ -358,6 +369,7 @@ namespace EverythingRenewableNow.Systems.Recipes {
                 .AddIngredient(ItemID.ObsidianBrick, 15)
                 .AddIngredient(ItemID.Book, 1)
                 .AddIngredient(ItemID.Bone, 4)
+                .AddDecraftCondition(Condition.DownedSkeletron)
                 .AddTile(TileID.Hellforge)
                 .Register();
 
@@ -427,19 +439,19 @@ namespace EverythingRenewableNow.Systems.Recipes {
 
         private static void AddDungeonFurnituresRecipes() {
             AddDungeonBrickFurnitureRecipes(ItemID.BlueBrick, ItemID.BlueDungeonBathtub, ItemID.BlueDungeonBed, ItemID.BlueDungeonBookcase, ItemID.BlueDungeonCandelabra,
-                ItemID.BlueDungeonCandle, ItemID.BlueDungeonChair, ItemID.BlueDungeonChandelier, ItemID.BlueDungeonChest, ItemID.DungeonClockBlue, ItemID.BlueDungeonDoor,
-                ItemID.BlueDungeonDresser, ItemID.BlueDungeonLamp, ItemID.BlueDungeonPiano, ItemID.BlueDungeonSink, ItemID.BlueDungeonSofa, ItemID.BlueDungeonTable,
-                ItemID.ToiletDungeonBlue, ItemID.BlueDungeonWorkBench, ItemID.BlueDungeonVase);
+                ItemID.BlueDungeonCandle, ItemID.BlueDungeonChair, ItemID.BlueDungeonChandelier, ItemID.DungeonClockBlue, ItemID.BlueDungeonDoor,
+                ItemID.BlueDungeonDresser, ItemID.BlueDungeonLamp, ItemID.BlueDungeonPiano, ItemID.BlueDungeonSofa, ItemID.BlueDungeonTable,
+                ItemID.BlueDungeonWorkBench, ItemID.BlueDungeonVase);
 
             AddDungeonBrickFurnitureRecipes(ItemID.GreenBrick, ItemID.GreenDungeonBathtub, ItemID.GreenDungeonBed, ItemID.GreenDungeonBookcase, ItemID.GreenDungeonCandelabra,
-                ItemID.GreenDungeonCandle, ItemID.GreenDungeonChair, ItemID.GreenDungeonChandelier, ItemID.GreenDungeonChest, ItemID.DungeonClockGreen, ItemID.GreenDungeonDoor,
-                ItemID.GreenDungeonDresser, ItemID.GreenDungeonLamp, ItemID.GreenDungeonPiano, ItemID.GreenDungeonSink, ItemID.GreenDungeonSofa, ItemID.GreenDungeonTable,
-                ItemID.ToiletDungeonGreen, ItemID.GreenDungeonWorkBench, ItemID.GreenDungeonVase);
+                ItemID.GreenDungeonCandle, ItemID.GreenDungeonChair, ItemID.GreenDungeonChandelier, ItemID.DungeonClockGreen, ItemID.GreenDungeonDoor,
+                ItemID.GreenDungeonDresser, ItemID.GreenDungeonLamp, ItemID.GreenDungeonPiano, ItemID.GreenDungeonSofa, ItemID.GreenDungeonTable,
+                ItemID.GreenDungeonWorkBench, ItemID.GreenDungeonVase);
 
             AddDungeonBrickFurnitureRecipes(ItemID.PinkBrick, ItemID.PinkDungeonBathtub, ItemID.PinkDungeonBed, ItemID.PinkDungeonBookcase, ItemID.PinkDungeonCandelabra,
-                ItemID.PinkDungeonCandle, ItemID.PinkDungeonChair, ItemID.PinkDungeonChandelier, ItemID.PinkDungeonChest, ItemID.DungeonClockPink, ItemID.PinkDungeonDoor,
-                ItemID.PinkDungeonDresser, ItemID.PinkDungeonLamp, ItemID.PinkDungeonPiano, ItemID.PinkDungeonSink, ItemID.PinkDungeonSofa, ItemID.PinkDungeonTable,
-                ItemID.ToiletDungeonPink, ItemID.PinkDungeonWorkBench, ItemID.PinkDungeonVase);
+                ItemID.PinkDungeonCandle, ItemID.PinkDungeonChair, ItemID.PinkDungeonChandelier, ItemID.DungeonClockPink, ItemID.PinkDungeonDoor,
+                ItemID.PinkDungeonDresser, ItemID.PinkDungeonLamp, ItemID.PinkDungeonPiano, ItemID.PinkDungeonSofa, ItemID.PinkDungeonTable,
+                ItemID.PinkDungeonWorkBench, ItemID.PinkDungeonVase);
 
             Recipe
                 .Create(ItemID.OilRagSconse)
@@ -490,28 +502,7 @@ namespace EverythingRenewableNow.Systems.Recipes {
                 .Register();
         }
 
-        private static void AddDungeonBrickFurnitureRecipes(int block, int bathtub, int bed, int bookcase, int candelabra, int candle, int chair, int chandelier, int chest, int clock, int door, int dresser, int lamp, int piano, int sink, int sofa, int table, int toilet, int workbench, int vase) {
-
-            Recipe
-                .Create(toilet)
-                .AddIngredient(block, 6)
-                .AddTile(TileID.Sawmill)
-                .Register();
-
-            Recipe
-                .Create(chest)
-                .AddIngredient(block, 8)
-                .AddRecipeGroup(RecipeGroupID.IronBar, 2)
-                .AddTile(TileID.WorkBenches)
-                .Register();
-
-            Recipe
-                .Create(sink)
-                .AddIngredient(block, 6)
-                .AddIngredient(ItemID.WaterBucket)
-                .AddTile(TileID.WorkBenches)
-                .Register();
-
+        private static void AddDungeonBrickFurnitureRecipes(int block, int bathtub, int bed, int bookcase, int candelabra, int candle, int chair, int chandelier, int clock, int door, int dresser, int lamp, int piano, int sofa, int table, int workbench, int vase) {
             Recipe
                 .Create(bed)
                 .AddIngredient(block, 15)
@@ -560,6 +551,7 @@ namespace EverythingRenewableNow.Systems.Recipes {
                 .AddIngredient(block, 15)
                 .AddIngredient(ItemID.Book, 1)
                 .AddIngredient(ItemID.Bone, 4)
+                .AddDecraftCondition(Condition.DownedSkeletron)
                 .AddTile(TileID.Sawmill)
                 .Register();
 
@@ -618,6 +610,13 @@ namespace EverythingRenewableNow.Systems.Recipes {
                 .AddIngredient(block, 9)
                 .AddTile(TileID.Sawmill)
                 .Register();
+        }
+
+        private static void ChangeShimmerTransmutations() {
+            int[] transmutations = ItemID.Sets.ShimmerTransformToItem;
+            transmutations[ItemID.AshWood] = ItemID.AshBlock;
+            transmutations[ItemID.CobaltOre] = ItemID.Hellstone;
+            transmutations[ItemID.Hellstone] = ItemID.PlatinumOre;
         }
     }
 }
