@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace EverythingRenewableNow.Systems.Recipes {
+namespace EverythingRenewableNow.Common.Systems.Recipes {
     public class RecipeSystem : ModSystem {
         private int _jellyfishBanners, _slimeBanners, _batBanners, _anvils;
         private int _copperAxes, _copperPickaxes, _copperSwords, _woodenBows, _woodenHammers;

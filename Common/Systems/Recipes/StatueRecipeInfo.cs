@@ -1,5 +1,5 @@
-﻿namespace EverythingRenewableNow.Systems.Recipes {
-    internal struct StatueRecipeInfo(int itemID, int statueID, int itemsCount = 1, bool requireGraveyard = false, bool itemIsGroup = false) {
+﻿namespace EverythingRenewableNow.Common.Systems.Recipes {
+    public struct StatueRecipeInfo(int itemID, int statueID, int itemsCount = 1, bool requireGraveyard = false, bool itemIsGroup = false) {
         public int ItemID { get; private set; } = itemID;
         public int StatueID { get; private set; } = statueID;
         public int ItemsCount { get; private set; } = itemsCount;

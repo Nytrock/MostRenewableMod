@@ -5,4 +5,29 @@ Items: {
 		DisplayName: Test Sword
 		Tooltip: First sword
 	}
+
+	CavernPaintingsBag: {
+		DisplayName: Cavern Paintings Bag
+		Tooltip: ""
+	}
+
+	DesertPaintingsBag: {
+		DisplayName: Desert Paintings Bag
+		Tooltip: ""
+	}
+
+	DungeonPaintingsBag: {
+		DisplayName: Dungeon Paintings Bag
+		Tooltip: ""
+	}
+
+	HellPaintingsBag: {
+		DisplayName: Hell Paintings Bag
+		Tooltip: ""
+	}
+
+	SkyPaintingsBag: {
+		DisplayName: Sky Paintings Bag
+		Tooltip: ""
+	}
 }
