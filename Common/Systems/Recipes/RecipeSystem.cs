@@ -282,6 +282,16 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
                 .AddIngredient(ItemID.Hellstone)
                 .AddTile(TileID.Hellforge)
                 .Register();
+
+            Recipe
+                .Create(ItemID.MechdusaSummon)
+                .AddIngredient(ItemID.MechanicalEye)
+                .AddIngredient(ItemID.MechanicalSkull)
+                .AddIngredient(ItemID.MechanicalWorm)
+                .AddCondition(Condition.NotZenithWorld)
+                .AddCondition(Condition.InGraveyard)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
         }
 
         private static void ChangeVanillaRecipes() {

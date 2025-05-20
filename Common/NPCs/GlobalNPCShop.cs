@@ -84,7 +84,7 @@ namespace EverythingRenewableNow.Common.NPCs {
         }
 
         public override void SetupTravelShop(int[] shop, ref int nextSlot) {
-            if (Main.rand.NextBool(404))
+            if (Main.rand.NextBool(20))
                 shop[nextSlot] = ItemID.AngelStatue;
         }
     }
