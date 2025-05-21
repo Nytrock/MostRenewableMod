@@ -1,4 +1,5 @@
-﻿using Terraria.ModLoader;
+﻿using Terraria;
+using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Common.Systems.MechQueen {
     public class MechQueenSystem : ModSystem {
@@ -29,6 +30,11 @@ namespace EverythingRenewableNow.Common.Systems.MechQueen {
 
         public override void PreSaveAndQuit() {
             MechQueenDisable();
+        }
+
+        public override void PostUpdateTime() {
+            if (Main.IsItDay() && !Main.zenithWorld)
+                MechQueenDisable();
         }
     }
 }

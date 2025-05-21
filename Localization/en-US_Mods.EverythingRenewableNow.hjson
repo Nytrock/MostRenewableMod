@@ -1,11 +1,6 @@
 # This file will automatically update with entries for new content after a build and reload.
 
 Items: {
-	TestSword: {
-		DisplayName: Test Sword
-		Tooltip: First sword
-	}
-
 	CavernPaintingsBag: {
 		DisplayName: Cavern Paintings Bag
 		Tooltip: ""
@@ -29,5 +24,14 @@ Items: {
 	SkyPaintingsBag: {
 		DisplayName: Sky Paintings Bag
 		Tooltip: ""
+	}
+
+	MechQueen: {
+		Tooltip:
+			'''
+			Summons ??? from cursed world
+			'You REALLY shouldn't'
+			'''
+		Conditions.Died: Is Mechdusa died in not getfixedboi world
 	}
 }
