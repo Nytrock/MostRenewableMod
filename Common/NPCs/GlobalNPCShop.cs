@@ -9,13 +9,15 @@ namespace EverythingRenewableNow.Common.NPCs {
         public override void ModifyShop(NPCShop shop) {
             if (shop.NpcType == NPCID.Steampunker) {
                 if (!Main.remixWorld) {
-                    shop.Add(ItemID.PurpleSolution, Condition.EclipseOrBloodMoon, Condition.CrimsonWorld);
-                    shop.Add(ItemID.RedSolution, Condition.EclipseOrBloodMoon, Condition.CorruptWorld);
+                    shop.Add(ItemID.PurpleSolution, Condition.InGraveyard, Condition.CrimsonWorld);
+                    shop.Add(ItemID.RedSolution, Condition.InGraveyard, Condition.CorruptWorld);
                 } else {
                     shop.Add(ItemID.Clentaminator);
-                    shop.Add(ItemID.PurpleSolution, Condition.EclipseOrBloodMoon);
-                    shop.Add(ItemID.RedSolution, Condition.EclipseOrBloodMoon);
                     shop.Add(ItemID.BlueSolution, Condition.InHallow);
+                    shop.Add(ItemID.PurpleSolution, Condition.EclipseOrBloodMoon, Condition.CorruptWorld);
+                    shop.Add(ItemID.RedSolution, Condition.InGraveyard, Condition.Hardmode, Condition.CorruptWorld);
+                    shop.Add(ItemID.RedSolution, Condition.EclipseOrBloodMoon, Condition.CrimsonWorld);
+                    shop.Add(ItemID.PurpleSolution, Condition.InGraveyard, Condition.Hardmode, Condition.CrimsonWorld);
                     shop.Add(ItemID.GreenSolution, Condition.NotEclipseAndNotBloodMoon, Condition.NotInHallow);
                     shop.Add(ItemID.SandSolution, Condition.DownedMoonLord);
                     shop.Add(ItemID.SnowSolution, Condition.DownedMoonLord);

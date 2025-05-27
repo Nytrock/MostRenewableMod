@@ -6,7 +6,7 @@ namespace EverythingRenewableNow.Common.Systems.MechQueen {
         public class Died : IItemDropRuleCondition, IProvideItemConditionDescription {
             public bool CanDrop(DropAttemptInfo info) => MechQueenSystem.IsMechQueenDied;
             public bool CanShowItemDropInUI() => MechQueenSystem.IsMechQueenDied;
-            public string GetConditionDescription() => Language.GetTextValue("Mods.EverythingRenewableNow.Items.MechQueen.Conditions.Died");
+            public string GetConditionDescription() => Language.GetTextValue("Mods.EverythingRenewableNow.Conditions.MechQueen.Died");
         }
     }
 }

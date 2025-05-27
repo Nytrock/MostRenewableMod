@@ -26,12 +26,19 @@ Items: {
 		Tooltip: ""
 	}
 
-	MechQueen: {
-		Tooltip:
-			'''
-			Summons ??? from cursed world
-			'You REALLY shouldn't'
-			'''
-		Conditions.Died: Is Mechdusa died in not getfixedboi world
+	MechQueen.Tooltip:
+		'''
+		Summons ??? from cursed world
+		'You REALLY shouldn't'
+		'''
+}
+
+Conditions: {
+	MechQueen.Died: Is Mechdusa died in not getfixedboi world
+
+	Dungeon: {
+		Pink: Is dungeon pink
+		Blue: Is dungeon blue
+		Green: Is dungeon green
 	}
 }

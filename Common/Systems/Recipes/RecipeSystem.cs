@@ -221,23 +221,21 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
                 .Create(ItemID.Hellforge)
                 .AddIngredient(ItemID.Furnace)
                 .AddIngredient(ItemID.Hellstone, 30)
-                .AddTile(TileID.Hellforge)
+                .AddTile(TileID.Anvils)
                 .Register();
 
             Recipe
                 .Create(ItemID.HangingSkeleton)
                 .AddIngredient(ItemID.Chain)
                 .AddIngredient(ItemID.Bone, 10)
-                .AddTile(TileID.HeavyWorkBench)
-                .AddCondition(Condition.InGraveyard)
+                .AddTile(TileID.BoneWelder)
                 .Register();
 
             Recipe
                 .Create(ItemID.WallSkeleton)
                 .AddIngredient(ItemID.Chain, 2)
                 .AddIngredient(ItemID.Bone, 10)
-                .AddTile(TileID.HeavyWorkBench)
-                .AddCondition(Condition.InGraveyard)
+                .AddTile(TileID.BoneWelder)
                 .Register();
 
             Recipe
@@ -259,13 +257,6 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
                 .AddIngredient(ItemID.LihzahrdBrick, 50)
                 .AddIngredient(ItemID.SunStone)
                 .AddTile(TileID.LihzahrdFurnace)
-                .Register();
-
-            Recipe
-                .Create(ItemID.FlareGun)
-                .AddIngredient(ItemID.GoldBar, 10)
-                .AddIngredient(ItemID.Flare, 50)
-                .AddTile(TileID.Anvils)
                 .Register();
 
             Recipe
