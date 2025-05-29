@@ -1,4 +1,5 @@
 ﻿using EverythingRenewableNow.Common.Systems.Dungeon;
+using EverythingRenewableNow.Content.Items.PaintingsBags;
 using System;
 using System.Linq;
 using Terraria;
@@ -80,6 +81,7 @@ namespace EverythingRenewableNow.Common.Items {
                         Array.FindAll(targetRule.rules, (rule) => !(rule is OneFromOptionsNotScaledWithLuckDropRule paintingsRule && paintingsRule.dropIds.Contains(ItemID.HighPitch)))
                     ];
                 }
+                itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<SkyPaintingsBag>()));
             }
 
             if (item.type == ItemID.DungeonFishingCrate || item.type == ItemID.DungeonFishingCrateHard) {
@@ -96,6 +98,7 @@ namespace EverythingRenewableNow.Common.Items {
                     }
                 }
 
+                itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<DungeonPaintingsBag>()));
                 itemLoot.Add(ItemDropRule.ByCondition(new DungeonCondiitons.PinkBrick(), ItemID.PinkBrick, 1, 25, 50));
                 itemLoot.Add(ItemDropRule.ByCondition(new DungeonCondiitons.GreenBrick(), ItemID.GreenBrick, 1, 25, 50));
                 itemLoot.Add(ItemDropRule.ByCondition(new DungeonCondiitons.BlueBrick(), ItemID.BlueBrick, 1, 25, 50));
@@ -141,12 +144,35 @@ namespace EverythingRenewableNow.Common.Items {
                         }
                     }
                 }
+                itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<DesertPaintingsBag>()));
                 itemLoot.Add(ItemDropRule.NotScalingWithLuck(20, ItemID.DesertMinecart));
             }
 
             if (item.type == ItemID.LavaCrate || item.type == ItemID.LavaCrateHard) {
+                foreach (var rule in itemLoot.Get()) {
+                    if (rule is not AlwaysAtleastOneSuccessDropRule targetRule)
+                        continue;
+
+                    for (int i = 0; i < targetRule.rules.Length; i++) {
+                        if (targetRule.rules[i] is CommonDropNotScalingWithLuck potRule && potRule.itemId == ItemID.PotSuspended) {
+                            targetRule.rules = Array.FindAll(targetRule.rules, rule => rule != potRule);
+                            i--;
+                        }
+
+                        if (targetRule.rules[i] is OneFromOptionsNotScaledWithLuckDropRule plantsRule && plantsRule.dropIds.Contains(ItemID.PottedLavaPlantPalm)) {
+                            targetRule.rules = Array.FindAll(targetRule.rules, rule => rule != plantsRule);
+                            i--;
+                        }
+                    }
+                }
+;
                 SimpleItemDropRuleCondition condition = Condition.DownedEowOrBoc.ToDropCondition(ShowItemDropInUI.WhenConditionSatisfied);
                 itemLoot.Add(ItemDropRule.ByCondition(condition, ItemID.Hellstone, 1, 20, 35));
+                itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<HellPaintingsBag>()));
+            }
+
+            if (item.type == ItemID.Present) {
+                itemLoot.RemoveWhere(rule => rule is AlwaysAtleastOneSuccessDropRule presentRule);
             }
         }
     }

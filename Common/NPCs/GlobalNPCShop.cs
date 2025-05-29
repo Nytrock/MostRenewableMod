@@ -30,10 +30,16 @@ namespace EverythingRenewableNow.Common.NPCs {
             }
 
             if (shop.NpcType == NPCID.Dryad) {
-                shop.Add(ItemID.CorruptGrassEcho, Condition.CrimsonWorld, Condition.BloodMoon);
-                shop.Add(ItemID.CrimsonGrassEcho, Condition.CorruptWorld, Condition.BloodMoon);
-                shop.Add(ItemID.CrimsonPlanterBox, Condition.CorruptWorld, Condition.DownedEowOrBoc);
-                shop.Add(ItemID.CorruptPlanterBox, Condition.CrimsonWorld, Condition.DownedEowOrBoc);
+                shop.Add(ItemID.CorruptGrassEcho, Condition.CrimsonWorld, Condition.BloodMoon, Condition.InGraveyard);
+                shop.Add(ItemID.CrimsonGrassEcho, Condition.CorruptWorld, Condition.BloodMoon, Condition.InGraveyard);
+                shop.Add(ItemID.CrimsonPlanterBox, Condition.CorruptWorld, Condition.DownedEowOrBoc, Condition.InGraveyard);
+                shop.Add(ItemID.CorruptPlanterBox, Condition.CrimsonWorld, Condition.DownedEowOrBoc, Condition.InGraveyard);
+
+                shop.Add(ItemID.PottedLavaPlantPalm, Condition.MoonPhasesQuarter0, Condition.InUnderworld);
+                shop.Add(ItemID.PottedLavaPlantBush, Condition.MoonPhasesQuarter1, Condition.InUnderworld);
+                shop.Add(ItemID.PottedLavaPlantBramble, Condition.MoonPhasesQuarter2, Condition.InUnderworld);
+                shop.Add(ItemID.PottedLavaPlantBulb, Condition.MoonPhasesQuarter3, Condition.InUnderworld);
+                shop.Add(ItemID.PottedLavaPlantTendrils, Condition.InUnderworld);
             }
 
             if (shop.NpcType == NPCID.Demolitionist) {

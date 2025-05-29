@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using EverythingRenewableNow.Content.Items.CursedBiomeKeys;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -181,7 +182,7 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
 
         private static void AddChestsRecipes() {
             Recipe
-                .Create(ItemID.GoldenChest)
+                .Create(ItemID.GoldChest)
                 .AddIngredient(ItemID.GoldBar, 8)
                 .AddRecipeGroup(RecipeGroupID.IronBar, 2)
                 .AddTile(TileID.Anvils)
@@ -282,6 +283,72 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
                 .AddCondition(Condition.NotZenithWorld)
                 .AddCondition(Condition.InGraveyard)
                 .AddTile(TileID.MythrilAnvil)
+                .Register();
+
+            Recipe
+                .Create(ItemID.DungeonDoor)
+                .AddIngredient(ItemID.Wood, 4)
+                .AddIngredient(ItemID.Glass, 2)
+                .AddTile(TileID.HeavyWorkBench)
+                .Register();
+
+            Recipe
+                .Create(ItemID.ScarabFishingRod)
+                .AddIngredient(ItemID.FossilOre, 15)
+                .AddIngredient(ItemID.Amber, 8)
+                .AddTile(TileID.Anvils)
+                .Register();
+
+            Recipe
+                .Create(ItemID.ClayBlock)
+                .AddIngredient(ItemID.DirtBlock)
+                .AddIngredient(ItemID.MudBlock)
+                .AddTile(TileID.Blendomatic)
+                .Register();
+
+            Recipe
+                .Create(ItemID.SnowGlobe)
+                .AddIngredient(ItemID.FrostCore)
+                .AddIngredient(ItemID.Glass, 25)
+                .AddIngredient(ItemID.PalladiumBar, 5)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+
+            Recipe
+                .Create(ItemID.SnowGlobe)
+                .AddIngredient(ItemID.FrostCore)
+                .AddIngredient(ItemID.Glass, 25)
+                .AddIngredient(ItemID.CobaltBar, 5)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+
+            Recipe
+                .Create(ItemID.PotSuspended)
+                .AddIngredient(ItemID.ClayPot)
+                .AddIngredient(ItemID.Rope, 2)
+                .Register();
+
+            Recipe
+                .Create(ItemID.RedPotion)
+                .AddIngredient(ItemID.RegenerationPotion)
+                .AddIngredient(ItemID.SwiftnessPotion)
+                .AddIngredient(ItemID.IronskinPotion)
+                .AddIngredient(ItemID.ObsidianSkinPotion)
+                .AddIngredient(ItemID.ManaRegenerationPotion)
+                .AddIngredient(ItemID.MagicPowerPotion)
+                .AddIngredient(ItemID.FeatherfallPotion)
+                .AddIngredient(ItemID.SpelunkerPotion)
+                .AddIngredient(ItemID.ArcheryPotion)
+                .AddIngredient(ItemID.HeartreachPotion)
+                .AddIngredient(ItemID.HunterPotion)
+                .AddIngredient(ItemID.EndurancePotion)
+                .AddIngredient(ItemID.LifeforcePotion)
+                .AddIngredient(ItemID.InfernoPotion)
+                .AddIngredient(ItemID.MiningPotion)
+                .AddIngredient(ItemID.RagePotion)
+                .AddIngredient(ItemID.WrathPotion)
+                .AddIngredient(ItemID.TrapsightPotion)
+                .AddTile(TileID.AlchemyTable)
                 .Register();
         }
 
@@ -615,9 +682,25 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
 
         private static void ChangeShimmerTransmutations() {
             int[] transmutations = ItemID.Sets.ShimmerTransformToItem;
-            transmutations[ItemID.AshWood] = ItemID.AshBlock;
             transmutations[ItemID.CobaltOre] = ItemID.Hellstone;
             transmutations[ItemID.Hellstone] = ItemID.PlatinumOre;
+
+            transmutations[ItemID.GoldChest] = ItemID.DeadMansChest;
+            transmutations[ItemID.Trident] = ItemID.Spear;
+
+            transmutations[ItemID.SlushBlock] = ItemID.SiltBlock;
+            transmutations[ItemID.SiltBlock] = ItemID.SlushBlock;
+            transmutations[ItemID.AshWood] = ItemID.AshBlock;
+
+            transmutations[ItemID.FrostCore] = ItemID.AncientBattleArmorMaterial;
+            transmutations[ItemID.AncientBattleArmorMaterial] = ItemID.FrostCore;
+
+            transmutations[ItemID.JungleKey] = ModContent.ItemType<CursedJungleKey>();
+            transmutations[ItemID.CorruptionKey] = ModContent.ItemType<CursedCorruptionKey>();
+            transmutations[ItemID.CrimsonKey] = ModContent.ItemType<CursedCrimsonKey>();
+            transmutations[ItemID.HallowedKey] = ModContent.ItemType<CursedHallowedKey>();
+            transmutations[ItemID.FrozenKey] = ModContent.ItemType<CursedFrozenKey>();
+            transmutations[ItemID.DungeonDesertKey] = ModContent.ItemType<CursedDesertKey>();
         }
     }
 }

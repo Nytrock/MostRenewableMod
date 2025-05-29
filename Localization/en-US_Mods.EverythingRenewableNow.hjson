@@ -31,6 +31,36 @@ Items: {
 		Summons ??? from cursed world
 		'You REALLY shouldn't'
 		'''
+
+	CursedCorruptionKey: {
+		DisplayName: Cursed Corruption Key
+		Tooltip: ""
+	}
+
+	CursedCrimsonKey: {
+		DisplayName: Cursed Crimson Key
+		Tooltip: ""
+	}
+
+	CursedDesertKey: {
+		DisplayName: Cursed Desert Key
+		Tooltip: ""
+	}
+
+	CursedFrozenKey: {
+		DisplayName: Cursed Frozen Key
+		Tooltip: ""
+	}
+
+	CursedHallowedKey: {
+		DisplayName: Cursed Hallowed Key
+		Tooltip: ""
+	}
+
+	CursedJungleKey: {
+		DisplayName: Cursed Jungle Key
+		Tooltip: ""
+	}
 }
 
 Conditions: {
