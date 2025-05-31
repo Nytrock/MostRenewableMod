@@ -1,4 +1,4 @@
-﻿using EverythingRenewableNow.Content.Items.CursedBiomeKeys;
+﻿using EverythingRenewableNow.Content.Items.AwakenedBiomeKeys;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -695,12 +695,12 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
             transmutations[ItemID.FrostCore] = ItemID.AncientBattleArmorMaterial;
             transmutations[ItemID.AncientBattleArmorMaterial] = ItemID.FrostCore;
 
-            transmutations[ItemID.JungleKey] = ModContent.ItemType<CursedJungleKey>();
-            transmutations[ItemID.CorruptionKey] = ModContent.ItemType<CursedCorruptionKey>();
-            transmutations[ItemID.CrimsonKey] = ModContent.ItemType<CursedCrimsonKey>();
-            transmutations[ItemID.HallowedKey] = ModContent.ItemType<CursedHallowedKey>();
-            transmutations[ItemID.FrozenKey] = ModContent.ItemType<CursedFrozenKey>();
-            transmutations[ItemID.DungeonDesertKey] = ModContent.ItemType<CursedDesertKey>();
+            transmutations[ItemID.JungleKey] = ModContent.ItemType<AwakenedJungleKey>();
+            transmutations[ItemID.CorruptionKey] = ModContent.ItemType<AwakenedCorruptionKey>();
+            transmutations[ItemID.CrimsonKey] = ModContent.ItemType<AwakenedCrimsonKey>();
+            transmutations[ItemID.HallowedKey] = ModContent.ItemType<AwakenedHallowedKey>();
+            transmutations[ItemID.FrozenKey] = ModContent.ItemType<AwakenedFrozenKey>();
+            transmutations[ItemID.DungeonDesertKey] = ModContent.ItemType<AwakenedDesertKey>();
         }
     }
 }

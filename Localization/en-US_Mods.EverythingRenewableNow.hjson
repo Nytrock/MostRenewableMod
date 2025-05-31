@@ -61,6 +61,36 @@ Items: {
 		DisplayName: Cursed Jungle Key
 		Tooltip: ""
 	}
+
+	AwakenedCorruptionKey: {
+		DisplayName: Awakened Corruption Key
+		Tooltip: ""
+	}
+
+	AwakenedCrimsonKey: {
+		DisplayName: Awakened Crimson Key
+		Tooltip: ""
+	}
+
+	AwakenedDesertKey: {
+		DisplayName: Awakened Desert Key
+		Tooltip: ""
+	}
+
+	AwakenedFrozenKey: {
+		DisplayName: Awakened Frozen Key
+		Tooltip: ""
+	}
+
+	AwakenedHallowedKey: {
+		DisplayName: Awakened Hallowed Key
+		Tooltip: ""
+	}
+
+	AwakenedJungleKey: {
+		DisplayName: Awakened Jungle Key
+		Tooltip: ""
+	}
 }
 
 Conditions: {
@@ -71,4 +101,9 @@ Conditions: {
 		Blue: Is dungeon blue
 		Green: Is dungeon green
 	}
+}
+
+Projectiles: {
+	SiltBallGun.DisplayName: Silt Ball Gun
+	SlushBallGun.DisplayName: Slush Ball Gun
 }

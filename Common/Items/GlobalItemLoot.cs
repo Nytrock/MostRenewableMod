@@ -172,7 +172,12 @@ namespace EverythingRenewableNow.Common.Items {
             }
 
             if (item.type == ItemID.Present) {
-                itemLoot.RemoveWhere(rule => rule is AlwaysAtleastOneSuccessDropRule presentRule);
+                foreach (var rule in itemLoot.Get()) {
+                    if (rule is not SequentialRulesNotScalingWithLuckRule presentRule)
+                        continue;
+
+                    presentRule.rules = Array.FindAll(presentRule.rules, rule => !(rule is CommonDrop globeRule && globeRule.itemId == ItemID.SnowGlobe));
+                }
             }
         }
     }
