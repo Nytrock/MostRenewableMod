@@ -11,5 +11,9 @@ namespace EverythingRenewableNow.Content.Tiles.FishingCrates {
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.addTile(Type);
         }
+
+        public override bool CreateDust(int i, int j, ref int type) {
+            return false;
+        }
     }
 }

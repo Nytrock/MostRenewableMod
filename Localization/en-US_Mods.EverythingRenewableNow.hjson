@@ -239,9 +239,11 @@ Conditions: {
 }
 
 Projectiles: {
-	SiltBallGun.DisplayName: Silt Ball Gun
-	SlushBallGun.DisplayName: Slush Ball Gun
+	SiltBallGun.DisplayName: Silt Ball
+	SlushBallGun.DisplayName: Slush Ball
 }
+
+DeathMessages.DeadManCrate: "{0} died from Dead Man's Crate"
 
 NPCs: {
 	CorruptionMimic.DisplayName: Corruption Mimic
