@@ -91,6 +91,141 @@ Items: {
 		DisplayName: Awakened Jungle Key
 		Tooltip: ""
 	}
+
+	CavernCrate: {
+		DisplayName: Cavern Crate
+		Tooltip: ""
+	}
+
+	CavernCrateHardmode: {
+		DisplayName: Cavern Crate Hardmode
+		Tooltip: ""
+	}
+
+	ForestCrate: {
+		DisplayName: Forest Crate
+		Tooltip: ""
+	}
+
+	ForestCrateHardmode: {
+		DisplayName: Forest Crate Hardmode
+		Tooltip: ""
+	}
+
+	MushroomCrate: {
+		DisplayName: Mushroom Crate
+		Tooltip: ""
+	}
+
+	MushroomCrateHardmode: {
+		DisplayName: Mushroom Crate Hardmode
+		Tooltip: ""
+	}
+
+	TempleCrate: {
+		DisplayName: Temple Crate
+		Tooltip: ""
+	}
+
+	TempleCrateHardmode: {
+		DisplayName: Temple Crate Hardmode
+		Tooltip: ""
+	}
+
+	GothicBathtub: {
+		DisplayName: Gothic Bathtub
+		Tooltip: ""
+	}
+
+	GothicBed: {
+		DisplayName: Gothic Bed
+		Tooltip: ""
+	}
+
+	GothicCandelabra: {
+		DisplayName: Gothic Candelabra
+		Tooltip: ""
+	}
+
+	GothicCandle: {
+		DisplayName: Gothic Candle
+		Tooltip: ""
+	}
+
+	GothicChandeller: {
+		DisplayName: Gothic Chandeller
+		Tooltip: ""
+	}
+
+	GothicChest: {
+		DisplayName: Gothic Chest
+		Tooltip: ""
+	}
+
+	GothicClock: {
+		DisplayName: Gothic Clock
+		Tooltip: ""
+	}
+
+	GothicDoor: {
+		DisplayName: Gothic Door
+		Tooltip: ""
+	}
+
+	GothicDresser: {
+		DisplayName: Gothic Dresser
+		Tooltip: ""
+	}
+
+	GothicLamp: {
+		DisplayName: Gothic Lamp
+		Tooltip: ""
+	}
+
+	GothicLantern: {
+		DisplayName: Gothic Lantern
+		Tooltip: ""
+	}
+
+	GothicPiano: {
+		DisplayName: Gothic Piano
+		Tooltip: ""
+	}
+
+	GothicPlatform: {
+		DisplayName: Gothic Platform
+		Tooltip: ""
+	}
+
+	GothicSink: {
+		DisplayName: Gothic Sink
+		Tooltip: ""
+	}
+
+	GothicSofa: {
+		DisplayName: Gothic Sofa
+		Tooltip: ""
+	}
+
+	GothicToilet: {
+		DisplayName: Gothic Toilet
+		Tooltip: ""
+	}
+
+	GothicTreeSapling: {
+		DisplayName: Gothic Tree Sapling
+		Tooltip: ""
+	}
+
+	GothicWood: {
+		DisplayName: Gothic Wood
+		Tooltip: ""
+	}
+
+	IceGrenade: {
+		DisplayName: Ice Grenade
+		Tooltip: ""
+	}
 }
 
 Conditions: {
@@ -106,4 +241,14 @@ Conditions: {
 Projectiles: {
 	SiltBallGun.DisplayName: Silt Ball Gun
 	SlushBallGun.DisplayName: Slush Ball Gun
+}
+
+NPCs: {
+	CorruptionMimic.DisplayName: Corruption Mimic
+	CrimsonMimic.DisplayName: Crimson Mimic
+	DesertMimic.DisplayName: Desert Mimic
+	HallowedMimic.DisplayName: Hallowed Mimic
+	IceMimic.DisplayName: Ice Mimic
+	JungleMimic.DisplayName: Jungle Mimic
+	SlushMerman.DisplayName: Slush Merman
 }
