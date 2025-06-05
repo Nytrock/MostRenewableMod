@@ -3,13 +3,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Items.FishingCrates {
-    public abstract class BaseCrate<TTile> : ModItem where TTile : ModTile {
+    public abstract class BaseCrate<TTile> : ModItem, ILocalizedModType where TTile : ModTile {
         public override void SetStaticDefaults() {
             Item.ResearchUnlockCount = 10;
             ItemID.Sets.IsFishingCrate[Type] = true;
         }
 
         public override void SetDefaults() {
+            Item.CloneDefaults(ItemID.FrozenCrate);
             Item.DefaultToPlaceableTile(ModContent.TileType<TTile>());
             Item.width = 12;
             Item.height = 12;

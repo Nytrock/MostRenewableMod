@@ -30,7 +30,7 @@ namespace EverythingRenewableNow.Content.Items.FishingCrates {
 
             GoreAndDustUtils.CreateExplosion(source, player.Center, 200, 200);
             player.QuickSpawnItem(source, ItemID.DeadMansSweater);
-            player.Hurt(deathReason, 300, 1);
+            player.Hurt(deathReason, 350, 1);
         }
     }
 }

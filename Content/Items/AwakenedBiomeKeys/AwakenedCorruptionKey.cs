@@ -1,7 +1,5 @@
-﻿using Terraria.ModLoader;
-
-namespace EverythingRenewableNow.Content.Items.AwakenedBiomeKeys {
-    public class AwakenedCorruptionKey : ModItem {
+﻿namespace EverythingRenewableNow.Content.Items.AwakenedBiomeKeys {
+    public class AwakenedCorruptionKey : AwakenedKey {
         public override void SetDefaults() {
             Item.width = 26;
             Item.height = 36;
