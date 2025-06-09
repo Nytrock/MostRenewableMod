@@ -11,6 +11,7 @@ namespace EverythingRenewableNow.Content.Tiles.FishingCrates {
             Main.tileTable[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
+            TileObjectData.newTile.CoordinateHeights = [16, 18];
             TileObjectData.addTile(Type);
 
             AddMapEntry(new Color(160, 120, 92));

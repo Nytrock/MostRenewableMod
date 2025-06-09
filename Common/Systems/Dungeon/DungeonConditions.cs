@@ -2,7 +2,7 @@
 using Terraria.Localization;
 
 namespace EverythingRenewableNow.Common.Systems.Dungeon {
-    public class DungeonCondiitons {
+    public class DungeonConditions {
         public class PinkBrick : IItemDropRuleCondition, IProvideItemConditionDescription {
             public bool CanDrop(DropAttemptInfo info) => DungeonSystem.TileType == DungeonTileType.Pink;
             public bool CanShowItemDropInUI() => DungeonSystem.TileType == DungeonTileType.Pink;

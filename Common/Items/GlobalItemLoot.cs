@@ -96,12 +96,15 @@ namespace EverythingRenewableNow.Common.Items {
                             targetRule.rules[i] = ItemDropRule.SequentialRulesNotScalingWithLuck(2, waterBoltRule, bookRule);
                         }
                     }
+
+                    IItemDropRule spikesRule = ItemDropRule.NotScalingWithLuck(ItemID.Spike, 5, 10, 25);
+                    targetRule.rules = [.. targetRule.rules, spikesRule];
                 }
 
                 itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<DungeonPaintingsBag>()));
-                itemLoot.Add(ItemDropRule.ByCondition(new DungeonCondiitons.PinkBrick(), ItemID.PinkBrick, 1, 25, 50));
-                itemLoot.Add(ItemDropRule.ByCondition(new DungeonCondiitons.GreenBrick(), ItemID.GreenBrick, 1, 25, 50));
-                itemLoot.Add(ItemDropRule.ByCondition(new DungeonCondiitons.BlueBrick(), ItemID.BlueBrick, 1, 25, 50));
+                itemLoot.Add(ItemDropRule.ByCondition(new DungeonConditions.PinkBrick(), ItemID.PinkBrick, 1, 25, 50));
+                itemLoot.Add(ItemDropRule.ByCondition(new DungeonConditions.GreenBrick(), ItemID.GreenBrick, 1, 25, 50));
+                itemLoot.Add(ItemDropRule.ByCondition(new DungeonConditions.BlueBrick(), ItemID.BlueBrick, 1, 25, 50));
             }
 
             if (item.type == ItemID.FrozenCrate || item.type == ItemID.FrozenCrateHard) {

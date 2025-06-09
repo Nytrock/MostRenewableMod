@@ -77,6 +77,7 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
             ChangeVanillaRecipes();
             AddObsidianFurnitureRecipes();
             AddDungeonFurnituresRecipes();
+            AddGothicFurnituresRecipes();
             AddStatuesRecipes();
             AddChestsRecipes();
             AddOtherRecipes();
@@ -385,6 +386,37 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
                     recipe.AddTile(TileID.HeavyWorkBench);
                 }
             }
+        }
+
+        private static void AddGothicFurnituresRecipes() {
+            Recipe
+                .Create(ItemID.GothicBookcase)
+                .AddRecipeGroup(RecipeGroupID.Wood, 20)
+                .AddIngredient(ItemID.Book, 10)
+                .AddTile(TileID.Sawmill)
+                .AddCondition(Condition.InGraveyard)
+                .Register();
+
+            Recipe
+                .Create(ItemID.GothicChair)
+                .AddRecipeGroup(RecipeGroupID.Wood, 4)
+                .AddTile(TileID.Sawmill)
+                .AddCondition(Condition.InGraveyard)
+                .Register();
+
+            Recipe
+                .Create(ItemID.GothicTable)
+                .AddRecipeGroup(RecipeGroupID.Wood, 8)
+                .AddTile(TileID.Sawmill)
+                .AddCondition(Condition.InGraveyard)
+                .Register();
+
+            Recipe
+                .Create(ItemID.GothicWorkBench)
+                .AddRecipeGroup(RecipeGroupID.Wood, 10)
+                .AddTile(TileID.Sawmill)
+                .AddCondition(Condition.InGraveyard)
+                .Register();
         }
 
         private static void AddObsidianFurnitureRecipes() {
