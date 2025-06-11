@@ -11,8 +11,18 @@ namespace EverythingRenewableNow.Common.Players {
             bool inWater = !attempt.inLava && !attempt.inHoney;
             bool isBiomeCrateConditions = inWater && attempt.crate && !attempt.veryrare && !attempt.legendary && attempt.rare;
 
+            if (itemDrop == ItemID.JungleFishingCrate && Player.ZoneLihzhardTemple) {
+                itemDrop = ModContent.ItemType<TempleCrate>();
+                return;
+            }
+
+            if (itemDrop == ItemID.JungleFishingCrateHard && Player.ZoneLihzhardTemple) {
+                itemDrop = ModContent.ItemType<TempleCrateHardmode>();
+                return;
+            }
+
             if (!isBiomeCrateConditions) {
-                if (Player.ZoneLihzhardTemple && inWater && !attempt.crate && (attempt.veryrare || attempt.legendary))
+                if (Player.ZoneLihzhardTemple && inWater && !attempt.crate && (attempt.veryrare || attempt.legendary) && Main.rand.NextBool(10))
                     itemDrop = ItemID.LizardKing;
                 return;
             }

@@ -1,9 +1,9 @@
 ﻿using Terraria.ID;
 
 namespace EverythingRenewableNow.Content.Projectiles.SandGun {
-    public class SiltBallGun : BaseBallGun {
-        protected override int Tile => TileID.Silt;
-        protected override int Dust => DustID.Silt;
+    public class AshBallGun : BaseBallGun {
+        protected override int Tile => TileID.Ash;
+        protected override int Dust => DustID.Ash;
 
         public override void SetDefaults() {
             base.SetDefaults();

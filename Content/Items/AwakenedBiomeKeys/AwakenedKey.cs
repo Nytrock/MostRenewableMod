@@ -12,7 +12,7 @@ namespace EverythingRenewableNow.Content.Items.AwakenedBiomeKeys {
         }
 
         public override void SetDefaults() {
-            Item.stack = 9999;
+            Item.maxStack = 9999;
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips) {

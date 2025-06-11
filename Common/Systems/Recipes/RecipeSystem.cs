@@ -722,7 +722,6 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
 
             transmutations[ItemID.SlushBlock] = ItemID.SiltBlock;
             transmutations[ItemID.SiltBlock] = ItemID.SlushBlock;
-            transmutations[ItemID.AshWood] = ItemID.AshBlock;
 
             transmutations[ItemID.FrostCore] = ItemID.AncientBattleArmorMaterial;
             transmutations[ItemID.AncientBattleArmorMaterial] = ItemID.FrostCore;

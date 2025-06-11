@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 namespace EverythingRenewableNow.Common.Items {
     public class GlobalWeapon : GlobalItem {
         public override bool? CanBeChosenAsAmmo(Item ammo, Item weapon, Player player) {
-            if (weapon.type == ItemID.Sandgun && (ammo.type == ItemID.SlushBlock || ammo.type == ItemID.SiltBlock))
+            if (weapon.type == ItemID.Sandgun && ammo.type == ItemID.AshBlock)
                 return true;
             return base.CanBeChosenAsAmmo(ammo, weapon, player);
         }
@@ -15,11 +15,8 @@ namespace EverythingRenewableNow.Common.Items {
             if (weapon.type != ItemID.Sandgun)
                 return;
 
-            if (ammo.type == ItemID.SlushBlock)
-                type = ModContent.ProjectileType<SlushBallGun>();
-
-            if (ammo.type == ItemID.SiltBlock)
-                type = ModContent.ProjectileType<SiltBallGun>();
+            if (ammo.type == ItemID.AshBlock)
+                type = ModContent.ProjectileType<AshBallGun>();
         }
     }
 }

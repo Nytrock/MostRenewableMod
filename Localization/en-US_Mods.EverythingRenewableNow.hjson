@@ -111,6 +111,11 @@ Items: {
 		DisplayName: Bewitched Living Wood Wall
 		Tooltip: ""
 	}
+
+	SlushMermanBanner: {
+		DisplayName: Slush Merman Banner
+		Tooltip: ""
+	}
 }
 
 Conditions: {
@@ -126,6 +131,13 @@ Conditions: {
 Projectiles: {
 	SiltBallGun.DisplayName: Silt Ball
 	SlushBallGun.DisplayName: Slush Ball
+	AshBallGun.DisplayName: Ash Ball Gun
+	DroppedCorruptionChest.DisplayName: Dropped Corruption Chest
+	DroppedCrimsonChest.DisplayName: Dropped Crimson Chest
+	DroppedDesertChest.DisplayName: Dropped Desert Chest
+	DroppedHallowedChest.DisplayName: Dropped Hallowed Chest
+	DroppedIceChest.DisplayName: Dropped Ice Chest
+	DroppedJungleChest.DisplayName: Dropped Jungle Chest
 }
 
 DeathMessages.DeadManCrate: "{0} died from Dead Man's Crate"
@@ -138,4 +150,10 @@ NPCs: {
 	IceMimic.DisplayName: Ice Chest Mimic
 	JungleMimic.DisplayName: Jungle Chest Mimic
 	SlushMerman.DisplayName: Slush Merman
+	CorruptionChestMimic.DisplayName: Corruption Chest Mimic
+	CrimsonChestMimic.DisplayName: Crimson Chest Mimic
+	DesertChestMimic.DisplayName: Desert Chest Mimic
+	HallowedChestMimic.DisplayName: Hallowed Chest Mimic
+	IceChestMimic.DisplayName: Ice Chest Mimic
+	JungleChestMimic.DisplayName: Jungle Chest Mimic
 }
