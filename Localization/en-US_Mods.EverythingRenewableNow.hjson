@@ -34,32 +34,32 @@ Items: {
 
 	AwakenedCorruptionKey: {
 		DisplayName: Awakened Corruption Key
-		Tooltip: ""
+		Tooltip: "'The essence of many souls have been awakened'"
 	}
 
 	AwakenedCrimsonKey: {
 		DisplayName: Awakened Crimson Key
-		Tooltip: ""
+		Tooltip: "'The essence of many souls have been awakened'"
 	}
 
 	AwakenedDesertKey: {
 		DisplayName: Awakened Desert Key
-		Tooltip: ""
+		Tooltip: "'The essence of many souls have been awakened'"
 	}
 
 	AwakenedFrozenKey: {
 		DisplayName: Awakened Frozen Key
-		Tooltip: ""
+		Tooltip: "'The essence of many souls have been awakened'"
 	}
 
 	AwakenedHallowedKey: {
 		DisplayName: Awakened Hallowed Key
-		Tooltip: ""
+		Tooltip: "'The essence of many souls have been awakened'"
 	}
 
 	AwakenedJungleKey: {
 		DisplayName: Awakened Jungle Key
-		Tooltip: ""
+		Tooltip: "'The essence of many souls have been awakened'"
 	}
 
 	CavernCrate: {
@@ -104,7 +104,7 @@ Items: {
 
 	IceGrenade: {
 		DisplayName: Ice Grenade
-		Tooltip: ""
+		Tooltip: A small explosion that will freeze the water
 	}
 
 	BewitchedLivingWoodWall: {
@@ -138,17 +138,12 @@ Projectiles: {
 	DroppedHallowedChest.DisplayName: Dropped Hallowed Chest
 	DroppedIceChest.DisplayName: Dropped Ice Chest
 	DroppedJungleChest.DisplayName: Dropped Jungle Chest
+	IceGrenadeProjectile.DisplayName: Ice Grenade Projectile
 }
 
 DeathMessages.DeadManCrate: "{0} died from Dead Man's Crate"
 
 NPCs: {
-	CorruptionMimic.DisplayName: Corruption Chest Mimic
-	CrimsonMimic.DisplayName: Crimson Chest Mimic
-	DesertMimic.DisplayName: Desert Chest Mimic
-	HallowedMimic.DisplayName: Hallowed Chest Mimic
-	IceMimic.DisplayName: Ice Chest Mimic
-	JungleMimic.DisplayName: Jungle Chest Mimic
 	SlushMerman.DisplayName: Slush Merman
 	CorruptionChestMimic.DisplayName: Corruption Chest Mimic
 	CrimsonChestMimic.DisplayName: Crimson Chest Mimic
@@ -156,4 +151,14 @@ NPCs: {
 	HallowedChestMimic.DisplayName: Hallowed Chest Mimic
 	IceChestMimic.DisplayName: Ice Chest Mimic
 	JungleChestMimic.DisplayName: Jungle Chest Mimic
+}
+
+Bestiary: {
+	SlushMerman: Slush Merman
+	CorruptionChestMimic: Corruption Chest Mimic
+	CrimsonChestMimic: Crimson Chest Mimic
+	DesertChestMimic: Desert Chest Mimic
+	HallowedChestMimic: Hallowed Chest Mimic
+	IceChestMimic: Ice Chest Mimic
+	JungleChestMimic: Jungle Chest Mimic
 }

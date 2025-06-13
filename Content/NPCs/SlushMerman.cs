@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
+using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -12,12 +13,34 @@ namespace EverythingRenewableNow.Content.NPCs {
     public class SlushMerman : ModNPC {
         public override void SetStaticDefaults() {
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.IcyMerman];
+
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new() {
+                Velocity = 2f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+        }
+
+        public override bool? CanBeHitByProjectile(Projectile projectile) {
+            if (projectile.type == ProjectileID.SlushBall)
+                return false;
+            return base.CanBeHitByProjectile(projectile);
+        }
+
+        public override void SetBestiary(BestiaryDatabase dataNPC, BestiaryEntry bestiaryEntry) {
+            bestiaryEntry.Info.AddRange([
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.UndergroundSnow,
+                new FlavorTextBestiaryInfoElement("Mods.EverythingRenewableNow.Bestiary.SlushMerman"),
+            ]);
         }
 
         public override void SetDefaults() {
             NPC.CloneDefaults(NPCID.IcyMerman);
             AnimationType = NPCID.IcyMerman;
             NPC.aiStyle = -1;
+            NPC.damage = 10;
+            NPC.defense = 8;
+            NPC.lifeMax = 55;
 
             Banner = Type;
             BannerItem = ModContent.ItemType<SlushMermanBanner>();

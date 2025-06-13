@@ -1,4 +1,5 @@
-﻿using EverythingRenewableNow.Utils;
+﻿using EverythingRenewableNow.Content.Tiles;
+using EverythingRenewableNow.Utils;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,6 +12,14 @@ namespace EverythingRenewableNow.Common.Tiles {
                     return;
 
                 if (WorldGen.PlaceTile(x, y - 1, TileID.GlowTulip)) {
+                    if (Main.netMode != NetmodeID.SinglePlayer)
+                        NetMessage.SendData(MessageID.TileManipulation, -1, -1, null, 1, x, y);
+                }
+            } else if (TileUtils.IsFitForCarrot(x, y, type)) {
+                if (!Main.rand.NextBool(10000))
+                    return;
+
+                if (WorldGen.PlaceTile(x, y - 1, ModContent.TileType<Carrot>())) {
                     if (Main.netMode != NetmodeID.SinglePlayer)
                         NetMessage.SendData(MessageID.TileManipulation, -1, -1, null, 1, x, y);
                 }
