@@ -3,7 +3,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Items.FishingCrates {
-    public class MushroomCrateHardmode : BaseCrate<Tiles.FishingCrates.MushroomCrateHardmode> {
+    public class MushroomCrateHardmode : BaseCrate {
+        protected override string _crateName => nameof(MushroomCrateHardmode);
+
         public override void SetStaticDefaults() {
             base.SetStaticDefaults();
             ItemID.Sets.IsFishingCrateHardmode[Type] = true;

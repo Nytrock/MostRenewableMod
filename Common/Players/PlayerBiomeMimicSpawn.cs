@@ -1,5 +1,4 @@
-﻿using EverythingRenewableNow.Content.Items.AwakenedBiomeKeys;
-using EverythingRenewableNow.Content.NPCs.BiomeChestMimics;
+﻿using EverythingRenewableNow.Utils;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
@@ -49,12 +48,12 @@ namespace EverythingRenewableNow.Common.Players {
                 return -1;
 
             Dictionary<int, int> keysAndMimics = new() {
-                { ModContent.ItemType<AwakenedCorruptionKey>(), ModContent.NPCType<CorruptionChestMimic>() },
-                { ModContent.ItemType<AwakenedCrimsonKey>(), ModContent.NPCType<CrimsonChestMimic>() },
-                { ModContent.ItemType<AwakenedDesertKey>(), ModContent.NPCType<DesertChestMimic>() },
-                { ModContent.ItemType<AwakenedFrozenKey>(), ModContent.NPCType<IceChestMimic>() },
-                { ModContent.ItemType<AwakenedHallowedKey>(), ModContent.NPCType<HallowedChestMimic>() },
-                { ModContent.ItemType<AwakenedJungleKey>(), ModContent.NPCType<JungleChestMimic>() },
+                { ModContentUtils.ItemType("AwakenedCorruptionKey"), ModContentUtils.NPCType("CorruptionChestMimic") },
+                { ModContentUtils.ItemType("AwakenedCrimsonKey"), ModContentUtils.NPCType("CrimsonChestMimic") },
+                { ModContentUtils.ItemType("AwakenedDesertKey"), ModContentUtils.NPCType("DesertChestMimic") },
+                { ModContentUtils.ItemType("AwakenedFrozenKey"), ModContentUtils.NPCType("IceChestMimic") },
+                { ModContentUtils.ItemType("AwakenedHallowedKey"), ModContentUtils.NPCType("HallowedChestMimic") },
+                { ModContentUtils.ItemType("AwakenedJungleKey"), ModContentUtils.NPCType("JungleChestMimic") },
             };
             Tile chestTile = Main.tile[chest.x, chest.y];
             int chestStyle = chestTile.TileFrameX / 36;

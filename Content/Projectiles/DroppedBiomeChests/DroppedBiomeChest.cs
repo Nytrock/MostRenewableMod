@@ -5,10 +5,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Projectiles.DroppedBiomeChests {
-    public abstract class DroppedBiomeChest : ModProjectile {
-        public virtual int ChestTileType => 21;
-        public abstract int ChestTileSubType { get; }
-        public abstract int ItemType { get; }
+    public class DroppedBiomeChest(string biome, int chestTileStyle, int itemType, int chestTileType) : ModProjectile {
+        public override string Name => $"Dropped{biome}Chest";
+        protected override bool CloneNewInstances => true;
 
         public override void SetDefaults() {
             Projectile.aiStyle = -1;
@@ -32,10 +31,10 @@ namespace EverythingRenewableNow.Content.Projectiles.DroppedBiomeChests {
             if (Main.tile[x, y] == null)
                 return;
 
-            if (!TileObject.CanPlace(x, y, ChestTileType, ChestTileSubType, Projectile.direction, out TileObject objectData))
+            if (!TileObject.CanPlace(x, y, chestTileType, chestTileStyle, Projectile.direction, out TileObject objectData))
                 return;
 
-            int chestIndex = WorldGen.PlaceChest(x, y, (ushort)ChestTileType, style: ChestTileSubType); ;
+            int chestIndex = WorldGen.PlaceChest(x, y, (ushort)chestTileType, style: chestTileStyle); ;
             if (chestIndex == -1)
                 return;
 
@@ -44,7 +43,7 @@ namespace EverythingRenewableNow.Content.Projectiles.DroppedBiomeChests {
             Projectile.Kill();
 
             Chest chest = Main.chest[chestIndex];
-            chest.item[0] = new Item(ItemType);
+            chest.item[0] = new Item(itemType);
         }
 
         private void Shimmer() {

@@ -6,7 +6,9 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Items.FishingCrates {
-    public class CavernCrate : BaseCrate<Tiles.FishingCrates.CavernCrate> {
+    public class CavernCrate : BaseCrate {
+        protected override string _crateName => nameof(CavernCrate);
+
         public override void ModifyItemLoot(ItemLoot itemLoot) {
             itemLoot.AddPreHardmodeFishingCrateLoot(LootUtils.GetCavernCrateRules());
         }
