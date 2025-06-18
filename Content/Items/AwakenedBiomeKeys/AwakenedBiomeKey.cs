@@ -25,7 +25,7 @@ namespace EverythingRenewableNow.Content.Items.AwakenedBiomeKeys {
                 return;
 
             TooltipLine planteraLine = new(Mod, "KeyLocked", _planteraCondition.Value);
-            tooltips.Insert(1, planteraLine);
+            tooltips.Insert(2, planteraLine);
         }
     }
 }

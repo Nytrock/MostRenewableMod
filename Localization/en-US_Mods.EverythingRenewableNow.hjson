@@ -2,28 +2,48 @@
 
 Items: {
 	CavernPaintingsBag: {
-		DisplayName: Cavern Paintings Bag
-		Tooltip: ""
+		DisplayName: Cavern Painting Cover
+		Tooltip:
+			'''
+			Contain a random painting from the caverns
+			{$CommonItemTooltip.RightClickToOpen}
+			'''
 	}
 
 	DesertPaintingsBag: {
-		DisplayName: Desert Paintings Bag
-		Tooltip: ""
+		DisplayName: Desert Painting Cover
+		Tooltip:
+			'''
+			Contain a random painting from the desert
+			{$CommonItemTooltip.RightClickToOpen}
+			'''
 	}
 
 	DungeonPaintingsBag: {
-		DisplayName: Dungeon Paintings Bag
-		Tooltip: ""
+		DisplayName: Dungeon Painting Cover
+		Tooltip:
+			'''
+			Contain a random painting from the dungeon
+			{$CommonItemTooltip.RightClickToOpen}
+			'''
 	}
 
 	HellPaintingsBag: {
-		DisplayName: Hell Paintings Bag
-		Tooltip: ""
+		DisplayName: Underworld Painting Cover
+		Tooltip:
+			'''
+			Contain a random painting from the underworld
+			{$CommonItemTooltip.RightClickToOpen}
+			'''
 	}
 
 	SkyPaintingsBag: {
-		DisplayName: Sky Paintings Bag
-		Tooltip: ""
+		DisplayName: Sky Painting Cover
+		Tooltip:
+			'''
+			Contains a random painting from the sky
+			{$CommonItemTooltip.RightClickToOpen}
+			'''
 	}
 
 	MechQueen.Tooltip:
@@ -141,7 +161,7 @@ Projectiles: {
 	IceGrenadeProjectile.DisplayName: Ice Grenade Projectile
 }
 
-DeathMessages.DeadManCrate: "{0} died from Dead Man's Crate"
+DeathMessages.DeadManCrate: "{0} was blown up by Dead Man's Crate"
 
 NPCs: {
 	SlushMerman.DisplayName: Slush Merman
@@ -161,4 +181,20 @@ Bestiary: {
 	HallowedChestMimic: Hallowed Chest Mimic
 	IceChestMimic: Ice Chest Mimic
 	JungleChestMimic: Jungle Chest Mimic
+}
+
+Configs: {
+	SeasonalEventsConfig: {
+		DisplayName: Seasonal Events
+
+		ChristmasToggle: {
+			Label: Christmas Toggle
+			Tooltip: Enables Christmas event
+		}
+
+		HalloweenToggle: {
+			Label: Halloween Toggle
+			Tooltip: Enables Halloween event
+		}
+	}
 }

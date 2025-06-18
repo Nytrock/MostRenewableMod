@@ -15,8 +15,8 @@ namespace EverythingRenewableNow.Content.Items.FishingCrates {
         public override void SetDefaults() {
             Item.CloneDefaults(ItemID.FrozenCrate);
             Item.DefaultToPlaceableTile(ModContentUtils.TileType(_crateName));
-            Item.width = 12;
-            Item.height = 12;
+            Item.width = 17;
+            Item.height = 17;
             Item.rare = ItemRarityID.Green;
             Item.value = Item.sellPrice(0, 1);
         }
