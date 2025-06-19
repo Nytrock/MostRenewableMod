@@ -13,6 +13,9 @@
 	<ItemGroup>
 	  <PackageReference Include="MonoMod" Version="22.7.31.1" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Assets\Skyblock\" />
+	</ItemGroup>
 
 	<!-- References -->
 

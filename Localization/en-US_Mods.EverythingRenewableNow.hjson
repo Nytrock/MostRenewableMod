@@ -198,3 +198,9 @@ Configs: {
 		}
 	}
 }
+
+WorldGen: {
+	RemovingTerrain: Oh wait, removing world terrain
+	Skyblock: Placing blocks in the sky
+	SkyblockCleanUp: Final clean up
+}
