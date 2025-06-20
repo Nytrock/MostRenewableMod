@@ -14,7 +14,6 @@ using Terraria.WorldBuilding;
 namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
     public class SkyblockSystem : ModSystem {
         private static bool _isSkyblock;
-        private static bool _isZenithSkyblock;
 
         private int _glitchFrameCounter;
         private int _glitchFrame;
@@ -22,7 +21,6 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
 
         public override void SaveWorldHeader(TagCompound tag) {
             tag["isSkyblock"] = _isSkyblock;
-            tag["isZenithSkyblock"] = _isZenithSkyblock;
         }
 
         public override void PreWorldGen() {
@@ -41,7 +39,7 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
         }
 
         private static void BecomeZenithSkyblock() {
-            _isZenithSkyblock = true;
+            _isSkyblock = true;
             WorldGen.noTrapsWorldGen = true;
             WorldGen.notTheBees = true;
             WorldGen.getGoodWorldGen = true;
@@ -63,16 +61,14 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
 
         public override void SaveWorldData(TagCompound tag) {
             tag["isSkyblock"] = _isSkyblock;
-            tag["isZenithSkyblock"] = _isZenithSkyblock;
         }
 
         public override void LoadWorldData(TagCompound tag) {
             _isSkyblock = tag.GetBool("isSkyblock");
-            _isZenithSkyblock = tag.GetBool("isZenithSkyblock");
         }
 
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight) {
-            if (_isSkyblock || _isZenithSkyblock) {
+            if (_isSkyblock) {
                 tasks.RemoveAll(task => task.Name is not ("Reset" or "Guide" or "Terrain" or "Spawn Point"));
                 tasks.Insert(3, new RemovingTerrainPass());
                 tasks.Insert(4, new SkyblockPass());
@@ -100,7 +96,8 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
         private void ILGetIconElement(ILContext il) {
             try {
                 ILCursor c = new(il);
-                c.GotoNext(i => i.MatchLdarg0());
+                for (int _ = 0; _ < 4; _++)
+                    c.GotoNext(i => i.MatchLdarg0());
                 c.Index--;
                 c.Emit(Mono.Cecil.Cil.OpCodes.Ldarg_0);
                 c.EmitDelegate(ModifyGetIconElement);
@@ -125,7 +122,7 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
             bool haveTags = list.Data.TryGetHeaderData<SkyblockSystem>(out TagCompound modTag);
             if (!haveTags) return originalElement;
 
-            if (modTag.GetBool("isZenithSkyblock")) {
+            if (modTag.GetBool("isSkyblock") && list.Data.ZenithWorld) {
                 Asset<Texture2D> asset = Mod.Assets.Request<Texture2D>("Assets/Skyblock/IconEverything");
                 UIImageFramed uIImageFramed = new(asset, asset.Frame(7, 16)) {
                     Left = new StyleDimension(4f, 0f)

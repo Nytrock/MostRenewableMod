@@ -138,7 +138,7 @@ namespace EverythingRenewableNow.Common.Items {
                         }
 
                         if (targetRule.rules[i] is CommonDropNotScalingWithLuck bottleRule && bottleRule.itemId == ItemID.SandstorminaBottle) {
-                            targetRule.rules[i] = ItemDropRule.OneFromOptionsNotScalingWithLuck(30, ItemID.SandstorminaBottle, ItemID.FlyingCarpet);
+                            targetRule.rules[i] = ItemDropRule.OneFromOptionsNotScalingWithLuck(35, ItemID.SandstorminaBottle, ItemID.FlyingCarpet);
                         }
 
                         if (targetRule.rules[i] is CommonDropNotScalingWithLuck bombRule && bombRule.itemId == ItemID.ScarabBomb) {
