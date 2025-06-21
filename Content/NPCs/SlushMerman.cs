@@ -177,7 +177,7 @@ namespace EverythingRenewableNow.Content.NPCs {
                     num163 = num159 / num163;
                     speedX *= num163;
                     speedY *= num163;
-                    int damage = 10;
+                    int damage = 20;
                     int type = 179;
 
                     Player player3 = Main.player[NPC.target];
