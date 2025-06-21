@@ -1,5 +1,3 @@
-# This file will automatically update with entries for new content after a build and reload.
-
 Items: {
 	CavernPaintingsBag: {
 		DisplayName: Cavern Painting Cover
@@ -174,13 +172,13 @@ NPCs: {
 }
 
 Bestiary: {
-	SlushMerman: Slush Merman
-	CorruptionChestMimic: Corruption Chest Mimic
-	CrimsonChestMimic: Crimson Chest Mimic
-	DesertChestMimic: Desert Chest Mimic
-	HallowedChestMimic: Hallowed Chest Mimic
-	IceChestMimic: Ice Chest Mimic
-	JungleChestMimic: Jungle Chest Mimic
+	SlushMerman: The habitat of the mermen population experienced a drastic climate change, forcing them to adapt to survival in the slush
+	CorruptionChestMimic: The awakened souls from the rotting crevices created this mimic from an ordinary chest
+	CrimsonChestMimic: The awakened souls from the pulsating catacombs created this mimic from an ordinary chest
+	DesertChestMimic: The awakened souls from the barren canyons created this mimic from an ordinary chest
+	HallowedChestMimic: The awakened souls from the hallowed land created this mimic from an ordinary chest
+	IceChestMimic: The awakened souls from the permafrost caves created this mimic from an ordinary chest
+	JungleChestMimic: The awakened souls from the depths of the jungle created this mimic from an ordinary chest
 }
 
 Configs: {

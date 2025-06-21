@@ -1,13 +1,13 @@
-﻿using Terraria;
+﻿using EverythingRenewableNow.Utils;
+using Terraria;
 using Terraria.IO;
-using Terraria.Localization;
 using Terraria.WorldBuilding;
 
 namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
     internal class SkyblockCleanUp() : GenPass("SkyblockCleanUp", float.PositiveInfinity) {
         protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration) {
             progress.Set(1);
-            progress.Message = Language.GetTextValue("Mods.EverythingRenewableNow.WorldGen.SkyblockCleanUp");
+            progress.Message = LocalizationUtils.GetTextValue("WorldGen.SkyblockCleanUp");
 
             WorldGen.notTheBees = false;
             WorldGen.getGoodWorldGen = false;

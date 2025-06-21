@@ -1,6 +1,7 @@
 ﻿using EverythingRenewableNow.Content.Dusts;
 using EverythingRenewableNow.Content.Gores;
 using EverythingRenewableNow.Content.Items.Banners;
+using EverythingRenewableNow.Utils;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -30,7 +31,7 @@ namespace EverythingRenewableNow.Content.NPCs {
         public override void SetBestiary(BestiaryDatabase dataNPC, BestiaryEntry bestiaryEntry) {
             bestiaryEntry.Info.AddRange([
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.UndergroundSnow,
-                new FlavorTextBestiaryInfoElement("Mods.EverythingRenewableNow.Bestiary.SlushMerman"),
+                LocalizationUtils.GetBestiaryText("Bestiary.SlushMerman"),
             ]);
         }
 

@@ -12,7 +12,7 @@ namespace EverythingRenewableNow.Common.Items {
         private static LocalizedText _mechQueenTooltip;
 
         public override void SetStaticDefaults() {
-            _mechQueenTooltip = Language.GetText("Mods.EverythingRenewableNow.Items.MechQueen.Tooltip");
+            _mechQueenTooltip = LocalizationUtils.GetText("Items.MechQueen.Tooltip");
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips) {

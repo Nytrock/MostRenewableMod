@@ -2,7 +2,6 @@
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Items.FishingCrates {
@@ -17,7 +16,7 @@ namespace EverythingRenewableNow.Content.Items.FishingCrates {
             if (!Main.rand.NextBool(100))
                 return;
 
-            PlayerDeathReason deathReason = PlayerDeathReason.ByCustomReason(NetworkText.FromKey("Mods.EverythingRenewableNow.DeathMessages.DeadManCrate", player.name));
+            PlayerDeathReason deathReason = PlayerDeathReason.ByCustomReason(LocalizationUtils.GetNetworkText("DeathMessages.DeadManCrate", player.name));
             IEntitySource source = player.GetSource_OnHurt(deathReason);
 
             GoreAndDustUtils.CreateExplosion(source, player.Center, 200, 200);

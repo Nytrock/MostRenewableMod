@@ -1,12 +1,12 @@
-﻿using Terraria.GameContent.ItemDropRules;
-using Terraria.Localization;
+﻿using EverythingRenewableNow.Utils;
+using Terraria.GameContent.ItemDropRules;
 
 namespace EverythingRenewableNow.Common.Systems.MechQueen {
     public class MechQueenConditions {
         public class Died : IItemDropRuleCondition, IProvideItemConditionDescription {
             public bool CanDrop(DropAttemptInfo info) => MechQueenSystem.IsMechQueenDied;
             public bool CanShowItemDropInUI() => MechQueenSystem.IsMechQueenDied;
-            public string GetConditionDescription() => Language.GetTextValue("Mods.EverythingRenewableNow.Conditions.MechQueen.Died");
+            public string GetConditionDescription() => LocalizationUtils.GetTextValue("Conditions.MechQueen.Died");
         }
     }
 }

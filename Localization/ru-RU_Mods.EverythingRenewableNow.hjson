@@ -1,0 +1,207 @@
+Items: {
+	CavernPaintingsBag: {
+		DisplayName: Переплёт Пещерной Картины
+		Tooltip:
+			'''
+			Содержит случайную картину из пещер
+			{$CommonItemTooltip.RightClickToOpen}
+			'Нарисуем твою бандитку на холсте'
+			'''
+	}
+
+	DesertPaintingsBag: {
+		DisplayName: Переплёт Пустынной Картины
+		Tooltip:
+			'''
+			Содержит случайную картину из пустыни
+			{$CommonItemTooltip.RightClickToOpen}
+			'Нарисуем твою бандитку на холсте'
+			'''
+	}
+
+	DungeonPaintingsBag: {
+		DisplayName: Переплёт Картины Темницы
+		Tooltip:
+			'''
+			Содержит случайную картину из темницы
+			{$CommonItemTooltip.RightClickToOpen}
+			'Нарисуем твою бандитку на холсте'
+			'''
+	}
+
+	HellPaintingsBag: {
+		DisplayName: Переплёт Картины Преисподней
+		Tooltip:
+			'''
+			Содержит случайную картину из преиподнии
+			{$CommonItemTooltip.RightClickToOpen}
+			'Нарисуем твою бандитку на холсте'
+			'''
+	}
+
+	SkyPaintingsBag: {
+		DisplayName: Переплёт Картины Космоса
+		Tooltip:
+			'''
+			Содержит случайную картину из космоса
+			{$CommonItemTooltip.RightClickToOpen}
+			'Нарисуем твою бандитку на холсте'
+			'''
+	}
+
+	MechQueen.Tooltip:
+		'''
+		Призывает ??? из проклятого мира
+		'Но ЛУЧШЕ не стоит'
+		'''
+
+	AwakenedCorruptionKey: {
+		DisplayName: Пробуждённый Порченый Ключ
+		Tooltip: "'Эссенции многих душ были пробуждены'"
+	}
+
+	AwakenedCrimsonKey: {
+		DisplayName: Пробуждённый Багровый Ключ
+		Tooltip: "'Эссенции многих душ были пробуждены'"
+	}
+
+	AwakenedDesertKey: {
+		DisplayName: Пробуждённый Пустынный Ключ
+		Tooltip: "'Эссенции многих душ были пробуждены'"
+	}
+
+	AwakenedFrozenKey: {
+		DisplayName: Пробуждённый Замороженный Ключ
+		Tooltip: "'Эссенции многих душ были пробуждены'"
+	}
+
+	AwakenedHallowedKey: {
+		DisplayName: Пробуждённый Освящённый Ключ
+		Tooltip: "'Эссенции многих душ были пробуждены'"
+	}
+
+	AwakenedJungleKey: {
+		DisplayName: Пробуждённый Ключ Джунглей
+		Tooltip: "'Эссенции многих душ были пробуждены'"
+	}
+
+	CavernCrate: {
+		DisplayName: Пещерный Ящик
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	CavernCrateHardmode: {
+		DisplayName: Ящик Грота
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	ForestCrate: {
+		DisplayName: Ящик Леса 
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	ForestCrateHardmode: {
+		DisplayName: Ящик Рощи
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	MushroomCrate: {
+		DisplayName: Грибной Ящик
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	MushroomCrateHardmode: {
+		DisplayName: Мицелиевый Ящик
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	TempleCrate: {
+		DisplayName: Ящик Ящщеров
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	TempleCrateHardmode: {
+		DisplayName: Ящик Голема
+		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+	}
+
+	IceGrenade: {
+		DisplayName: Ледяная граната
+		Tooltip: Небольшой взрыв, замораживающий воду
+	}
+
+	BewitchedLivingWoodWall: {
+		DisplayName: Заколдованная Стена из Живого Дерева
+		Tooltip: ""
+	}
+
+	SlushMermanBanner: {
+		DisplayName: Знамя Слякотного Тритона
+		Tooltip: ""
+	}
+}
+
+Conditions: {
+	MechQueen.Died: Умерла ли Мехдуза не в мире "get fixed boi"
+
+	Dungeon: {
+		Pink: Темница розовая
+		Blue: Темница синяя
+		Green: Темница зелёная
+	}
+}
+
+Projectiles: {
+	AshBallGun.DisplayName: Ком пепла
+	DroppedCorruptionChest.DisplayName: Выпавший Порченый сундук
+	DroppedCrimsonChest.DisplayName: Выпавший Багровый сундук
+	DroppedDesertChest.DisplayName: Выпавший Пустынный сундук
+	DroppedHallowedChest.DisplayName: Выпавший Освящённый сундук
+	DroppedIceChest.DisplayName: Выпавший Ледяной сундук
+	DroppedJungleChest.DisplayName: Выпавший Сундук Джунглей
+	IceGrenadeProjectile.DisplayName: Снаряд Ледяной Гранаты
+}
+
+DeathMessages.DeadManCrate: "{0} был взорван Ящиком Мертвеца"
+
+NPCs: {
+	SlushMerman.DisplayName: Слякотный тритон
+	CorruptionChestMimic.DisplayName: Подражатель Порченого Сундука
+	CrimsonChestMimic.DisplayName: Подражатель Багрового сундука
+	DesertChestMimic.DisplayName: Подражатель Пустынного сундука
+	HallowedChestMimic.DisplayName: Подражатель Освящённого сундука
+	IceChestMimic.DisplayName: Подражатель Ледяного сундука
+	JungleChestMimic.DisplayName: Подражатель Сундука Джунглей
+}
+
+Bestiary: {
+	SlushMerman: В среде обитания популяции тритонов произошло резкое изменение климата, из-за чего им пришлось приспосабливаться к выживанию в слякоти
+	CorruptionChestMimic: Пробуждённые души из гниющих расщелин создали это существо из обычного сундука
+	CrimsonChestMimic: Пробуждённые души из пульсирующих катакомб создали это существо из обычного сундука
+	DesertChestMimic: Пробуждённые души из пустынных каньонов создали это существо из обычного сундука
+	HallowedChestMimic: Пробуждённые души из освящённой земли создали это существо из обычного сундука
+	IceChestMimic: Пробуждённые души из промёрзших пещер создали это существо из обычного сундука
+	JungleChestMimic: Пробуждённые души из недр джунглей создали это существо из обычного сундука
+}
+
+Configs: {
+	SeasonalEventsConfig: {
+		DisplayName: Сезонные события
+
+		ChristmasToggle: {
+			Label: Переключатель Рождества
+			Tooltip: Включает Рождество
+		}
+
+		HalloweenToggle: {
+			Label: Переключатель Хэллоуина
+			Tooltip: Включает Хэллоуин
+		}
+	}
+}
+
+WorldGen: {
+	RemovingTerrain: Ох, подождите, убирание всей поверхности
+	Skyblock: Установка блоков в небе
+	SkyblockCleanUp: Завершающая очистка
+}

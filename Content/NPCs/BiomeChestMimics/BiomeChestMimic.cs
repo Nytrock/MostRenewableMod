@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EverythingRenewableNow.Utils;
+using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -363,7 +364,7 @@ namespace EverythingRenewableNow.Content.NPCs.BiomeChestMimics {
         public override void SetBestiary(BestiaryDatabase dataNPC, BestiaryEntry bestiaryEntry) {
             bestiaryEntry.Info.AddRange([
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.TheDungeon,
-                new FlavorTextBestiaryInfoElement($"Mods.EverythingRenewableNow.Bestiary.{biome}ChestMimic"),
+                LocalizationUtils.GetBestiaryText($"Bestiary.{biome}ChestMimic"),
             ]);
         }
 

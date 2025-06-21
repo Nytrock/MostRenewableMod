@@ -1,14 +1,14 @@
-﻿using Terraria;
+﻿using EverythingRenewableNow.Utils;
+using Terraria;
 using Terraria.ID;
 using Terraria.IO;
-using Terraria.Localization;
 using Terraria.WorldBuilding;
 
 namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
     public class SkyblockPass() : GenPass("Skyblock", float.PositiveInfinity) {
         protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration) {
             progress.Set(1);
-            progress.Message = Language.GetTextValue("Mods.EverythingRenewableNow.WorldGen.Skyblock");
+            progress.Message = LocalizationUtils.GetTextValue("WorldGen.Skyblock");
 
             int x = Main.spawnTileX - 3;
             int y = Main.spawnTileY + 1;
