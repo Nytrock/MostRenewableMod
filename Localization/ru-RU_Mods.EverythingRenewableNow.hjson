@@ -152,8 +152,6 @@ Conditions: {
 }
 
 Projectiles: {
-	// SiltBallGun.DisplayName: Silt Ball
-	// SlushBallGun.DisplayName: Slush Ball
 	AshBallGun.DisplayName: ��� �����
 	DroppedCorruptionChest.DisplayName: �������� �������� ������
 	DroppedCrimsonChest.DisplayName: �������� �������� ������
