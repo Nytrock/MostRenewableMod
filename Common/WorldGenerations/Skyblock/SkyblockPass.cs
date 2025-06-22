@@ -13,7 +13,7 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
             int x = Main.spawnTileX - 3;
             int y = Main.spawnTileY + 1;
             for (int i = 0; i < 5; i++)
-                WorldGen.PlaceTile(x + i, y, TileID.WoodBlock);
+                WorldGen.PlaceTile(x + i, y, TileID.IceBrick);
 
             int isCrimson = WorldGen.crimson ? 1 : 0;
             WorldGen.Place3x2(Main.spawnTileX - 2, Main.spawnTileY, TileID.DemonAltar, isCrimson);

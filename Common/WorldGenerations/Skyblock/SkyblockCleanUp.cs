@@ -15,6 +15,7 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
             Main.tileSolid[659] = true;
             Main.tileSolid[GenVars.crackedType] = true;
             Main.tileSolid[484] = true;
+            Main.forceXMasForToday = true;
             WorldGen.gen = false;
             Main.AnglerQuestSwap();
             WorldGen.generatingWorld = false;

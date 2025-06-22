@@ -9,6 +9,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.UI;
+using Terraria.Utilities;
 using Terraria.WorldBuilding;
 
 namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
@@ -35,7 +36,7 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
 
         private static void BecomeSkyblock() {
             _isSkyblock = true;
-            WorldGen.currentWorldSeed = Main.rand.Next().ToString();
+            GenerateRandomSeed();
         }
 
         private static void BecomeZenithSkyblock() {
@@ -56,7 +57,16 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
             Main.remixWorld = true;
             Main.zenithWorld = true;
             Main.drunkWorld = true;
-            WorldGen.currentWorldSeed = Main.rand.Next().ToString();
+            GenerateRandomSeed();
+        }
+
+        private static void GenerateRandomSeed() {
+            int seed = Main.rand.Next();
+            WorldGen.currentWorldSeed = seed.ToString();
+            WorldGen._lastSeed = seed;
+            WorldGen._genRand = new UnifiedRandom(seed);
+            Main.rand = new UnifiedRandom(seed);
+            Main.ActiveWorldFileData.SetSeed(WorldGen.currentWorldSeed);
         }
 
         public override void SaveWorldData(TagCompound tag) {
@@ -65,6 +75,10 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
 
         public override void LoadWorldData(TagCompound tag) {
             _isSkyblock = tag.GetBool("isSkyblock");
+        }
+
+        public override void ClearWorld() {
+            _isSkyblock = false;
         }
 
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight) {

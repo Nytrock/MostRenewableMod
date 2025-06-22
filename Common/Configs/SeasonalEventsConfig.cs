@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using Terraria;
 using Terraria.ModLoader.Config;
 
 namespace EverythingRenewableNow.Common.Configs {
@@ -11,14 +10,5 @@ namespace EverythingRenewableNow.Common.Configs {
 
         [DefaultValue(true)]
         public bool HalloweenToggle;
-
-        public override void OnChanged() {
-            Main.checkXMas();
-            Main.checkHalloween();
-        }
-
-        public override void OnLoaded() {
-            Mod.Logger.Info(ChristmasToggle);
-        }
     }
 }
