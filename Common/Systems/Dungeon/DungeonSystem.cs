@@ -5,8 +5,13 @@ using Terraria.ModLoader;
 namespace EverythingRenewableNow.Common.Systems.Dungeon {
     public class DungeonSystem : ModSystem {
         private static DungeonTileType _tileType;
+        private readonly static int[] _dungeonBricksItems = [ItemID.PinkBrick, ItemID.BlueBrick, ItemID.GreenBrick];
 
         public static DungeonTileType TileType => _tileType;
+
+        public static int GetRandomBrickItem() {
+            return _dungeonBricksItems[Main.rand.Next(_dungeonBricksItems.Length)];
+        }
 
         public override void OnWorldLoad() {
             for (int x = 0; x < Main.maxTilesX; x++) {

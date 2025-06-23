@@ -86,7 +86,8 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
                 tasks.RemoveAll(task => task.Name is not ("Reset" or "Guide" or "Terrain" or "Spawn Point"));
                 tasks.Insert(3, new RemovingTerrainPass());
                 tasks.Insert(4, new SkyblockPass());
-                tasks.Add(new SkyblockCleanUp());
+                tasks.Insert(5, new SkyblockDungeonPass());
+                tasks.Add(new SkyblockCleanUpPass());
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using EverythingRenewableNow.Utils;
+﻿using EverythingRenewableNow.Common.Systems.Dungeon;
+using EverythingRenewableNow.Utils;
 using Terraria;
 using Terraria.ID;
 using Terraria.IO;
@@ -26,7 +27,7 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
             chest.item[0] = new Item(ItemID.BottomlessShimmerBucket);
             chest.item[1] = new Item(ItemID.LihzahrdWallUnsafe);
             chest.item[2] = new Item(ItemID.LihzahrdAltar);
-            chest.item[3] = new Item(ItemID.PinkBrick, Main.GameModeInfo.IsJourneyMode ? 100 : 256);
+            chest.item[3] = new Item(DungeonSystem.GetRandomBrickItem(), Main.GameModeInfo.IsJourneyMode ? 100 : 256);
             chest.item[4] = new Item(ItemID.RainbowMoss);
 
             int chestItemIndex = 5;

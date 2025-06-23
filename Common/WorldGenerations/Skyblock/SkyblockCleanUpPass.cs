@@ -4,7 +4,7 @@ using Terraria.IO;
 using Terraria.WorldBuilding;
 
 namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
-    internal class SkyblockCleanUp() : GenPass("SkyblockCleanUp", float.PositiveInfinity) {
+    internal class SkyblockCleanUpPass() : GenPass("SkyblockCleanUp", float.PositiveInfinity) {
         protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration) {
             progress.Set(1);
             progress.Message = LocalizationUtils.GetTextValue("WorldGen.SkyblockCleanUp");

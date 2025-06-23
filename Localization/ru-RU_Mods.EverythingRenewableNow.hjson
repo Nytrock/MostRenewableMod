@@ -96,7 +96,7 @@ Items: {
 	}
 
 	ForestCrate: {
-		DisplayName: Ящик Леса 
+		DisplayName: Ящик Леса
 		Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
 	}
 
@@ -203,5 +203,6 @@ Configs: {
 WorldGen: {
 	RemovingTerrain: Ох, подождите, убирание всей поверхности
 	Skyblock: Установка блоков в небе
+	SkyblockDungeon: Накладывание проклятия Темницы
 	SkyblockCleanUp: Завершающая очистка
 }

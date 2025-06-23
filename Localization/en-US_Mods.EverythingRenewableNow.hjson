@@ -147,8 +147,6 @@ Conditions: {
 }
 
 Projectiles: {
-	SiltBallGun.DisplayName: Silt Ball
-	SlushBallGun.DisplayName: Slush Ball
 	AshBallGun.DisplayName: Ash Ball Gun
 	DroppedCorruptionChest.DisplayName: Dropped Corruption Chest
 	DroppedCrimsonChest.DisplayName: Dropped Crimson Chest
@@ -200,5 +198,6 @@ Configs: {
 WorldGen: {
 	RemovingTerrain: Oh wait, removing world terrain
 	Skyblock: Placing blocks in the sky
+	SkyblockDungeon: Applying the Dungeon curse
 	SkyblockCleanUp: Final clean up
 }

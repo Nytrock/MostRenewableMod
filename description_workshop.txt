@@ -1,4 +1,4 @@
-Annoyed that you can’t get a bunch of cool items on skyblock map? Tired of running all over the world searching for your favorite painting or statue? Sick of changing your system date just to unlock extra content? Then this mod is for you!
+Annoyed that you can't get a bunch of cool items on skyblock map? Tired of running all over the world searching for your favorite painting or statue? Sick of changing your system date just to unlock seasonal content? Then this mod is for you!
 
 [hr][/hr]
 [b]The Most Renewable Mod[/b] is a mod that makes absolutely every item in Terraria renewable. For reference: a renewable item is one that can theoretically be obtained in infinite quantities within a single world. The mod adds tons of new, original ways to acquire items and even more!
@@ -6,16 +6,16 @@ Annoyed that you can’t get a bunch of cool items on skyblock map? Tired of runni
 [hr][/hr]
 Major Additions:
 [list]
-[*] 4 new fishing crates: Forest, Mushroom, Golem, and Underground. Careful with the last one — it can explode!
+[*] 4 new fishing crates types: Forest, Mushroom, Golem, and Underground. Careful with the last one — it can explode!
 [*] Biome Key now shimmer into their awakened versions. Place one such key in an empty chest and face a new enemy: the Biome Mimic Chest!
 [*] New enemy in Ice Caves: Slush Merman. Fires slush at the player
 [*] Configs for enabling Christmas and Halloween
-[*] 2 new secret seeds: skyblock and parkour civilization. The first creates a replica of the most renewable skyblock. The second is a mix of skyblock and getfixedboi seeds
+[*] 2 new secret seeds: skyblock and parkour civilization. The first creates a replica of the [url=steamcommunity.com/sharedfiles/filedetails/?id=3474881954]most renewable skyblock[/url]. The second is a mix of skyblock and getfixedboi seeds
 [*] Painting Bags drop from some crates, granting random paintings from specific biomes
 [*] Golem now drops Lihzahrd Bricks, and the Dungeon Crate drops Dungeon Bricks
-[*] The Frost Legion is no longer Christmas-exclusive. Its summoning item can now be crafted with a Frost Core and uh... I forgot
+[*] The Frost Legion is no longer Christmas-exclusive. Its summoning item can now be crafted with a Frost Core and uh… I forgot
 [*] Ice Grenade freezes nearby water. Alson, Ice Slimes now drop Ice Blocks
-[*] Bewiched Living Wood Wall allows to create artificial gnome farms
+[*] Bewiched Living Wood Wall, which allows to create artificial gnome farms
 [/list]
 
 [hr][/hr]
@@ -23,11 +23,16 @@ Other Changes:
 [list]
 [*] Loot changes to most fishing crates
 [*] The Sandgun can now use Ash Blocks as ammo
-[*] Earth Bombs have a tiny chance to spawn the dirties block instead of the regular one
-[*] The Carrot from the Collector’s Edition is now available in regular game and can randomly grow on grass
-[*] Mechduza can now be summoned in any world
-[*] The Cultist’s Mysterious Tablet might drop Moon Lord Legs when broken (somebody’s just bad at summoning eldritch horrors, huh?)
+[*] Dirt Bombs have a tiny chance to spawn the Dirtiest Block instead of the regular one
+[*] The Carrot from the Collector's Edition is now available in regular game and can randomly grow on grass
+[*] Mechdusa can now be summoned in any world
+[*] The Cultist's Mysterious Tablet might drop Moon Lord Legs when broken (somebody is just bad at summoning eldritch horrors, huh?)
 [*] Glowing Tulip can randomly grow in caves near the edge of the world
 [*] Solutions are now sold in dontdigup and getfixedboi worlds
-[*] Loads of boring crafting recipes, transmutations, NPC shops changes and mob drops added
+[*] Bunch of lame crafting recipes, transmutations, NPC shops changes and mob drops added
 [/list]
+
+[hr][/hr]
+If you found a bug in the mod or have any questions or suggestions, feel free to contact me on [url=t.me/csharpguy]Telegram[/url] or Discord (nytrock)
+
+[quote=tModLoader MostRenewableMod]Developed By Nytrock[/quote]
