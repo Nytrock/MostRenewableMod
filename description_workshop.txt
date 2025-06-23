@@ -6,14 +6,14 @@ Annoyed that you can't get a bunch of cool items on skyblock map? Tired of runni
 [hr][/hr]
 Major Additions:
 [list]
-[*] 4 new fishing crates types: Forest, Mushroom, Golem, and Underground. Careful with the last one — it can explode!
+[*] 4 new fishing crates types: Forest, Mushroom, Golem, and Underground. Careful with the last one because it can explode!
 [*] Biome Key now shimmer into their awakened versions. Place one such key in an empty chest and face a new enemy: the Biome Mimic Chest!
 [*] New enemy in Ice Caves: Slush Merman. Fires slush at the player
 [*] Configs for enabling Christmas and Halloween
 [*] 2 new secret seeds: skyblock and parkour civilization. The first creates a replica of the [url=steamcommunity.com/sharedfiles/filedetails/?id=3474881954]most renewable skyblock[/url]. The second is a mix of skyblock and getfixedboi seeds
 [*] Painting Bags drop from some crates, granting random paintings from specific biomes
 [*] Golem now drops Lihzahrd Bricks, and the Dungeon Crate drops Dungeon Bricks
-[*] The Frost Legion is no longer Christmas-exclusive. Its summoning item can now be crafted with a Frost Core and uh… I forgot
+[*] The Frost Legion is no longer Christmas-exclusive. Its summoning item can now be crafted with a Frost Core and uh... I forgot
 [*] Ice Grenade freezes nearby water. Alson, Ice Slimes now drop Ice Blocks
 [*] Bewiched Living Wood Wall, which allows to create artificial gnome farms
 [/list]
@@ -29,6 +29,7 @@ Other Changes:
 [*] The Cultist's Mysterious Tablet might drop Moon Lord Legs when broken (somebody is just bad at summoning eldritch horrors, huh?)
 [*] Glowing Tulip can randomly grow in caves near the edge of the world
 [*] Solutions are now sold in dontdigup and getfixedboi worlds
+[*] Statues now craftable, but enemies spawned using them are not counted in the overall kill tally and don't drop banners (get trolled)
 [*] Bunch of lame crafting recipes, transmutations, NPC shops changes and mob drops added
 [/list]
 
