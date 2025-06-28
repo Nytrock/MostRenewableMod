@@ -13,6 +13,7 @@ namespace EverythingRenewableNow.Content.Tiles {
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.CoordinateHeights = [18];
+            TileObjectData.newTile.AnchorValidTiles = [TileID.Grass];
             TileObjectData.addTile(Type);
 
             DustType = DustID.Grass;

@@ -11,15 +11,15 @@ namespace EverythingRenewableNow.Common.Tiles {
                 if (!Main.rand.NextBool(7500))
                     return;
 
-                if (WorldGen.PlaceTile(x, y - 1, TileID.GlowTulip)) {
+                if (WorldGen.PlaceTile(x, y - 1, TileID.GlowTulip, mute: true)) {
                     if (Main.netMode != NetmodeID.SinglePlayer)
                         NetMessage.SendData(MessageID.TileManipulation, -1, -1, null, 1, x, y);
                 }
             } else if (TileUtils.IsFitForCarrot(x, y, type)) {
-                if (!Main.rand.NextBool(10000))
+                if (!Main.rand.NextBool(15000))
                     return;
 
-                if (WorldGen.PlaceTile(x, y - 1, ModContent.TileType<Carrot>())) {
+                if (WorldGen.PlaceTile(x, y - 1, ModContent.TileType<Carrot>(), mute: true)) {
                     if (Main.netMode != NetmodeID.SinglePlayer)
                         NetMessage.SendData(MessageID.TileManipulation, -1, -1, null, 1, x, y);
                 }
