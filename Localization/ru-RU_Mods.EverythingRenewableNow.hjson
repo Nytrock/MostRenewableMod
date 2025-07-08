@@ -189,13 +189,22 @@ Configs: {
 		DisplayName: Сезонные события
 
 		ChristmasToggle: {
-			Label: Переключатель Рождества
+			Label: Рождество
 			Tooltip: Включает Рождество
 		}
 
 		HalloweenToggle: {
-			Label: Переключатель Хэллоуина
+			Label: Хэллоуин
 			Tooltip: Включает Хэллоуин
+		}
+	}
+
+	GameplayConfig: {
+		DisplayName: Геймлей
+
+		StatuesToggle: {
+			Label: Враги из статуй не дропают знамёна
+			Tooltip: Враги, заспавненные статуями, не учиваются в глобальном подсчёте и не дропают знамёна
 		}
 	}
 }

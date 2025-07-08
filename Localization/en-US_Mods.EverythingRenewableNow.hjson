@@ -184,13 +184,22 @@ Configs: {
 		DisplayName: Seasonal Events
 
 		ChristmasToggle: {
-			Label: Christmas Toggle
+			Label: Is Christmas
 			Tooltip: Enables Christmas event
 		}
 
 		HalloweenToggle: {
-			Label: Halloween Toggle
+			Label: Is Halloween
 			Tooltip: Enables Halloween event
+		}
+	}
+
+	GameplayConfig: {
+		DisplayName: Gameplay Config
+
+		StatuesToggle: {
+			Label: Enemies from statues don't drop banners
+			Tooltip: Enemies spawned by statues are not counted in the kill tally and don't drop banners
 		}
 	}
 }

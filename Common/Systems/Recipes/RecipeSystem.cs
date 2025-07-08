@@ -309,17 +309,17 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
 
             Recipe
                 .Create(ItemID.SnowGlobe)
-                .AddIngredient(ItemID.FrostCore)
+                .AddIngredient(ItemID.IceBlock, 100)
                 .AddIngredient(ItemID.Glass, 25)
-                .AddIngredient(ItemID.PalladiumBar, 5)
+                .AddIngredient(ItemID.PalladiumBar, 15)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
 
             Recipe
                 .Create(ItemID.SnowGlobe)
-                .AddIngredient(ItemID.FrostCore)
+                .AddIngredient(ItemID.IceBlock, 100)
                 .AddIngredient(ItemID.Glass, 25)
-                .AddIngredient(ItemID.CobaltBar, 5)
+                .AddIngredient(ItemID.CobaltBar, 15)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
 
