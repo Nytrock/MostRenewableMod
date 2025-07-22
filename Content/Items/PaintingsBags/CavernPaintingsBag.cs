@@ -4,7 +4,7 @@ using Terraria.ID;
 namespace EverythingRenewableNow.Content.Items.PaintingsBags {
     public class CavernPaintingsBag : PaintingBag {
         protected override IItemDropRule GeneratePaintingsDropRule() {
-            IItemDropRule waldoRule = ItemDropRule.Common(625, ItemID.Waldo);
+            IItemDropRule waldoRule = ItemDropRule.Common(ItemID.Waldo, 625);
             IItemDropRule otherPaintingsRule = ItemDropRule.OneFromOptions(1,
                 ItemID.Sunflowers, ItemID.TerrarianGothic, ItemID.GuidePicasso, ItemID.FatherofSomeone, ItemID.NurseLisa,
                 ItemID.Land, ItemID.FindingGold, ItemID.AmericanExplosive, ItemID.Discover, ItemID.OldMiner, ItemID.TheMerchant,

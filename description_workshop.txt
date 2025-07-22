@@ -13,8 +13,8 @@ Major Additions:
 [*] 2 new secret seeds: skyblock and parkour civilization. The first creates a replica of the [url=steamcommunity.com/sharedfiles/filedetails/?id=3474881954]most renewable skyblock[/url]. The second is a mix of skyblock and getfixedboi seeds
 [*] Painting Bags drop from some crates, granting random paintings from specific biomes
 [*] Golem now drops Lihzahrd Bricks, and the Dungeon Crate drops Dungeon Bricks
-[*] The Frost Legion is no longer Christmas-exclusive. Its summoning item can now be crafted with a Frost Core and uh... I forgot
-[*] Ice Grenade freezes nearby water. Alson, Ice Slimes now drop Ice Blocks
+[*] The Frost Legion is no longer Christmas-exclusive. Its summoning item can now be crafted
+[*] Ice Grenade freezes nearby water. Also, Ice Slimes now drop Ice Blocks
 [*] Bewiched Living Wood Wall, which allows to create artificial gnome farms
 [/list]
 
@@ -22,6 +22,7 @@ Major Additions:
 Other Changes:
 [list]
 [*] Loot changes to most fishing crates
+[*] Hellstone now drops from Obsidian Lock Box
 [*] The Sandgun can now use Ash Blocks as ammo
 [*] Dirt Bombs have a tiny chance to spawn the Dirtiest Block instead of the regular one
 [*] The Carrot from the Collector's Edition is now available in regular game and can randomly grow on grass
@@ -29,11 +30,13 @@ Other Changes:
 [*] The Cultist's Mysterious Tablet might drop Moon Lord Legs when broken (somebody is just bad at summoning eldritch horrors, huh?)
 [*] Glowing Tulip can randomly grow in caves near the edge of the world
 [*] Solutions are now sold in dontdigup and getfixedboi worlds
-[*] Statues now craftable, but enemies spawned using them are not counted in the overall kill tally and don't drop banners (get trolled)
+[*] Statues now craftable, but enemies spawned using them are not counted in the overall kill tally and don't drop banners (toggable)
 [*] Bunch of lame crafting recipes, transmutations, NPC shops changes and mob drops added
 [/list]
 
 [hr][/hr]
 If you found a bug in the mod or have any questions or suggestions, feel free to contact me on [url=t.me/csharpguy]Telegram[/url] or Discord (nytrock)
+
+[url=https://github.com/Nytrock/MostRenewableMod]Source code[/url]
 
 [quote=tModLoader MostRenewableMod]Developed By Nytrock[/quote]

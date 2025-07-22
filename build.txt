@@ -1,3 +1,3 @@
 displayName = Most Renewable Mod
 author = Nytrock
-version = 1.0.4
+version = 1.0.6

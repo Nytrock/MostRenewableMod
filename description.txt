@@ -16,6 +16,7 @@ Major Additions:
 
 Other Changes:
 - Loot changes to most fishing crates
+- Hellstone now drops from Obsidian Lock Box
 - The Sandgun can now use Ash Blocks as ammo
 - Earth Bombs have a tiny chance to spawn the dirties block instead of the regular one
 - The Carrot from the Collector’s Edition is now available in regular game and can randomly grow on grass

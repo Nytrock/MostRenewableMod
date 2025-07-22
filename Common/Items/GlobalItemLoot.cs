@@ -151,6 +151,10 @@ namespace EverythingRenewableNow.Common.Items {
                 itemLoot.Add(ItemDropRule.NotScalingWithLuck(20, ItemID.DesertMinecart));
             }
 
+            if (item.type == ItemID.ObsidianLockbox) {
+                itemLoot.Add(itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.Hellstone, 1, 20, 35)));
+            }
+
             if (item.type == ItemID.LavaCrate || item.type == ItemID.LavaCrateHard) {
                 foreach (var rule in itemLoot.Get()) {
                     if (rule is not AlwaysAtleastOneSuccessDropRule targetRule)
@@ -169,8 +173,6 @@ namespace EverythingRenewableNow.Common.Items {
                     }
                 }
 ;
-                SimpleItemDropRuleCondition condition = Condition.DownedEowOrBoc.ToDropCondition(ShowItemDropInUI.WhenConditionSatisfied);
-                itemLoot.Add(ItemDropRule.ByCondition(condition, ItemID.Hellstone, 1, 20, 35));
                 itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<HellPaintingsBag>()));
             }
 

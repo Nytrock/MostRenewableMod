@@ -33,13 +33,13 @@ namespace EverythingRenewableNow.Content.Projectiles {
         public override void OnKill(int timeLeft) {
             SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
             Color transparent2 = Color.Transparent;
-            for (int num849 = 0; num849 < 20; num849++) {
+            for (int num849 = 0; num849 < 15; num849++) {
                 Dust dust51 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Smoke, 0f, 0f, 100, transparent2, 1.5f);
                 Dust dust2 = dust51;
                 dust2.velocity *= 1.4f;
             }
 
-            for (int num850 = 0; num850 < 40; num850++) {
+            for (int num850 = 0; num850 < 30; num850++) {
                 Dust dust52 = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Ice, 0f, 0f, 100, transparent2, 2.2f);
                 dust52.noGravity = true;
                 dust52.velocity.Y -= 1.2f;
@@ -111,13 +111,12 @@ namespace EverythingRenewableNow.Content.Projectiles {
                 }
 
                 Vector2 position = new(x * 16, y * 16);
-                int num = 0;
-                for (int i = 0; i < 3; i++) {
-                    Dust dust = Dust.NewDustDirect(position, 16, 16, num, 0f, 0f, 100, Color.Transparent, 2.2f);
+                for (int i = 0; i < 2; i++) {
+                    Dust dust = Dust.NewDustDirect(position, 16, 16, DustID.Ice, 0f, 0f, 100, Color.Transparent, 2.2f);
                     dust.noGravity = true;
                     dust.velocity.Y -= 1.2f;
                     dust.velocity *= 4f;
-                    Dust dust2 = Dust.NewDustDirect(position, 16, 16, num, 0f, 0f, 100, Color.Transparent, 1.3f);
+                    Dust dust2 = Dust.NewDustDirect(position, 16, 16, DustID.Ice, 0f, 0f, 100, Color.Transparent, 1.3f);
                     dust2.velocity.Y -= 1.2f;
                     dust2.velocity *= 2f;
                 }
@@ -141,7 +140,7 @@ namespace EverythingRenewableNow.Content.Projectiles {
                 for (int j = x - 1; j <= x + 1; j++) {
                     for (int k = y - 1; k <= y + 1; k++) {
                         Tile tile = Main.tile[j, k];
-                        if (!tile.HasTile || num == tile.TileType || !permittedTileTypes.Contains(tile.TileType))
+                        if (!tile.HasTile || TileID.IceBlock == tile.TileType || !permittedTileTypes.Contains(tile.TileType))
                             continue;
 
                         bool flag = true;
