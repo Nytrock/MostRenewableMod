@@ -717,14 +717,14 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
             transmutations[ItemID.CobaltOre] = ItemID.Hellstone;
             transmutations[ItemID.Hellstone] = ItemID.PlatinumOre;
 
+            transmutations[ItemID.HelFire] = ItemID.Cascade;
+            transmutations[ItemID.ZapinatorOrange] = ItemID.ZapinatorGray;
+
             transmutations[ItemID.GoldChest] = ItemID.DeadMansChest;
             transmutations[ItemID.Trident] = ItemID.Spear;
 
             transmutations[ItemID.SlushBlock] = ItemID.SiltBlock;
             transmutations[ItemID.SiltBlock] = ItemID.SlushBlock;
-
-            transmutations[ItemID.FrostCore] = ItemID.AncientBattleArmorMaterial;
-            transmutations[ItemID.AncientBattleArmorMaterial] = ItemID.FrostCore;
 
             transmutations[ItemID.JungleKey] = ModContentUtils.ItemType("AwakenedJungleKey");
             transmutations[ItemID.CorruptionKey] = ModContentUtils.ItemType("AwakenedCorruptionKey");

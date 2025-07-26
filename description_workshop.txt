@@ -30,6 +30,7 @@ Other Changes:
 [*] The Cultist's Mysterious Tablet might drop Moon Lord Legs when broken (somebody is just bad at summoning eldritch horrors, huh?)
 [*] Glowing Tulip can randomly grow in caves near the edge of the world
 [*] Solutions are now sold in dontdigup and getfixedboi worlds
+[*] Killing the Clothier using his voodoo doll during the day will spawn the Dungeon Guardian
 [*] Statues now craftable, but enemies spawned using them are not counted in the overall kill tally and don't drop banners (toggable)
 [*] Bunch of lame crafting recipes, transmutations, NPC shops changes and mob drops added
 [/list]

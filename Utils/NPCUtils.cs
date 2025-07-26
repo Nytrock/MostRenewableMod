@@ -23,5 +23,12 @@ namespace EverythingRenewableNow.Utils {
 
             return true;
         }
+
+        public static void SpawnDungeonGuardian(int onWho, NPC clothier) {
+            int x = (int)clothier.Center.X;
+            int y = (int)clothier.Center.Y;
+            int guardian = NPC.NewNPC(NPC.GetBossSpawnSource(onWho), x, y, NPCID.DungeonGuardian);
+            Main.npc[guardian].netUpdate = true;
+        }
     }
 }
