@@ -53,7 +53,7 @@ namespace EverythingRenewableNow.Common.NPCs {
                 List<int> spaceBanners = [ItemID.WorldBanner, ItemID.SunBanner, ItemID.GravityBanner];
                 List<int> underworldBanners = [ItemID.HellboundBanner, ItemID.HellHammerBanner, ItemID.HelltowerBanner,
                     ItemID.LostHopesofManBanner, ItemID.ObsidianWatcherBanner, ItemID.LavaEruptsBanner];
-                List<int> desertBanners = [ItemID.AnkhBanner, ItemID.SnakeBanner, ItemID.SnakeBanner];
+                List<int> desertBanners = [ItemID.AnkhBanner, ItemID.SnakeBanner, ItemID.OmegaBanner];
 
                 foreach (var dungeonBanner in dungeonBanners) {
                     shop.Add(new Item(dungeonBanner) {
