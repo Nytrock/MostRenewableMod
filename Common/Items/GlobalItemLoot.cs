@@ -148,7 +148,7 @@ namespace EverythingRenewableNow.Common.Items {
                     }
                 }
                 itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<DesertPaintingsBag>()));
-                itemLoot.Add(ItemDropRule.NotScalingWithLuck(20, ItemID.DesertMinecart));
+                itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.DesertMinecart, 20));
             }
 
             if (item.type == ItemID.ObsidianLockbox) {
