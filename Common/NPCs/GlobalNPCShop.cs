@@ -1,5 +1,4 @@
-﻿using EverythingRenewableNow.Content.Items.PaintingsBags;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,14 +12,16 @@ namespace EverythingRenewableNow.Common.NPCs {
 
                 shop.Add(ItemID.Clentaminator, Condition.RemixWorld);
                 shop.Add(ItemID.BlueSolution, Condition.InHallow, Condition.RemixWorld);
-                shop.Add(ItemID.PurpleSolution, Condition.EclipseOrBloodMoon, Condition.CorruptWorld, Condition.RemixWorld);
-                shop.Add(ItemID.RedSolution, Condition.InGraveyard, Condition.Hardmode, Condition.CorruptWorld, Condition.RemixWorld);
-                shop.Add(ItemID.RedSolution, Condition.EclipseOrBloodMoon, Condition.CrimsonWorld, Condition.RemixWorld);
-                shop.Add(ItemID.PurpleSolution, Condition.InGraveyard, Condition.Hardmode, Condition.CrimsonWorld, Condition.RemixWorld);
                 shop.Add(ItemID.GreenSolution, Condition.NotEclipseAndNotBloodMoon, Condition.NotInHallow, Condition.RemixWorld);
                 shop.Add(ItemID.SandSolution, Condition.DownedMoonLord, Condition.RemixWorld);
                 shop.Add(ItemID.SnowSolution, Condition.DownedMoonLord, Condition.RemixWorld);
                 shop.Add(ItemID.DirtSolution, Condition.DownedMoonLord, Condition.RemixWorld);
+
+                shop.Add(ItemID.PurpleSolution, Condition.EclipseOrBloodMoon, Condition.CorruptWorld, Condition.RemixWorld);
+                shop.Add(ItemID.RedSolution, Condition.InGraveyard, Condition.Hardmode, Condition.CorruptWorld, Condition.RemixWorld, Condition.NotZenithWorld);
+
+                shop.Add(ItemID.RedSolution, Condition.EclipseOrBloodMoon, Condition.CrimsonWorld, Condition.RemixWorld);
+                shop.Add(ItemID.PurpleSolution, Condition.InGraveyard, Condition.Hardmode, Condition.CrimsonWorld, Condition.RemixWorld, Condition.NotZenithWorld);
             }
 
             if (shop.NpcType == NPCID.Truffle) {
@@ -28,10 +29,10 @@ namespace EverythingRenewableNow.Common.NPCs {
             }
 
             if (shop.NpcType == NPCID.Dryad) {
-                shop.Add(ItemID.CorruptGrassEcho, Condition.CrimsonWorld, Condition.BloodMoon, Condition.InGraveyard);
-                shop.Add(ItemID.CrimsonGrassEcho, Condition.CorruptWorld, Condition.BloodMoon, Condition.InGraveyard);
-                shop.Add(ItemID.CrimsonPlanterBox, Condition.CorruptWorld, Condition.DownedEowOrBoc, Condition.InGraveyard);
-                shop.Add(ItemID.CorruptPlanterBox, Condition.CrimsonWorld, Condition.DownedEowOrBoc, Condition.InGraveyard);
+                shop.Add(ItemID.CorruptGrassEcho, Condition.CrimsonWorld, Condition.BloodMoon, Condition.InGraveyard, Condition.NotDrunkWorld);
+                shop.Add(ItemID.CrimsonGrassEcho, Condition.CorruptWorld, Condition.BloodMoon, Condition.InGraveyard, Condition.NotDrunkWorld);
+                shop.Add(ItemID.CrimsonPlanterBox, Condition.CorruptWorld, Condition.DownedEowOrBoc, Condition.InGraveyard, Condition.NotDrunkWorld);
+                shop.Add(ItemID.CorruptPlanterBox, Condition.CrimsonWorld, Condition.DownedEowOrBoc, Condition.InGraveyard, Condition.NotDrunkWorld);
 
                 shop.Add(ItemID.PottedLavaPlantPalm, Condition.MoonPhasesQuarter0, Condition.InUnderworld);
                 shop.Add(ItemID.PottedLavaPlantBush, Condition.MoonPhasesQuarter1, Condition.InUnderworld);
@@ -78,14 +79,6 @@ namespace EverythingRenewableNow.Common.NPCs {
                         shopCustomPrice = Item.buyPrice(gold: 1)
                     }, Condition.InDesert);
                 }
-            }
-
-            if (shop.NpcType == NPCID.Painter && shop.Name == "Decor") {
-                shop.Add(ModContent.ItemType<SkyPaintingsBag>(), Condition.InSpace);
-                shop.Add(ModContent.ItemType<DesertPaintingsBag>(), Condition.InDesert);
-                shop.Add(ModContent.ItemType<CavernPaintingsBag>(), Condition.InBelowSurface, Condition.NotInUnderworld);
-                shop.Add(ModContent.ItemType<DungeonPaintingsBag>(), Condition.EclipseOrBloodMoon);
-                shop.Add(ModContent.ItemType<HellPaintingsBag>(), Condition.InUnderworld);
             }
         }
 

@@ -5,6 +5,9 @@ namespace EverythingRenewableNow.Common.Configs {
     public class SeasonalEventsConfig : ModConfig {
         public override ConfigScope Mode => ConfigScope.ServerSide;
 
+        [DefaultValue(false)]
+        public bool HardToggle;
+
         [DefaultValue(true)]
         public bool ChristmasToggle;
 

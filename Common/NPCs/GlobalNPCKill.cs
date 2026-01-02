@@ -19,9 +19,11 @@ namespace EverythingRenewableNow.Common.NPCs {
         private static void PreventBannerEnemiesCount(NPC npc) {
             int bannerID = Item.NPCtoBanner(npc.BannerID());
 
+            if (!npc.SpawnedFromStatue) return;
+            if (npc.catchItem > 0) return;
+
             if (NPC.killCount[bannerID] == 0) return;
             if (!ModContent.GetInstance<GameplayConfig>().StatuesToggle) return;
-            if (!npc.SpawnedFromStatue) return;
 
             NPC.killCount[bannerID]--;
         }

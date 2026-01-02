@@ -188,6 +188,11 @@ Configs: {
 	SeasonalEventsConfig: {
 		DisplayName: Сезонные события
 
+		HardToggle: {
+			Label: Строго определять праздники
+			Tooltip: Конфиг будет жёстко определяет праздники, независимо от даты или других модов
+		}
+
 		ChristmasToggle: {
 			Label: Рождество
 			Tooltip: Включает Рождество
@@ -215,3 +220,5 @@ WorldGen: {
 	SkyblockDungeon: Накладывание проклятия Темницы
 	SkyblockCleanUp: Завершающая очистка
 }
+
+BannersTooltip: "{$CommonItemTooltip.BannerBonus}{0}"

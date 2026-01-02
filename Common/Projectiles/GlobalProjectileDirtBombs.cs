@@ -71,12 +71,11 @@ namespace EverythingRenewableNow.Common.Projectiles {
             if (Vector2.Distance(_dirtBombCenter, new Vector2(x, y)) > _dirtBombRadius)
                 return false;
 
-            int tileID = TileID.Dirt;
-            if (Main.rand.NextBool(100000))
-                tileID = TileID.DirtiestBlock;
-            WorldGen.TryKillingReplaceableTile(x, y, tileID);
+            WorldGen.TryKillingReplaceableTile(x, y, TileID.Dirt);
+            if (WorldGen.PlaceTile(x, y, TileID.Dirt)) {
+                if (Main.rand.NextBool(100000))
+                    WorldGen.PlaceTile(x, y, TileID.DirtiestBlock, forced: true);
 
-            if (WorldGen.PlaceTile(x, y, tileID)) {
                 if (Main.netMode != NetmodeID.SinglePlayer)
                     NetMessage.SendData(MessageID.TileManipulation, -1, -1, null, 1, x, y);
 
@@ -137,7 +136,7 @@ namespace EverythingRenewableNow.Common.Projectiles {
             if (tile2 == null)
                 return false;
 
-            if (tile2.TileType < 0)
+            if (tile2.TileType < TileID.Dirt)
                 return false;
 
             if (Main.tileSolid[tile2.TileType] && !TileID.Sets.Platforms[tile2.TileType])

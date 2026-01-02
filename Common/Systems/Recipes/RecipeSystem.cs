@@ -92,7 +92,7 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
                 new(ItemID.ZombieBanner, ItemID.ZombieArmStatue, requireGraveyard: true),
                 new(_batBanners, ItemID.BatStatue, requireGraveyard: true, itemIsGroup: true),
                 new(ItemID.BloodZombieBanner, ItemID.BloodZombieStatue, requireGraveyard: true),
-                new(ItemID.SkeletonBanner, ItemID.SkeletonStatue, requireGraveyard: true),
+                new(ItemID.SkeletonBanner, ItemID.BoneSkeletonStatue, requireGraveyard: true),
                 new(ItemID.MimicBanner, ItemID.ChestStatue, requireGraveyard: true),
                 new(ItemID.EaterofSoulsBanner, ItemID.CorruptStatue, requireGraveyard: true),
                 new(ItemID.CrabBanner, ItemID.CrabStatue, requireGraveyard: true),
@@ -266,6 +266,12 @@ namespace EverythingRenewableNow.Common.Systems.Recipes {
                 .AddRecipeGroup(RecipeGroupID.PressurePlate)
                 .AddIngredient(ItemID.LihzahrdBrick, 2)
                 .AddIngredient(ItemID.Wire)
+                .AddTile(TileID.LihzahrdFurnace)
+                .Register();
+
+            Recipe
+                .Create(ItemID.LihzahrdWorkBench)
+                .AddIngredient(ItemID.LihzahrdBrick, 10)
                 .AddTile(TileID.LihzahrdFurnace)
                 .Register();
 

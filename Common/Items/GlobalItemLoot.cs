@@ -32,7 +32,7 @@ namespace EverythingRenewableNow.Common.Items {
                         if (targetRule.rules[i] is SequentialRulesNotScalingWithLuckRule crateRule
                             && crateRule.rules[0] is CommonDropNotScalingWithLuck bootsRule
                             && bootsRule.itemId == ItemID.SailfishBoots) {
-                            crateRule.rules = crateRule.rules.Take(2).ToArray();
+                            crateRule.rules = [.. crateRule.rules.Take(2)];
                         }
                     }
                 }
@@ -55,9 +55,9 @@ namespace EverythingRenewableNow.Common.Items {
 
                     for (int i = 0; i < targetRule.rules.Length; i++) {
                         if (targetRule.rules[i] is CommonDropNotScalingWithLuck childRule && childRule.itemId == ItemID.EnchantedSword) {
-                            IItemDropRule enchantedSwordRule = ItemDropRule.NotScalingWithLuckWithNumerator(ItemID.EnchantedSword, 20, 19);
-                            IItemDropRule terragrimRule = ItemDropRule.NotScalingWithLuck(ItemID.Terragrim);
-                            targetRule.rules[i] = ItemDropRule.SequentialRulesNotScalingWithLuck(25, enchantedSwordRule, terragrimRule);
+                            IItemDropRule terragrimRule = ItemDropRule.NotScalingWithLuck(ItemID.Terragrim, 20);
+                            IItemDropRule enchantedSwordRule = ItemDropRule.NotScalingWithLuck(ItemID.EnchantedSword);
+                            targetRule.rules[i] = ItemDropRule.SequentialRulesNotScalingWithLuck(25, terragrimRule, enchantedSwordRule);
                         }
                     }
                 }

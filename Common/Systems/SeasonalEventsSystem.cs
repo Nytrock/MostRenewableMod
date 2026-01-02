@@ -7,8 +7,13 @@ namespace EverythingRenewableNow.Common.Systems {
         private SeasonalEventsConfig _config;
 
         public override void PostUpdateTime() {
-            Main.xMas |= _config.ChristmasToggle;
-            Main.halloween |= _config.HalloweenToggle;
+            if (_config.HardToggle) {
+                Main.xMas = _config.ChristmasToggle;
+                Main.halloween = _config.HalloweenToggle;
+            } else {
+                Main.xMas |= _config.ChristmasToggle;
+                Main.halloween |= _config.HalloweenToggle;
+            }
         }
 
         public override void Load() {

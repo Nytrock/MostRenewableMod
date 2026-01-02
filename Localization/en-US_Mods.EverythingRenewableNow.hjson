@@ -183,6 +183,11 @@ Configs: {
 	SeasonalEventsConfig: {
 		DisplayName: Seasonal Events
 
+		HardToggle: {
+			Label: Strictly determine holidays
+			Tooltip: The config will strictly determine holidays, regardless of the date or other mods
+		}
+
 		ChristmasToggle: {
 			Label: Is Christmas
 			Tooltip: Enables Christmas event
@@ -210,3 +215,5 @@ WorldGen: {
 	SkyblockDungeon: Applying the Dungeon curse
 	SkyblockCleanUp: Final clean up
 }
+
+BannersTooltip: "{$CommonItemTooltip.BannerBonus}{0}"
