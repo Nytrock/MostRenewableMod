@@ -17,7 +17,10 @@ namespace EverythingRenewableNow.Common.Items {
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips) {
             if (item.type == ItemID.MechdusaSummon && !Main.zenithWorld) {
-                tooltips[2].Hide();
+                tooltips.ForEach(tooltip => {
+                    if (tooltip.Name == "Tooltip0")
+                        tooltip.Hide();
+                });
                 TooltipLine line = new(Mod, "MechQueenInRegularWorldTooltip", _mechQueenTooltip.Value);
                 tooltips.Add(line);
             }

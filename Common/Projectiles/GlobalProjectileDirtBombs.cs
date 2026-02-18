@@ -10,6 +10,9 @@ namespace EverythingRenewableNow.Common.Projectiles {
         private static Vector2 _dirtBombCenter;
         private static float _dirtBombRadius;
 
+        private const int DIRTIEST_BLOCK_CHANCE = 100000;
+        private static int _dirtBlocksPlaced = 0;
+
         public override bool PreKill(Projectile projectile, int timeLeft) {
             if (projectile.type == ProjectileID.DirtBomb || projectile.type == ProjectileID.DirtStickyBomb) {
                 DirtBombCodeSurrogate(projectile);
@@ -73,8 +76,12 @@ namespace EverythingRenewableNow.Common.Projectiles {
 
             WorldGen.TryKillingReplaceableTile(x, y, TileID.Dirt);
             if (WorldGen.PlaceTile(x, y, TileID.Dirt)) {
-                if (Main.rand.NextBool(100000))
+                _dirtBlocksPlaced++;
+
+                if (Main.rand.NextBool(DIRTIEST_BLOCK_CHANCE) || _dirtBlocksPlaced == DIRTIEST_BLOCK_CHANCE) {
                     WorldGen.PlaceTile(x, y, TileID.DirtiestBlock, forced: true);
+                    _dirtBlocksPlaced = 0;
+                }
 
                 if (Main.netMode != NetmodeID.SinglePlayer)
                     NetMessage.SendData(MessageID.TileManipulation, -1, -1, null, 1, x, y);
