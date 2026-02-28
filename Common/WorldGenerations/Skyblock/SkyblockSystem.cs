@@ -30,7 +30,7 @@ namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
             if (seedName == "parkour civilization")
                 BecomeZenithSkyblock();
 
-            if (seedName == "skyblock")
+            if (seedName == "renewable heaven")
                 BecomeSkyblock();
         }
 

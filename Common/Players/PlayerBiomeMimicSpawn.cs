@@ -30,7 +30,7 @@ namespace EverythingRenewableNow.Common.Players {
             }
 
             int number2 = 1;
-            if (Main.tile[chest.x, chest.y].TileType == 467)
+            if (Main.tile[chest.x, chest.y].TileType == TileID.Containers2)
                 number2 = 5;
             if (Main.tile[chest.x, chest.y].TileType >= TileID.Count)
                 number2 = 101;

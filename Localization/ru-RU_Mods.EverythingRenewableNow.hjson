@@ -131,7 +131,7 @@ Items: {
 	}
 
 	BewitchedLivingWoodWall: {
-		DisplayName: Заколдованная Стена из Живого Дерева
+		DisplayName: Переросшая Стена из Живого Дерева
 		Tooltip: ""
 	}
 

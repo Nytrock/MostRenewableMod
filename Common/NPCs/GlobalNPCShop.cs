@@ -7,21 +7,14 @@ namespace EverythingRenewableNow.Common.NPCs {
     public class GlobalNPCShop : GlobalNPC {
         public override void ModifyShop(NPCShop shop) {
             if (shop.NpcType == NPCID.Steampunker) {
-                shop.Add(ItemID.PurpleSolution, Condition.InGraveyard, Condition.CrimsonWorld, Condition.NotRemixWorld);
-                shop.Add(ItemID.RedSolution, Condition.InGraveyard, Condition.CorruptWorld, Condition.NotRemixWorld);
-
                 shop.Add(ItemID.Clentaminator, Condition.RemixWorld);
                 shop.Add(ItemID.BlueSolution, Condition.InHallow, Condition.RemixWorld);
                 shop.Add(ItemID.GreenSolution, Condition.NotEclipseAndNotBloodMoon, Condition.NotInHallow, Condition.RemixWorld);
                 shop.Add(ItemID.SandSolution, Condition.DownedMoonLord, Condition.RemixWorld);
                 shop.Add(ItemID.SnowSolution, Condition.DownedMoonLord, Condition.RemixWorld);
                 shop.Add(ItemID.DirtSolution, Condition.DownedMoonLord, Condition.RemixWorld);
-
                 shop.Add(ItemID.PurpleSolution, Condition.EclipseOrBloodMoon, Condition.CorruptWorld, Condition.RemixWorld);
-                shop.Add(ItemID.RedSolution, Condition.InGraveyard, Condition.Hardmode, Condition.CorruptWorld, Condition.RemixWorld, Condition.NotZenithWorld);
-
                 shop.Add(ItemID.RedSolution, Condition.EclipseOrBloodMoon, Condition.CrimsonWorld, Condition.RemixWorld);
-                shop.Add(ItemID.PurpleSolution, Condition.InGraveyard, Condition.Hardmode, Condition.CrimsonWorld, Condition.RemixWorld, Condition.NotZenithWorld);
             }
 
             if (shop.NpcType == NPCID.Truffle) {

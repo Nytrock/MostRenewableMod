@@ -151,10 +151,6 @@ namespace EverythingRenewableNow.Common.Items {
                 itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.DesertMinecart, 20));
             }
 
-            if (item.type == ItemID.ObsidianLockbox) {
-                itemLoot.Add(itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.Hellstone, 1, 20, 35)));
-            }
-
             if (item.type == ItemID.LavaCrate || item.type == ItemID.LavaCrateHard) {
                 foreach (var rule in itemLoot.Get()) {
                     if (rule is not AlwaysAtleastOneSuccessDropRule targetRule)
@@ -170,10 +166,21 @@ namespace EverythingRenewableNow.Common.Items {
                             targetRule.rules = Array.FindAll(targetRule.rules, rule => rule != plantsRule);
                             i--;
                         }
+
+                        if (targetRule.rules[i] is OneFromRulesRule barsRules &&
+                                barsRules.options[0] is CommonDropNotScalingWithLuck copperBarRule &&
+                                copperBarRule.itemId == ItemID.IronBar)
+                            targetRule.rules[i] = ItemDropRule.NotScalingWithLuck(ItemID.HellstoneBar, 4, 6, 16);
+
+                        if (targetRule.rules[i] is OneFromRulesRule oresRules &&
+                                oresRules.options[0] is CommonDropNotScalingWithLuck copperOreRule &&
+                                copperOreRule.itemId == ItemID.CopperOre)
+                            targetRule.rules[i] = ItemDropRule.NotScalingWithLuck(ItemID.Hellstone, 7, 20, 35);
                     }
                 }
 ;
                 itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<HellPaintingsBag>()));
+                itemLoot.Add(ItemDropRule.NotScalingWithLuck(ItemID.Hellforge, 20));
             }
 
             if (item.type == ItemID.Present) {
