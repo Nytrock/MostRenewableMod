@@ -12,7 +12,7 @@ using Terraria.UI;
 using Terraria.Utilities;
 using Terraria.WorldBuilding;
 
-namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
+namespace EverythingRenewableNow.Content.SkyblockSeed {
     public class SkyblockSystem : ModSystem {
         private static bool _isSkyblock;
 

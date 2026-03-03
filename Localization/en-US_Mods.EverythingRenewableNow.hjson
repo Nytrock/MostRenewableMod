@@ -134,6 +134,40 @@ Items: {
 		DisplayName: Slush Merman Banner
 		Tooltip: ""
 	}
+
+	NaturalDirtWall: {
+		DisplayName: Natural Dirt Wall
+		Tooltip: ""
+	}
+
+	LuckyClover: {
+		DisplayName: Lucky Clover
+		Tooltip: Magically delicious! Please do not eat.
+	}
+
+	RavenFeather: {
+		DisplayName: Raven Feather
+		Tooltip:
+			'''
+			A passing raven chose you to carry this emblem.
+			What manner of ill doth this portent?
+			'''
+	}
+
+	WiltedClover: {
+		DisplayName: Wilted Clover
+		Tooltip: Watering this lucky charm with Shimmer maybe wasn't the best idea..
+	}
+
+	GothicBrick: {
+		DisplayName: Gothic Brick
+		Tooltip: ""
+	}
+
+	PrettyMirror: {
+		DisplayName: Pretty Mirror
+		Tooltip: You break it, you buy it - you and all of your friends
+	}
 }
 
 Conditions: {
@@ -155,6 +189,7 @@ Projectiles: {
 	DroppedIceChest.DisplayName: Dropped Ice Chest
 	DroppedJungleChest.DisplayName: Dropped Jungle Chest
 	IceGrenadeProjectile.DisplayName: Ice Grenade Projectile
+	PrettyMirrorProjectile.DisplayName: Pretty Mirror Projectile
 }
 
 DeathMessages.DeadManCrate: "{0} was blown up by Dead Man's Crate"
@@ -196,15 +231,6 @@ Configs: {
 		HalloweenToggle: {
 			Label: Is Halloween
 			Tooltip: Enables Halloween event
-		}
-	}
-
-	GameplayConfig: {
-		DisplayName: Gameplay Config
-
-		StatuesToggle: {
-			Label: Enemies from statues don't drop banners
-			Tooltip: Enemies spawned by statues are not counted in the kill tally and don't drop banners
 		}
 	}
 }

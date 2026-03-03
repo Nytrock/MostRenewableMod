@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using EverythingRenewableNow.Content.Items.Boulder;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -73,12 +74,13 @@ namespace EverythingRenewableNow.Common.NPCs {
                     }, Condition.InDesert);
                 }
             }
+
+            ModifyBoulderShop(shop);
         }
 
-        public override void SetupTravelShop(int[] shop, ref int nextSlot) {
-            if (Main.rand.NextBool(20)) {
-                shop[nextSlot] = ItemID.AngelStatue;
-                nextSlot++;
+        private static void ModifyBoulderShop(NPCShop shop) {
+            if (shop.NpcType == NPCID.Clothier) {
+                shop.Add(ModContent.ItemType<PrettyMirror>(), Condition.InGraveyard);
             }
         }
     }

@@ -139,6 +139,40 @@ Items: {
 		DisplayName: Знамя Слякотного Тритона
 		Tooltip: ""
 	}
+
+	NaturalDirtWall: {
+		DisplayName: Естественная Земляная Стена
+		Tooltip: ""
+	}
+
+	LuckyClover: {
+		DisplayName: Счастливый Клевер
+		Tooltip: Волшебно вкусно! Прошу, не ешь
+	}
+
+	RavenFeather: {
+		DisplayName: Перо Ворона
+		Tooltip:
+			'''
+			Пролетающий мимо ворон выбрал вас носителем этой эмблемы.
+			Что за беду она предвещает?
+			'''
+	}
+
+	WiltedClover: {
+		DisplayName: Увядший Клевер
+		Tooltip: Поливать этот талисман удачи шиммером было не лучшей идеей..
+	}
+
+	GothicBrick: {
+		DisplayName: Готический блок
+		Tooltip: ""
+	}
+
+	PrettyMirror: {
+		DisplayName: Милое зеркало
+		Tooltip: Сломал – покупай – ты и все твои друзья.
+	}
 }
 
 Conditions: {
@@ -160,6 +194,7 @@ Projectiles: {
 	DroppedIceChest.DisplayName: Выпавший Ледяной сундук
 	DroppedJungleChest.DisplayName: Выпавший Сундук Джунглей
 	IceGrenadeProjectile.DisplayName: Снаряд Ледяной Гранаты
+	PrettyMirrorProjectile.DisplayName: Снаряд Милого зеркала
 }
 
 DeathMessages.DeadManCrate: "{0} был взорван Ящиком Мертвеца"
@@ -201,15 +236,6 @@ Configs: {
 		HalloweenToggle: {
 			Label: Хэллоуин
 			Tooltip: Включает Хэллоуин
-		}
-	}
-
-	GameplayConfig: {
-		DisplayName: Геймлей
-
-		StatuesToggle: {
-			Label: Враги из статуй не дропают знамёна
-			Tooltip: Враги, заспавненные статуями, не учиваются в глобальном подсчёте и не дропают знамёна
 		}
 	}
 }

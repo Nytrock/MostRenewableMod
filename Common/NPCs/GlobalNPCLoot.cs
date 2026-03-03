@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using EverythingRenewableNow.Content.Items.Boulder;
+using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,6 +18,8 @@ namespace EverythingRenewableNow.Common.NPCs {
         }
 
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot) {
+            AddBoulderNPCLoot(npc, npcLoot);
+
             if (npc.type == NPCID.WallCreeper || npc.type == NPCID.WallCreeperWall) {
                 npcLoot.Add(ItemDropRule.Common(ItemID.WebSlinger, 50));
             }
@@ -34,6 +37,11 @@ namespace EverythingRenewableNow.Common.NPCs {
             if (npc.type == NPCID.IceSlime || npc.type == NPCID.SpikedIceSlime) {
                 npcLoot.Add(ItemDropRule.Common(ItemID.IceBlock, 100, 3, 13));
             }
+        }
+
+        private static void AddBoulderNPCLoot(NPC npc, NPCLoot npcLoot) {
+            if (npc.type == NPCID.Raven)
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RavenFeather>(), 10));
         }
     }
 }

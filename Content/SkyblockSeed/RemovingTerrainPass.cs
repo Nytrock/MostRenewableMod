@@ -4,7 +4,7 @@ using Terraria.DataStructures;
 using Terraria.IO;
 using Terraria.WorldBuilding;
 
-namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
+namespace EverythingRenewableNow.Content.SkyblockSeed {
     public class RemovingTerrainPass() : GenPass("Removing Terrain", float.PositiveInfinity) {
         protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration) {
             progress.Message = LocalizationUtils.GetTextValue("WorldGen.RemovingTerrain");

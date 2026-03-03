@@ -1,4 +1,4 @@
-﻿using EverythingRenewableNow.Common.Configs;
+﻿using DuckLib;
 using EverythingRenewableNow.Utils;
 using Terraria;
 using Terraria.ID;
@@ -6,26 +6,8 @@ using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Common.NPCs {
     public class GlobalNPCKill : GlobalNPC {
-        public override void HitEffect(NPC npc, NPC.HitInfo hit) {
-            if (npc.life > 0) return;
-            KillChecks(npc);
-        }
-
-        private static void KillChecks(NPC npc) {
-            PreventBannerEnemiesCount(npc);
-            TrySpawnDungeonGuardian(npc);
-        }
-
-        private static void PreventBannerEnemiesCount(NPC npc) {
-            int bannerID = Item.NPCtoBanner(npc.BannerID());
-
-            if (!npc.SpawnedFromStatue) return;
-            if (npc.catchItem > 0) return;
-
-            if (NPC.killCount[bannerID] == 0) return;
-            if (!ModContent.GetInstance<GameplayConfig>().StatuesToggle) return;
-
-            NPC.killCount[bannerID]--;
+        public override void Load() {
+            DuckHook.OnNPCDeath += TrySpawnDungeonGuardian;
         }
 
         private static void TrySpawnDungeonGuardian(NPC npc) {

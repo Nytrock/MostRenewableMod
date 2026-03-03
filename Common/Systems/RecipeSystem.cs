@@ -1,5 +1,6 @@
 ﻿using DuckLib;
 using DuckLib.Utils;
+using EverythingRenewableNow.Content.Items.Boulder;
 using EverythingRenewableNow.Utils;
 using System.Collections.Generic;
 using Terraria;
@@ -23,8 +24,8 @@ namespace EverythingRenewableNow.Common.Systems {
         }
 
         private static void AddOtherRecipes() {
-            FurnitureUtils.AddChest(ItemID.GoldChest, ItemID.GoldBar, TileID.Anvils);
-            FurnitureUtils.AddChest(ItemID.ShadowChest, ItemID.DemoniteBar, TileID.Anvils);
+            FurnitureRecipeUtils.AddChest(ItemID.GoldChest, ItemID.GoldBar, TileID.Anvils);
+            FurnitureRecipeUtils.AddChest(ItemID.ShadowChest, ItemID.DemoniteBar, TileID.Anvils);
 
             Recipe
                 .Create(ItemID.IvyChest)
@@ -181,8 +182,15 @@ namespace EverythingRenewableNow.Common.Systems {
         }
 
         private static void AddBoulderRecipes() {
-            FurnitureUtils.AddWorkbench(ItemID.LihzahrdWorkBench, ItemID.LihzahrdBrick, TileID.LihzahrdFurnace);
-            FurnitureUtils.AddChest(ItemID.WaterChest, ItemID.ShellPileBlock, TileID.Anvils);
+            FurnitureRecipeUtils.AddWorkbench(ItemID.LihzahrdWorkBench, ItemID.LihzahrdBrick, TileID.LihzahrdFurnace);
+            FurnitureRecipeUtils.AddChest(ItemID.WaterChest, ItemID.ShellPileBlock, TileID.Anvils);
+
+            int gothicBrick = ModContent.ItemType<GothicBrick>();
+            int boneWelder = TileID.BoneWelder;
+            FurnitureRecipeUtils.AddChair(ItemID.GothicChair, gothicBrick, boneWelder);
+            FurnitureRecipeUtils.AddBookcase(ItemID.GothicBookcase, gothicBrick, boneWelder);
+            FurnitureRecipeUtils.AddWorkbench(ItemID.GothicWorkBench, gothicBrick, boneWelder);
+            FurnitureRecipeUtils.AddTable(ItemID.GothicTable, gothicBrick, boneWelder);
 
             Recipe
                 .Create(ItemID.AshBlock)
@@ -234,7 +242,7 @@ namespace EverythingRenewableNow.Common.Systems {
         }
 
         private static void AddFurnitureSetsRecipes() {
-            FurnitureUtils.AddSpecificFurniture(ItemID.BlueBrick,
+            FurnitureRecipeUtils.AddSpecificFurniture(ItemID.BlueBrick,
                 bathtub: ItemID.BlueDungeonBathtub,
                 bed: ItemID.BlueDungeonBed,
                 bookcase: ItemID.BlueDungeonBookcase,
@@ -253,7 +261,7 @@ namespace EverythingRenewableNow.Common.Systems {
                 vase: ItemID.BlueDungeonVase
             );
 
-            FurnitureUtils.AddSpecificFurniture(ItemID.GreenBrick,
+            FurnitureRecipeUtils.AddSpecificFurniture(ItemID.GreenBrick,
                 bathtub: ItemID.GreenDungeonBathtub,
                 bed: ItemID.GreenDungeonBed,
                 bookcase: ItemID.GreenDungeonBookcase,
@@ -272,7 +280,7 @@ namespace EverythingRenewableNow.Common.Systems {
                 vase: ItemID.GreenDungeonVase
             );
 
-            FurnitureUtils.AddSpecificFurniture(ItemID.PinkBrick,
+            FurnitureRecipeUtils.AddSpecificFurniture(ItemID.PinkBrick,
                 bathtub: ItemID.PinkDungeonBathtub,
                 bed: ItemID.PinkDungeonBed,
                 bookcase: ItemID.PinkDungeonBookcase,
@@ -291,7 +299,7 @@ namespace EverythingRenewableNow.Common.Systems {
                 vase: ItemID.PinkDungeonVase
             );
 
-            FurnitureUtils.AddSpecificFurniture(ItemID.ObsidianBrick,
+            FurnitureRecipeUtils.AddSpecificFurniture(ItemID.ObsidianBrick,
                 craftingStation: TileID.Hellforge,
                 torch: ItemID.DemonTorch,
                 bathtub: ItemID.ObsidianBathtub,

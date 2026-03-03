@@ -1,5 +1,4 @@
-﻿using EverythingRenewableNow.Content.Dusts;
-using EverythingRenewableNow.Content.Gores;
+﻿using DuckLib.Utils;
 using EverythingRenewableNow.Content.Items.Banners;
 using EverythingRenewableNow.Utils;
 using Microsoft.Xna.Framework;
@@ -12,6 +11,18 @@ using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.NPCs {
     public class SlushMerman : ModNPC {
+        private static int _headGore;
+        private static int _handGore;
+        private static int _legGore;
+        private static int _dust;
+
+        public override void Load() {
+            _headGore = this.CreateGore("Head");
+            _handGore = this.CreateGore("Hand");
+            _legGore = this.CreateGore("Leg");
+            _dust = this.CreateDust();
+        }
+
         public override void SetStaticDefaults() {
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.IcyMerman];
 
@@ -59,20 +70,18 @@ namespace EverythingRenewableNow.Content.NPCs {
 
         public override void HitEffect(NPC.HitInfo hit) {
             if (NPC.life > 0) {
-                for (int num525 = 0; num525 < hit.Damage / (double)NPC.lifeMax * 150.0; num525++) {
-                    Dust.NewDust(NPC.position, NPC.width, NPC.height, ModContent.DustType<SlushMermanDust>(), hit.HitDirection, -1f);
-                }
+                for (int num525 = 0; num525 < hit.Damage / (double)NPC.lifeMax * 150.0; num525++)
+                    Dust.NewDust(NPC.position, NPC.width, NPC.height, _dust, hit.HitDirection, -1f);
                 return;
             }
 
-            for (int num526 = 0; num526 < 75; num526++) {
-                Dust.NewDust(NPC.position, NPC.width, NPC.height, ModContent.DustType<SlushMermanDust>(), 2 * hit.HitDirection, -2f);
-            }
-            Gore.NewGore(NPC.GetSource_FromThis(), NPC.position, NPC.velocity, ModContent.GoreType<SlushMermanHead>(), NPC.scale);
-            Gore.NewGore(NPC.GetSource_FromThis(), new Vector2(NPC.position.X, NPC.position.Y + 20f), NPC.velocity, ModContent.GoreType<SlushMermanHand>(), NPC.scale);
-            Gore.NewGore(NPC.GetSource_FromThis(), new Vector2(NPC.position.X, NPC.position.Y + 20f), NPC.velocity, ModContent.GoreType<SlushMermanHand>(), NPC.scale);
-            Gore.NewGore(NPC.GetSource_FromThis(), new Vector2(NPC.position.X, NPC.position.Y + 34f), NPC.velocity, ModContent.GoreType<SlushMermanLeg>(), NPC.scale);
-            Gore.NewGore(NPC.GetSource_FromThis(), new Vector2(NPC.position.X, NPC.position.Y + 34f), NPC.velocity, ModContent.GoreType<SlushMermanLeg>(), NPC.scale);
+            for (int num526 = 0; num526 < 75; num526++)
+                Dust.NewDust(NPC.position, NPC.width, NPC.height, _dust, 2 * hit.HitDirection, -2f);
+            Gore.NewGore(NPC.GetSource_FromThis(), NPC.position, NPC.velocity, _headGore, NPC.scale);
+            Gore.NewGore(NPC.GetSource_FromThis(), new Vector2(NPC.position.X, NPC.position.Y + 20f), NPC.velocity, _handGore, NPC.scale);
+            Gore.NewGore(NPC.GetSource_FromThis(), new Vector2(NPC.position.X, NPC.position.Y + 20f), NPC.velocity, _handGore, NPC.scale);
+            Gore.NewGore(NPC.GetSource_FromThis(), new Vector2(NPC.position.X, NPC.position.Y + 34f), NPC.velocity, _legGore, NPC.scale);
+            Gore.NewGore(NPC.GetSource_FromThis(), new Vector2(NPC.position.X, NPC.position.Y + 34f), NPC.velocity, _legGore, NPC.scale);
         }
 
         public override void AI() {

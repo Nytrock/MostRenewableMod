@@ -1,10 +1,11 @@
+using DuckLib.Utils;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EverythingRenewableNow.Content.Items {
+namespace EverythingRenewableNow.Content.Items.Boulder {
     public class BewitchedLivingWoodWall : ModItem {
         public override void SetStaticDefaults() {
-            ItemID.Sets.ShimmerTransformToItem[ItemID.LivingWoodWall] = Type;
+            ShimmerUtils.Add(ItemID.LivingWoodWall, Type);
             ItemID.Sets.DrawUnsafeIndicator[Type] = true;
         }
 

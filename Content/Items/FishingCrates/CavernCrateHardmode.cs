@@ -29,7 +29,7 @@ namespace EverythingRenewableNow.Content.Items.FishingCrates {
             PlayerDeathReason deathReason = PlayerDeathReason.ByCustomReason(LocalizationUtils.GetNetworkText("DeathMessages.DeadManCrate", player.name));
             IEntitySource source = player.GetSource_OnHurt(deathReason);
 
-            GoreAndDustUtils.CreateExplosion(source, player.Center, 200, 200);
+            SFXUtils.CreateExplosion(source, player.Center, 200, 200);
             player.QuickSpawnItem(source, ItemID.DeadMansSweater);
             player.Hurt(deathReason, 350, 1);
         }

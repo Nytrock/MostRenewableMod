@@ -1,4 +1,5 @@
-﻿using EverythingRenewableNow.Content.Tiles;
+﻿using EverythingRenewableNow.Content.Items.Boulder;
+using EverythingRenewableNow.Content.Tiles;
 using EverythingRenewableNow.Utils;
 using Terraria;
 using Terraria.ID;
@@ -24,6 +25,19 @@ namespace EverythingRenewableNow.Common.Tiles {
                         NetMessage.SendData(MessageID.TileManipulation, -1, -1, null, 1, x, y);
                 }
             }
+        }
+
+        // Boulder
+        public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem) {
+            if (type != TileID.Plants2)
+                return;
+
+            Tile tile = Framing.GetTileSafely(i, j);
+            if (tile.TileFrameX >= 108)
+                return;
+
+            if (WorldGen.genRand.NextBool(1000))
+                Item.NewItem(WorldGen.GetItemSource_FromTileBreak(i, j), i * 16, j * 16, 16, 16, ModContent.ItemType<LuckyClover>());
         }
     }
 }

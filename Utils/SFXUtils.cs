@@ -5,7 +5,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 
 namespace EverythingRenewableNow.Utils {
-    public static class GoreAndDustUtils {
+    public static class SFXUtils {
         public static void CreateExplosion(IEntitySource source, Vector2 center, int width, int height) {
             SoundEngine.PlaySound(SoundID.Item14, center);
             Vector2 position = new(center.X - width / 2, center.Y - height / 2);

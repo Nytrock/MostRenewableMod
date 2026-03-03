@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.IO;
 using Terraria.WorldBuilding;
 
-namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
+namespace EverythingRenewableNow.Content.SkyblockSeed {
     internal class SkyblockCleanUpPass() : GenPass("SkyblockCleanUp", float.PositiveInfinity) {
         protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration) {
             progress.Set(1);

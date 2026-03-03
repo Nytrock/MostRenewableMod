@@ -168,8 +168,8 @@ namespace EverythingRenewableNow.Common.Items {
                         }
 
                         if (targetRule.rules[i] is OneFromRulesRule barsRules &&
-                                barsRules.options[0] is CommonDropNotScalingWithLuck copperBarRule &&
-                                copperBarRule.itemId == ItemID.IronBar)
+                                barsRules.options[0] is CommonDropNotScalingWithLuck ironBarRule &&
+                                ironBarRule.itemId == ItemID.IronBar)
                             targetRule.rules[i] = ItemDropRule.NotScalingWithLuck(ItemID.HellstoneBar, 4, 6, 16);
 
                         if (targetRule.rules[i] is OneFromRulesRule oresRules &&

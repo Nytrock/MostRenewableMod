@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
 
-namespace EverythingRenewableNow.Common.WorldGenerations.Skyblock {
+namespace EverythingRenewableNow.Content.SkyblockSeed {
     public class SkyblockPass() : GenPass("Skyblock", float.PositiveInfinity) {
         protected override void ApplyPass(GenerationProgress progress, GameConfiguration configuration) {
             progress.Set(1);
