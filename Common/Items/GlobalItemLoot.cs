@@ -10,9 +10,6 @@ using Terraria.ModLoader;
 namespace EverythingRenewableNow.Common.Items {
     public class GlobalItemLoot : GlobalItem {
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot) {
-            if (item.type == ItemID.GolemBossBag)
-                itemLoot.Add(ItemDropRule.Common(ItemID.LihzahrdBrick, 1, 35, 70));
-
             if (item.type == ItemID.WoodenCrate || item.type == ItemID.WoodenCrateHard) {
                 foreach (var rule in itemLoot.Get()) {
                     if (rule is SequentialRulesNotScalingWithLuckRule baitRule

@@ -8,14 +8,8 @@ namespace EverythingRenewableNow.Content.Items.Boulder {
         public override void SetDefaults() {
             Item.CloneDefaults(ItemID.DirtBomb);
             Item.shoot = ModContent.ProjectileType<IceGrenadeProjectile>();
+            Item.value = Item.buyPrice(0, 0, 10);
             Item.ResearchUnlockCount = 99;
-        }
-
-        public override void AddRecipes() {
-            CreateRecipe()
-                .AddIngredient(ItemID.Grenade)
-                .AddIngredient(ItemID.IceBlock, 15)
-                .Register();
         }
     }
 }

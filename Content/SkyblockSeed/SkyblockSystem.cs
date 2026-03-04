@@ -85,7 +85,7 @@ namespace EverythingRenewableNow.Content.SkyblockSeed {
             if (_isSkyblock) {
                 tasks.RemoveAll(task => task.Name is not ("Reset" or "Guide" or "Terrain" or "Spawn Point"));
                 tasks.Insert(3, new RemovingTerrainPass());
-                tasks.Insert(4, new SkyblockPass());
+                tasks.Insert(4, new SkyblockIslandPass());
                 tasks.Insert(5, new SkyblockDungeonPass());
                 tasks.Add(new SkyblockCleanUpPass());
             }

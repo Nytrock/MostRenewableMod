@@ -3,9 +3,8 @@ using Terraria;
 using Terraria.ID;
 
 namespace EverythingRenewableNow.Utils {
-    public static class TileUtils {
+    public static class PlantsUtils {
         private static readonly List<int> _tilesForGlowTulip = [TileID.Dirt, TileID.CorruptGrass, TileID.CrimsonGrass, TileID.HallowedGrass, TileID.Mud, TileID.Hive, TileID.Ebonstone, TileID.Stone, TileID.Crimstone, TileID.Pearlstone, TileID.GreenMoss, TileID.BrownMoss, TileID.RedMoss, TileID.BlueMoss, TileID.PurpleMoss, TileID.LavaMoss, TileID.KryptonMoss, TileID.XenonMoss, TileID.ArgonMoss, TileID.VioletMoss, TileID.RainbowMoss];
-        private static readonly List<int> _ambientTiles = [TileID.FallenLog, TileID.DyePlants, TileID.Stalactite, TileID.SmallPiles, TileID.SmallPiles1x1Echo, TileID.SmallPiles2x1Echo, TileID.LargePiles, TileID.LargePiles2, TileID.LargePilesEcho, TileID.LargePiles2Echo, TileID.Pots, TileID.PotsEcho];
 
         public static bool IsFitForCarrot(int x, int y, int type) {
             if (y > Main.worldSurface)

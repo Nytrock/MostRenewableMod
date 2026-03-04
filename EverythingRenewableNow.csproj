@@ -8,6 +8,12 @@
 		
 	</PropertyGroup>
 	<ItemGroup>
+	  <AdditionalFiles Remove="Content\Gores\**" />
+	  <Compile Remove="Content\Gores\**" />
+	  <EmbeddedResource Remove="Content\Gores\**" />
+	  <None Remove="Content\Gores\**" />
+	</ItemGroup>
+	<ItemGroup>
 	  <None Remove="Content\Projectiles\IceGrenadeProjectile.png" />
 	  <None Remove="Localization\ru-RU_Mods.EverythingRenewableNow.hjson" />
 	</ItemGroup>
@@ -16,6 +22,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Assets\Skyblock\" />
+	  <Folder Include="Content\NPCs\Boulder\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Reference Include="DuckLib">

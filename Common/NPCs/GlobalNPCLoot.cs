@@ -20,23 +20,8 @@ namespace EverythingRenewableNow.Common.NPCs {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot) {
             AddBoulderNPCLoot(npc, npcLoot);
 
-            if (npc.type == NPCID.WallCreeper || npc.type == NPCID.WallCreeperWall) {
+            if (npc.type == NPCID.WallCreeper || npc.type == NPCID.WallCreeperWall)
                 npcLoot.Add(ItemDropRule.Common(ItemID.WebSlinger, 50));
-            }
-
-            if (npc.type == NPCID.Golem) {
-                LeadingConditionRule notExpertRule = new(new Conditions.NotExpert());
-                notExpertRule.OnSuccess(ItemDropRule.Common(ItemID.LihzahrdBrick, minimumDropped: 25, maximumDropped: 50));
-                npcLoot.Add(notExpertRule);
-            }
-
-            if (npc.type == NPCID.DuneSplicerHead) {
-                npcLoot.Add(ItemDropRule.Common(ItemID.DesertFossil, 2, 5, 20));
-            }
-
-            if (npc.type == NPCID.IceSlime || npc.type == NPCID.SpikedIceSlime) {
-                npcLoot.Add(ItemDropRule.Common(ItemID.IceBlock, 100, 3, 13));
-            }
         }
 
         private static void AddBoulderNPCLoot(NPC npc, NPCLoot npcLoot) {

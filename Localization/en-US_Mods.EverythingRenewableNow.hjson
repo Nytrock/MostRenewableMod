@@ -121,8 +121,8 @@ Items: {
 	}
 
 	IceGrenade: {
-		DisplayName: Ice Grenade
-		Tooltip: A small explosion that will freeze the water
+		DisplayName: Freeze Bomb
+		Tooltip: A small explosion that will freeze water
 	}
 
 	BewitchedLivingWoodWall: {
@@ -242,4 +242,5 @@ WorldGen: {
 	SkyblockCleanUp: Final clean up
 }
 
+Skyblock.SignText: Sorry bud, no Flare Gun for you
 BannersTooltip: "{$CommonItemTooltip.BannerBonus}{0}"

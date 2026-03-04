@@ -82,6 +82,9 @@ namespace EverythingRenewableNow.Common.NPCs {
             if (shop.NpcType == NPCID.Clothier) {
                 shop.Add(ModContent.ItemType<PrettyMirror>(), Condition.InGraveyard);
             }
+
+            if (shop.NpcType == NPCID.Demolitionist)
+                shop.Add(ModContent.ItemType<IceGrenade>(), Condition.TimeNight, Condition.DownedEyeOfCthulhu);
         }
     }
 }

@@ -6,12 +6,27 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EverythingRenewableNow.Content.Projectiles {
+namespace EverythingRenewableNow.Content.Projectiles.Boulder {
     public class IceGrenadeProjectile : ModProjectile {
         public override void SetDefaults() {
-            Projectile.CloneDefaults(ProjectileID.Grenade);
+            Projectile.width = 22;
+            Projectile.height = 22;
+            Projectile.friendly = true;
+            Projectile.penetrate = -1;
             Projectile.timeLeft = 180;
             Projectile.aiStyle = -1;
+
+            DrawOriginOffsetY = -8;
+        }
+
+        public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac) {
+            width = Projectile.width - 8;
+            height = Projectile.height - 8;
+            return true;
+        }
+
+        public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox) {
+            return base.Colliding(projHitbox, targetHitbox);
         }
 
         public override bool OnTileCollide(Vector2 lastVelocity) {
@@ -64,7 +79,7 @@ namespace EverythingRenewableNow.Content.Projectiles {
             }
 
             Point pt = Projectile.Center.ToTileCoordinates();
-            float radius = 3f;
+            float radius = 4.2f;
             Projectile.Kill_DirtAndFluidProjectiles_RunDelegateMethodPushUpForHalfBricks(pt, radius, SpreadIce);
         }
 
@@ -87,6 +102,11 @@ namespace EverythingRenewableNow.Content.Projectiles {
                 }
                 Projectile.velocity.Y += 0.2f;
             }
+
+            Dust fuse = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch, 0f, 0f, 100);
+            fuse.scale = 1f + Main.rand.Next(5) * 0.1f;
+            fuse.noGravity = true;
+            fuse.position = Projectile.Center + new Vector2(0f, -Projectile.height / 2 - 6).RotatedBy(Projectile.rotation) * 1.1f;
 
             Projectile.rotation += Projectile.velocity.X * 0.1f;
         }
@@ -165,7 +185,7 @@ namespace EverythingRenewableNow.Content.Projectiles {
             if (waterTile.LiquidAmount > 128)
                 return true;
 
-            if (waterTile.TileType < 0)
+            if (waterTile.TileType < TileID.Dirt)
                 return false;
 
             if (Main.tileSolid[waterTile.TileType] && !TileID.Sets.Platforms[waterTile.TileType])

@@ -126,7 +126,7 @@ Items: {
 	}
 
 	IceGrenade: {
-		DisplayName: Ледяная граната
+		DisplayName: Ледяная Бомба
 		Tooltip: Небольшой взрыв, замораживающий воду
 	}
 
@@ -247,4 +247,5 @@ WorldGen: {
 	SkyblockCleanUp: Завершающая очистка
 }
 
+Skyblock.SignText: Прости чувак, никакой сигнальной пушки
 BannersTooltip: "{$CommonItemTooltip.BannerBonus}{0}"

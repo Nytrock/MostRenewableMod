@@ -3,8 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EverythingRenewableNow.Common.Systems {
-    // BOULDER
+namespace EverythingRenewableNow.Common.Systems.Boulder {
     public class ExtractinatorSystem : ModSystem {
         private readonly static int[] _pooSeeds = [ItemID.GrassSeeds, ItemID.JungleGrassSeeds, ItemID.MushroomGrassSeeds];
 
