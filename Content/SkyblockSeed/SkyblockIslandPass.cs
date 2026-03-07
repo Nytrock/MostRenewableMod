@@ -1,4 +1,4 @@
-﻿using DuckLib.Utils;
+﻿using DuckLib;
 using EverythingRenewableNow.Utils;
 using Terraria;
 using Terraria.ID;
@@ -18,7 +18,7 @@ namespace EverythingRenewableNow.Content.SkyblockSeed {
 
             WorldGen.PlaceTile(platformX + 3, platformY, TileID.WoodBlock, forced: true);
             WorldGen.AddShadowOrb(Main.spawnTileX, Main.spawnTileY + 3);
-            TileUtils.PlaceItemFrame(Main.spawnTileX, Main.spawnTileY - 1, ItemID.BottomlessShimmerBucket);
+            DuckGen.PlaceItemFrame(Main.spawnTileX, Main.spawnTileY - 1, ItemID.BottomlessShimmerBucket);
 
             int signX = Main.spawnTileX - 2, signY = Main.spawnTileY;
             WorldGen.PlaceSign(signX, signY, TileID.Signs, 0);

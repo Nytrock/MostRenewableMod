@@ -1,7 +1,6 @@
 ﻿using DuckLib;
 using DuckLib.Utils;
 using EverythingRenewableNow.Content.Items.Boulder;
-using EverythingRenewableNow.Utils;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -26,6 +25,14 @@ namespace EverythingRenewableNow.Common.Systems {
         private static void AddOtherRecipes() {
             FurnitureRecipeUtils.AddChest(ItemID.GoldChest, ItemID.GoldBar, TileID.Anvils);
             FurnitureRecipeUtils.AddChest(ItemID.ShadowChest, ItemID.DemoniteBar, TileID.Anvils);
+
+            int[] templeStatues = [ItemID.LihzahrdStatue, ItemID.LihzahrdGuardianStatue, ItemID.LihzahrdWatcherStatue];
+            foreach (int statue in templeStatues)
+                Recipe
+                    .Create(statue)
+                    .AddIngredient(ItemID.LihzahrdBrick, 25)
+                    .AddTile(TileID.LihzahrdFurnace)
+                    .Register();
 
             Recipe
                 .Create(ItemID.IvyChest)
@@ -330,12 +337,12 @@ namespace EverythingRenewableNow.Common.Systems {
             ShimmerUtils.Add(ItemID.GoldChest, ItemID.DeadMansChest);
             ShimmerUtils.Add(ItemID.Trident, ItemID.Spear);
 
-            ShimmerUtils.Add(ItemID.JungleKey, ModContentUtils.ItemType("AwakenedJungleKey"));
-            ShimmerUtils.Add(ItemID.CorruptionKey, ModContentUtils.ItemType("AwakenedCorruptionKey"));
-            ShimmerUtils.Add(ItemID.CrimsonKey, ModContentUtils.ItemType("AwakenedCrimsonKey"));
-            ShimmerUtils.Add(ItemID.HallowedKey, ModContentUtils.ItemType("AwakenedHallowedKey"));
-            ShimmerUtils.Add(ItemID.FrozenKey, ModContentUtils.ItemType("AwakenedFrozenKey"));
-            ShimmerUtils.Add(ItemID.DungeonDesertKey, ModContentUtils.ItemType("AwakenedDesertKey"));
+            ShimmerUtils.RemoveTransform(ItemID.JungleKey);
+            ShimmerUtils.RemoveTransform(ItemID.CorruptionKey);
+            ShimmerUtils.RemoveTransform(ItemID.CrimsonKey);
+            ShimmerUtils.RemoveTransform(ItemID.HallowedKey);
+            ShimmerUtils.RemoveTransform(ItemID.FrozenKey);
+            ShimmerUtils.RemoveTransform(ItemID.DungeonDesertKey);
         }
 
         private static void AddBoulderShimmerTransmutations() {

@@ -1,31 +1,25 @@
-﻿using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
+﻿using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Items.AwakenedBiomeKeys {
-    public class AwakenedBiomeKey(int width, int heigth, string biome) : ModItem {
-        private static LocalizedText _planteraCondition;
-
+    public class AwakenedBiomeKey(int width, int height, string biome, int keyID) : ModItem {
         public override string Name => $"Awakened{biome}Key";
         protected override bool CloneNewInstances => true;
 
-        public override void SetStaticDefaults() {
-            _planteraCondition = Language.GetText("LegacyTooltip.59");
-        }
-
         public override void SetDefaults() {
             Item.width = width;
-            Item.height = heigth;
+            Item.height = height;
             Item.maxStack = 9999;
         }
 
-        public override void ModifyTooltips(List<TooltipLine> tooltips) {
-            if (NPC.downedPlantBoss)
-                return;
-
-            TooltipLine planteraLine = new(Mod, "KeyLocked", _planteraCondition.Value);
-            tooltips.Insert(2, planteraLine);
+        public override void AddRecipes() {
+            Recipe
+                .Create(Type)
+                .AddIngredient(keyID)
+                .AddIngredient(ItemID.Ectoplasm, 10)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
         }
     }
 }

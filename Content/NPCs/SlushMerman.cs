@@ -1,4 +1,4 @@
-﻿using DuckLib.Utils;
+﻿using DuckLib;
 using EverythingRenewableNow.Content.Items.Banners;
 using EverythingRenewableNow.Utils;
 using Microsoft.Xna.Framework;
@@ -358,7 +358,7 @@ namespace EverythingRenewableNow.Content.NPCs {
             if (flag5) {
                 int num194 = (int)((NPC.position.X + NPC.width / 2 + 15 * NPC.direction) / 16f);
                 int num195 = (int)((NPC.position.Y + NPC.height - 15f) / 16f);
-                if (Main.tile[num194, num195 - 1].HasUnactuatedTile && (TileLoader.IsClosedDoor(Main.tile[num194, num195 - 1]) || Main.tile[num194, num195 - 1].TileType == 388) && flag8) {
+                if (Main.tile[num194, num195 - 1].HasUnactuatedTile && (TileLoader.IsClosedDoor(Main.tile[num194, num195 - 1]) || Main.tile[num194, num195 - 1].TileType == TileID.TallGateClosed) && flag8) {
                     NPC.ai[2] += 1f;
                     NPC.ai[3] = 0f;
                     if (NPC.ai[2] >= 60f) {
@@ -369,7 +369,7 @@ namespace EverythingRenewableNow.Content.NPCs {
                         }
                         NPC.velocity.X = 0.5f * -NPC.direction;
                         int num196 = 5;
-                        if (Main.tile[num194, num195 - 1].TileType == 388) {
+                        if (Main.tile[num194, num195 - 1].TileType == TileID.TallGateClosed) {
                             num196 = 2;
                         }
                         NPC.ai[1] += num196;
@@ -391,7 +391,7 @@ namespace EverythingRenewableNow.Content.NPCs {
                                     NetMessage.SendData(MessageID.ToggleDoorState, -1, -1, null, 0, num194, num195 - 1, NPC.direction);
                                 }
                             }
-                            if (Main.tile[num194, num195 - 1].TileType == 388) {
+                            if (Main.tile[num194, num195 - 1].TileType == TileID.TallGateClosed) {
                                 bool flag27 = WorldGen.ShiftTallGate(num194, num195 - 1, closing: false);
                                 if (!flag27) {
                                     NPC.ai[3] = num56;

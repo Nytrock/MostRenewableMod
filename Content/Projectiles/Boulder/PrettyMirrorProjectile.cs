@@ -1,4 +1,4 @@
-﻿using DuckLib.Utils;
+﻿using DuckLib;
 using EverythingRenewableNow.Common.Players;
 using Microsoft.Xna.Framework;
 using Terraria;

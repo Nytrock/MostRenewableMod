@@ -10,6 +10,9 @@ using Terraria.ModLoader;
 namespace EverythingRenewableNow.Common.Items {
     public class GlobalItemLoot : GlobalItem {
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot) {
+            if (item.type == ItemID.GolemBossBag)
+                itemLoot.Add(ItemDropRule.Common(ItemID.LihzahrdBrick, 1, 35, 70));
+
             if (item.type == ItemID.WoodenCrate || item.type == ItemID.WoodenCrateHard) {
                 foreach (var rule in itemLoot.Get()) {
                     if (rule is SequentialRulesNotScalingWithLuckRule baitRule
@@ -52,7 +55,7 @@ namespace EverythingRenewableNow.Common.Items {
 
                     for (int i = 0; i < targetRule.rules.Length; i++) {
                         if (targetRule.rules[i] is CommonDropNotScalingWithLuck childRule && childRule.itemId == ItemID.EnchantedSword) {
-                            IItemDropRule terragrimRule = ItemDropRule.NotScalingWithLuck(ItemID.Terragrim, 20);
+                            IItemDropRule terragrimRule = ItemDropRule.NotScalingWithLuck(ItemID.Terragrim, 10);
                             IItemDropRule enchantedSwordRule = ItemDropRule.NotScalingWithLuck(ItemID.EnchantedSword);
                             targetRule.rules[i] = ItemDropRule.SequentialRulesNotScalingWithLuck(25, terragrimRule, enchantedSwordRule);
                         }
@@ -85,14 +88,6 @@ namespace EverythingRenewableNow.Common.Items {
                 foreach (var rule in itemLoot.Get()) {
                     if (rule is not AlwaysAtleastOneSuccessDropRule targetRule)
                         continue;
-
-                    for (int i = 0; i < targetRule.rules.Length; i++) {
-                        if (targetRule.rules[i] is CommonDropNotScalingWithLuck bookRule && bookRule.itemId == ItemID.Book) {
-                            IItemDropRule waterBoltRule = ItemDropRule.NotScalingWithLuck(ItemID.WaterBolt, 100);
-                            IItemDropRule booksRule = ItemDropRule.NotScalingWithLuck(ItemID.Book, 1, 5, 15);
-                            targetRule.rules[i] = ItemDropRule.SequentialRulesNotScalingWithLuck(2, waterBoltRule, bookRule);
-                        }
-                    }
 
                     IItemDropRule spikesRule = ItemDropRule.NotScalingWithLuck(ItemID.Spike, 5, 10, 25);
                     targetRule.rules = [.. targetRule.rules, spikesRule];

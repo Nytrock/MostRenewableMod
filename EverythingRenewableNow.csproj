@@ -22,7 +22,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Assets\Skyblock\" />
-	  <Folder Include="Content\NPCs\Boulder\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Reference Include="DuckLib">

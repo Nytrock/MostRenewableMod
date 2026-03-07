@@ -3,7 +3,8 @@
 namespace EverythingRenewableNow.Content.Tiles {
     public class EnemyBanner : ModBannerTile {
         public enum StyleID {
-            SlushMerman
+            SlushMerman,
+            WaterboltMimic
         }
     }
 }

@@ -51,8 +51,6 @@ namespace EverythingRenewableNow.Utils {
 
             IItemDropRule[] mushroomLootRules = [
                 clothRule,
-                ItemDropRule.Common(ItemID.Shroomerang),
-                ItemDropRule.Common(ItemID.MushroomStatue),
                 ItemDropRule.Common(ItemID.ShroomMinecart),
             ];
             IItemDropRule mushroomLootRule = new OneFromRulesRule(1, mushroomLootRules);

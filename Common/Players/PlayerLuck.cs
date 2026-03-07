@@ -1,4 +1,4 @@
-﻿using DuckLib.Utils;
+﻿using DuckLib.Extensions;
 using EverythingRenewableNow.Content.Items.Boulder;
 using Terraria;
 using Terraria.ID;

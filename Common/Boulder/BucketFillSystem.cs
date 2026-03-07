@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EverythingRenewableNow.Common.Systems.Boulder {
+namespace EverythingRenewableNow.Common.Boulder {
     public class BucketFillSystem : GlobalItem {
         public override void PostUpdate(Item item) {
             if (item.beingGrabbed)

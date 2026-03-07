@@ -168,6 +168,8 @@ Items: {
 		DisplayName: Pretty Mirror
 		Tooltip: You break it, you buy it - you and all of your friends
 	}
+
+	WaterboltMimicBanner.DisplayName: Waterbolt Mimic Banner
 }
 
 Conditions: {
@@ -202,10 +204,16 @@ NPCs: {
 	HallowedChestMimic.DisplayName: Hallowed Chest Mimic
 	IceChestMimic.DisplayName: Ice Chest Mimic
 	JungleChestMimic.DisplayName: Jungle Chest Mimic
+	MossZombie.DisplayName: Moss Zombie
+	StatueMimic.DisplayName: Statue Mimic
+	WaterboltMimic.DisplayName: Waterbolt Mimic
 }
 
 Bestiary: {
 	SlushMerman: The habitat of the mermen population experienced a drastic climate change, forcing them to adapt to survival in the slush
+	MossZombie: They say a rolling stone gathers no moss... but they didn't say anything about zombies
+	StatueMimic: Is it your imagination, or are you being watched? You cannot seem to escape the foreboding feeling as you pass in front of this effigy - possessed by an ancient and unspeakable evil
+	WaterboltMimic: Appearing at first glance to be a magic tome of unspeakable power, this sneaky monster dines on the fingers of anyone foolish enough to attempt to decipher the runes within
 	CorruptionChestMimic: The awakened souls from the rotting crevices created this mimic from an ordinary chest
 	CrimsonChestMimic: The awakened souls from the pulsating catacombs created this mimic from an ordinary chest
 	DesertChestMimic: The awakened souls from the barren canyons created this mimic from an ordinary chest
