@@ -175,20 +175,37 @@ Items: {
 	}
 
 	WaterboltMimicBanner.DisplayName: Знамя Мимика Водяного Выстрела
+
+	CorruptionAltar: {
+		DisplayName: Алтарь Искажения
+		Tooltip: Вот это уже по делу!
+	}
+
+	CrimsonAltar: {
+		DisplayName: Алтарь Кримзона
+		Tooltip: Вот это уже по делу!
+	}
+
+	MiniDungeon: {
+		DisplayName: Мини-Данж
+		Tooltip: 
+			'''
+			Как ты вообще умудрился...
+			Ох, неважно, держи ещё один
+			'''
+	}
+
+	MiniTemple: {
+		DisplayName: Мини-Храм
+		Tooltip: Мне всё равно, НИКАКОГО КИРКОПИЛА
+	}
 }
 
 Conditions: {
 	MechQueen.Died: Умерла ли Мехдуза не в мире "get fixed boi"
-
-	Dungeon: {
-		Pink: Темница розовая
-		Blue: Темница синяя
-		Green: Темница зелёная
-	}
 }
 
 Projectiles: {
-	AshBallGun.DisplayName: Ком пепла
 	DroppedCorruptionChest.DisplayName: Выпавший Порченый сундук
 	DroppedCrimsonChest.DisplayName: Выпавший Багровый сундук
 	DroppedDesertChest.DisplayName: Выпавший Пустынный сундук

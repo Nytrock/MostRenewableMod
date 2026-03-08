@@ -1,4 +1,4 @@
-﻿using EverythingRenewableNow.Common.Systems.Dungeon;
+﻿using DuckLib.ItemDropRules;
 using EverythingRenewableNow.Content.Items.PaintingsBags;
 using System;
 using System.Linq;
@@ -94,9 +94,7 @@ namespace EverythingRenewableNow.Common.Items {
                 }
 
                 itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<DungeonPaintingsBag>()));
-                itemLoot.Add(ItemDropRule.ByCondition(new DungeonConditions.PinkBrick(), ItemID.PinkBrick, 1, 25, 50));
-                itemLoot.Add(ItemDropRule.ByCondition(new DungeonConditions.GreenBrick(), ItemID.GreenBrick, 1, 25, 50));
-                itemLoot.Add(ItemDropRule.ByCondition(new DungeonConditions.BlueBrick(), ItemID.BlueBrick, 1, 25, 50));
+                itemLoot.Add(new DungeonBrickDropRule(1, 25, 50));
             }
 
             if (item.type == ItemID.FrozenCrate || item.type == ItemID.FrozenCrateHard) {

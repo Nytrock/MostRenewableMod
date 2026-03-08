@@ -170,20 +170,37 @@ Items: {
 	}
 
 	WaterboltMimicBanner.DisplayName: Waterbolt Mimic Banner
+
+	CorruptionAltar: {
+		DisplayName: Corruption Altar
+		Tooltip: This is the real deal
+	}
+
+	CrimsonAltar: {
+		DisplayName: Crimson Altar
+		Tooltip: This is the real deal
+	}
+
+	MiniDungeon: {
+		DisplayName: Mini-Dungeon
+		Tooltip: 
+			'''
+			How do you even...
+			Uh, nevermind, here's another one
+			'''
+	}
+
+	MiniTemple: {
+		DisplayName: Mini-Temple
+		Tooltip: I don't care, I WILL NOT give you picksaw
+	}
 }
 
 Conditions: {
 	MechQueen.Died: Is Mechdusa died in not getfixedboi world
-
-	Dungeon: {
-		Pink: Is dungeon pink
-		Blue: Is dungeon blue
-		Green: Is dungeon green
-	}
 }
 
 Projectiles: {
-	AshBallGun.DisplayName: Ash Ball Gun
 	DroppedCorruptionChest.DisplayName: Dropped Corruption Chest
 	DroppedCrimsonChest.DisplayName: Dropped Crimson Chest
 	DroppedDesertChest.DisplayName: Dropped Desert Chest
