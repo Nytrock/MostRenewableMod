@@ -10,9 +10,11 @@ namespace EverythingRenewableNow.Content.Tiles {
         public override void SetStaticDefaults() {
             Main.tileFrameImportant[Type] = true;
             Main.tileSolid[Type] = false;
+            Main.tileObsidianKill[Type] = true;
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
             TileObjectData.newTile.CoordinateHeights = [18];
+            TileID.Sets.IgnoredByGrowingSaplings[Type] = true;
             TileObjectData.newTile.AnchorValidTiles = [TileID.Grass];
             TileObjectData.addTile(Type);
 

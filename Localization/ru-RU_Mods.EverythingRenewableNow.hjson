@@ -188,7 +188,7 @@ Items: {
 
 	MiniDungeon: {
 		DisplayName: Мини-Данж
-		Tooltip: 
+		Tooltip:
 			'''
 			Как ты вообще умудрился...
 			Ох, неважно, держи ещё один
@@ -201,9 +201,7 @@ Items: {
 	}
 }
 
-Conditions: {
-	MechQueen.Died: Умерла ли Мехдуза не в мире "get fixed boi"
-}
+Conditions.MechQueen.Died: Умерла ли Мехдуза не в мире "get fixed boi"
 
 Projectiles: {
 	DroppedCorruptionChest.DisplayName: Выпавший Порченый сундук

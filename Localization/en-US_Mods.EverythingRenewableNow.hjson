@@ -183,7 +183,7 @@ Items: {
 
 	MiniDungeon: {
 		DisplayName: Mini-Dungeon
-		Tooltip: 
+		Tooltip:
 			'''
 			How do you even...
 			Uh, nevermind, here's another one
@@ -196,9 +196,7 @@ Items: {
 	}
 }
 
-Conditions: {
-	MechQueen.Died: Is Mechdusa died in not getfixedboi world
-}
+Conditions.MechQueen.Died: Is Mechdusa died in not getfixedboi world
 
 Projectiles: {
 	DroppedCorruptionChest.DisplayName: Dropped Corruption Chest

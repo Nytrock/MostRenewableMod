@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Common.Systems.MechQueen {
@@ -35,6 +36,16 @@ namespace EverythingRenewableNow.Common.Systems.MechQueen {
         public override void PostUpdateTime() {
             if (Main.IsItDay() && !Main.zenithWorld)
                 MechQueenDisable();
+        }
+    }
+
+    public class MechQueenDespawnHandler : GlobalNPC {
+        public override void PostAI(NPC npc) {
+            if (!MechQueenSystem.IsMechQueenAlive || npc.timeLeft != 1)
+                return;
+
+            if (npc.type == NPCID.Retinazer || npc.type == NPCID.Spazmatism)
+                MechQueenSystem.MechQueenPartKilled();
         }
     }
 }

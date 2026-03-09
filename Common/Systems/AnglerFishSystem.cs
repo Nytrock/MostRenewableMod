@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuckLib;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -13,13 +14,9 @@ namespace EverythingRenewableNow.Common.Systems {
 
         private int _nowFish;
         private int _newFish;
-        private bool _wasDayTime;
 
-        public override void PostUpdateTime() {
-            if (!_wasDayTime && Main.dayTime)
-                CheckAnglerFish();
-
-            _wasDayTime = Main.dayTime;
+        public override void Load() {
+            DuckHook.OnDayStarted += CheckAnglerFish;
         }
 
         private void CheckAnglerFish() {
@@ -39,7 +36,7 @@ namespace EverythingRenewableNow.Common.Systems {
         }
 
         private void TryToChangeFish(List<int> currentEvilFishes, bool isCurrentEvil, List<int> otherEvilFish) {
-            if (currentEvilFishes.Contains(_nowFish) && isCurrentEvil && Main.rand.NextBool())
+            if (currentEvilFishes.Contains(_nowFish) && isCurrentEvil && Main.rand.NextBool() && DuckWorldObserver.OppositeEvilObserver.HaveInWorld)
                 _newFish = Main.rand.Next(otherEvilFish);
         }
     }
