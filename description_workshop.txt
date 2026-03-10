@@ -7,23 +7,36 @@ Annoyed that you can't get a bunch of cool items on skyblock map? Tired of runni
 Major Additions:
 [list]
 [*] 4 new fishing crates types: Forest, Mushroom, Golem, and Underground. Careful with the last one because it can explode!
-[*] Biome Key now shimmer into their awakened versions. Place one such key in an empty chest and face a new enemy: the Biome Mimic Chest!
+[*] Biome Key now can be used to craft awakened versions. Place one such key in an empty chest and face a new enemy: the Biome Mimic Chest!
 [*] New enemy in Ice Caves: Slush Merman. Fires slush at the player
+[*] Painting Covers drop from some crates, giving random paintings from specific biomes
 [*] Configs for enabling Christmas and Halloween
-[*] 2 new secret seeds: skyblock and parkour civilization. The first creates a replica of the [url=steamcommunity.com/sharedfiles/filedetails/?id=3474881954]most renewable skyblock[/url]. The second is a mix of skyblock and getfixedboi seeds
-[*] Painting Bags drop from some crates, granting random paintings from specific biomes
-[*] Golem now drops Lihzahrd Bricks, and the Dungeon Crate drops Dungeon Bricks
+[*] 2 new secret seeds: renewable heaven and parkour civilization. The first creates a replica of the [url=steamcommunity.com/sharedfiles/filedetails/?id=3474881954]Most Renewable Skyblock[/url]. The second is a mix of renewable heaven and getfixedboi seeds
+[*] Golem now drops Lihzahrd Bricks
 [*] The Frost Legion is no longer Christmas-exclusive. Its summoning item can now be crafted
-[*] Ice Grenade freezes nearby water. Also, Ice Slimes now drop Ice Blocks
-[*] Bewiched Living Wood Wall, which allows to create artificial gnome farms
+[/list]
+
+[hr][/hr]
+1.4.5 Backport:
+[list]
+[*] All shimmer transmutations, including slime crown, which starts the slime rain
+[*] Hellstone and hellforge drop from lava crates, dungeon bricks drop from dungeon crates
+[*] Eye of Cthulhu will drop demon altar if there are zero of them in world. In respective situations, Evil biome boss will drop mini-dungeon and Planter will drop mini-temple
+[*] Moss zombie, Waterbolt mimic and Statue mimic
+[*] Empty bucket now filling with water during rain
+[*] Slimes bodies can contain stone, granite, marble, LIFE CRYSTALLS, desert fossils and dart traps
+[*] All items, affecting the luck (2 clevers, raven feather, pretty mirror and stinky potion effect)
+[*] Ice bombs. What can I add here?
+[*] Extractinator can process poo, hive, shell pile and obsidian
+[*] Unsafe dirt and living wood walls. Obtained throught shimmer
+[*] Crafts of ash, dungeon bricks, honey bucket and golden delight from golden carp
+[*] Gothic blocks and crafting recipes for gothic furniture
 [/list]
 
 [hr][/hr]
 Other Changes:
 [list]
 [*] Loot changes to most fishing crates
-[*] Hellstone now drops from Obsidian Lock Box
-[*] The Sandgun can now use Ash Blocks as ammo
 [*] Dirt Bombs have a tiny chance to spawn the Dirtiest Block instead of the regular one
 [*] The Carrot from the Collector's Edition is now available in regular game and can randomly grow on grass
 [*] Mechdusa can now be summoned in any world
@@ -31,7 +44,7 @@ Other Changes:
 [*] Glowing Tulip can randomly grow in caves near the edge of the world
 [*] Solutions are now sold in dontdigup and getfixedboi worlds
 [*] Killing the Clothier using his voodoo doll during the day will spawn the Dungeon Guardian
-[*] Statues now craftable, but enemies spawned using them are not counted in the overall kill tally and don't drop banners (toggable)
+[*] Dungeon and obsidian furniture now craftable
 [*] Bunch of lame crafting recipes, transmutations, NPC shops changes and mob drops added
 [/list]
 

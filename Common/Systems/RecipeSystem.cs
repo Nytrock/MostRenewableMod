@@ -189,7 +189,8 @@ namespace EverythingRenewableNow.Common.Systems {
         }
 
         private static void AddBoulderRecipes() {
-            FurnitureRecipeUtils.AddWorkbench(ItemID.LihzahrdWorkBench, ItemID.LihzahrdBrick, TileID.LihzahrdFurnace);
+            Recipe lihzarhrdWorkbench = FurnitureRecipeUtils.AddWorkbench(ItemID.LihzahrdWorkBench, ItemID.LihzahrdBrick, TileID.LihzahrdFurnace);
+            lihzarhrdWorkbench.AddDecraftCondition(Condition.DownedGolem);
             FurnitureRecipeUtils.AddChest(ItemID.WaterChest, ItemID.ShellPileBlock, TileID.Anvils);
 
             int gothicBrick = ModContent.ItemType<GothicBrick>();
