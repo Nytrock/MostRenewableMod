@@ -7,7 +7,7 @@ namespace EverythingRenewableNow.Common.Boulder {
     public class ExtractinatorSystem : ModSystem {
         private readonly static int[] _pooSeeds = [ItemID.GrassSeeds, ItemID.JungleGrassSeeds, ItemID.MushroomGrassSeeds];
 
-        public override void Load() {
+        public override void PostSetupContent() {
             ExtractinatorUtils.AddDirectConversion(ItemID.ShellPileBlock, ItemID.SandBlock);
             ExtractinatorUtils.AddItemToConversionGroup(ItemID.ShellPileBlock, ItemID.Obsidian);
             ExtractinatorUtils.AddDirectConversion(ItemID.Hive, ItemID.HoneyBlock);

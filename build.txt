@@ -1,5 +1,5 @@
 displayName = Most Renewable Mod
 author = Nytrock
-version = 1.1
+version = 1.1.1
 modReferences = DuckLib
 sortAfter = DuckLib
