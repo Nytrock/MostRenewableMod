@@ -89,7 +89,6 @@ namespace EverythingRenewableNow.Content.NPCs.Boulder {
 
             int x = spawnInfo.SpawnTileX;
             int y = spawnInfo.SpawnTileY;
-            Main.NewText(IsThisAGoodPlaceForAStatueMimic(x, y));
             if (IsThisAGoodPlaceForAStatueMimic(x, y))
                 return 1f;
             return 0f;
@@ -147,7 +146,7 @@ namespace EverythingRenewableNow.Content.NPCs.Boulder {
                         return;
                     }
                     int num = 0;
-                    int num3 = -1;
+                    int num3;
                     int num2;
                     if (Math.Abs(Main.player[NPC.target].Center.X - NPC.Center.X) < (float)(NPC.sWidth / 2)) {
                         num2 = (int)((Main.player[NPC.target].Center.X - (float)(NPC.sWidth / 2) - (float)num) / 16f);
@@ -159,8 +158,8 @@ namespace EverythingRenewableNow.Content.NPCs.Boulder {
                         num2 = (int)(NPC.Center.X / 16f);
                         num3 = (int)((Main.player[NPC.target].Center.X - (float)(NPC.sWidth / 2) - (float)num) / 16f);
                     }
-                    int num4 = -1;
-                    int num5 = -1;
+                    int num4;
+                    int num5;
                     if (Math.Abs(Main.player[NPC.target].Center.Y - NPC.Center.Y) < (float)(NPC.sHeight / 2)) {
                         num4 = (int)((Main.player[NPC.target].Center.Y - (float)(NPC.sHeight / 2) - (float)num) / 16f);
                         num5 = (int)((Main.player[NPC.target].Center.Y + (float)(NPC.sHeight / 2) + (float)num) / 16f);
@@ -323,7 +322,7 @@ namespace EverythingRenewableNow.Content.NPCs.Boulder {
             public List<IItemDropRuleChainAttempt> ChainedRules { get; private set; }
 
             public StatueMimicItemDropRule() {
-                this.ChainedRules = new();
+                ChainedRules = [];
             }
 
             public bool CanDrop(DropAttemptInfo info) {
@@ -334,7 +333,7 @@ namespace EverythingRenewableNow.Content.NPCs.Boulder {
             }
 
             public void ReportDroprates(List<DropRateInfo> drops, DropRateInfoChainFeed ratesInfo) {
-                Chains.ReportDroprates(this.ChainedRules, 1f, drops, ratesInfo);
+                Chains.ReportDroprates(ChainedRules, 1f, drops, ratesInfo);
             }
 
             public ItemDropAttemptResult TryDroppingItem(DropAttemptInfo info) {

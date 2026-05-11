@@ -1,4 +1,5 @@
 ﻿using DuckLib;
+using DuckLib.Extensions;
 using DuckLib.Utils;
 using EverythingRenewableNow.Content.Items;
 using EverythingRenewableNow.Content.Items.Boulder;
@@ -36,8 +37,15 @@ namespace EverythingRenewableNow.Common.NPCs {
             if (npc.type == NPCID.Plantera)
                 npcLoot.Add(ItemDropRule.ByCondition(new DuckLootCondition.NoTemple(), ModContent.ItemType<MiniTemple>()));
 
-            if (npc.type == NPCID.BrainofCthulhu || npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail)
-                npcLoot.Add(ItemDropRule.ByCondition(new DuckLootCondition.NoDungeon(), ModContent.ItemType<MiniDungeon>()));
+            IItemDropRule miniDungeonRule = ItemDropRule.ByCondition(new DuckLootCondition.NoDungeon(), ModContent.ItemType<MiniDungeon>());
+            if (npc.type == NPCID.BrainofCthulhu)
+                npcLoot.Add(miniDungeonRule);
+
+            if (npc.IsType(NPCID.EaterofWorldsHead, NPCID.EaterofWorldsBody, NPCID.EaterofWorldsTail)) {
+                LeadingConditionRule leadingConditionRule = new(new Conditions.LegacyHack_IsABoss());
+                leadingConditionRule.OnSuccess(miniDungeonRule);
+                npcLoot.Add(leadingConditionRule);
+            }
         }
 
         private static void AddBoulderNPCLoot(NPC npc, NPCLoot npcLoot) {
