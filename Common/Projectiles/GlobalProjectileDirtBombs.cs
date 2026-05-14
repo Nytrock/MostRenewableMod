@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using DuckLib.Random;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
@@ -10,10 +11,12 @@ namespace EverythingRenewableNow.Common.Projectiles {
         private static Vector2 _dirtBombCenter;
         private static float _dirtBombRadius;
 
+        private static DuckRandom _dirtiestBlockRandom;
         private const int DIRTIEST_BLOCK_CHANCE = 100000;
-        private static int _dirtBlocksPlaced = 0;
+        private const string DIRTIEST_BLOCK_KEY = "dirtiestBlock";
 
         public override bool PreKill(Projectile projectile, int timeLeft) {
+            _dirtiestBlockRandom = DuckRandomSystem.GetOrCreateRandom(DIRTIEST_BLOCK_KEY, DIRTIEST_BLOCK_CHANCE);
             if (projectile.type == ProjectileID.DirtBomb || projectile.type == ProjectileID.DirtStickyBomb) {
                 DirtBombCodeSurrogate(projectile);
                 if (Main.netMode != NetmodeID.MultiplayerClient) {
@@ -76,12 +79,8 @@ namespace EverythingRenewableNow.Common.Projectiles {
 
             WorldGen.TryKillingReplaceableTile(x, y, TileID.Dirt);
             if (WorldGen.PlaceTile(x, y, TileID.Dirt)) {
-                _dirtBlocksPlaced++;
-
-                if (Main.rand.NextBool(DIRTIEST_BLOCK_CHANCE) || _dirtBlocksPlaced == DIRTIEST_BLOCK_CHANCE) {
+                if (_dirtiestBlockRandom.NextBool())
                     WorldGen.PlaceTile(x, y, TileID.DirtiestBlock, forced: true);
-                    _dirtBlocksPlaced = 0;
-                }
 
                 if (Main.netMode != NetmodeID.SinglePlayer)
                     NetMessage.SendData(MessageID.TileManipulation, -1, -1, null, 1, x, y);

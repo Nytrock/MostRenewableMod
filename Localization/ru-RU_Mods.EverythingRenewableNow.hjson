@@ -208,7 +208,7 @@ Projectiles: {
 	DroppedCrimsonChest.DisplayName: Выпавший Багровый сундук
 	DroppedDesertChest.DisplayName: Выпавший Пустынный сундук
 	DroppedHallowedChest.DisplayName: Выпавший Освящённый сундук
-	DroppedIceChest.DisplayName: Выпавший Ледяной сундук
+	DroppedFrozenChest.DisplayName: Выпавший Ледяной сундук
 	DroppedJungleChest.DisplayName: Выпавший Сундук Джунглей
 	IceGrenadeProjectile.DisplayName: Снаряд Ледяной Гранаты
 	PrettyMirrorProjectile.DisplayName: Снаряд Милого зеркала
@@ -222,7 +222,7 @@ NPCs: {
 	CrimsonChestMimic.DisplayName: Подражатель Багрового сундука
 	DesertChestMimic.DisplayName: Подражатель Пустынного сундука
 	HallowedChestMimic.DisplayName: Подражатель Освящённого сундука
-	IceChestMimic.DisplayName: Подражатель Ледяного сундука
+	FrozenChestMimic.DisplayName: Подражатель Ледяного сундука
 	JungleChestMimic.DisplayName: Подражатель Сундука Джунглей
 	MossZombie.DisplayName: Моховый зомби
 	StatueMimic.DisplayName: Статуя
@@ -238,7 +238,7 @@ Bestiary: {
 	CrimsonChestMimic: Пробуждённые души из пульсирующих катакомб создали это существо из обычного сундука
 	DesertChestMimic: Пробуждённые души из пустынных каньонов создали это существо из обычного сундука
 	HallowedChestMimic: Пробуждённые души из освящённой земли создали это существо из обычного сундука
-	IceChestMimic: Пробуждённые души из промёрзших пещер создали это существо из обычного сундука
+	FrozenChestMimic: Пробуждённые души из промёрзших пещер создали это существо из обычного сундука
 	JungleChestMimic: Пробуждённые души из недр джунглей создали это существо из обычного сундука
 }
 

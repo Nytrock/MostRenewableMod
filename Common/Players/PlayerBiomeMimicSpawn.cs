@@ -1,5 +1,4 @@
-﻿using EverythingRenewableNow.Utils;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -7,6 +6,12 @@ using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Common.Players {
     public class PlayerBiomeMimicSpawn : ModPlayer {
+        private static readonly Dictionary<int, int> keysAndMimics = [];
+
+        public static void AddMimicToSpawn(int key, int mimic) {
+            keysAndMimics.Add(key, mimic);
+        }
+
         public override void PreUpdate() {
             if (Main.netMode == NetmodeID.MultiplayerClient)
                 return;
@@ -47,14 +52,6 @@ namespace EverythingRenewableNow.Common.Players {
             if (!NPC.downedPlantBoss)
                 return -1;
 
-            Dictionary<int, int> keysAndMimics = new() {
-                { ModContentUtils.ItemType("AwakenedCorruptionKey"), ModContentUtils.NPCType("CorruptionChestMimic") },
-                { ModContentUtils.ItemType("AwakenedCrimsonKey"), ModContentUtils.NPCType("CrimsonChestMimic") },
-                { ModContentUtils.ItemType("AwakenedDesertKey"), ModContentUtils.NPCType("DesertChestMimic") },
-                { ModContentUtils.ItemType("AwakenedFrozenKey"), ModContentUtils.NPCType("IceChestMimic") },
-                { ModContentUtils.ItemType("AwakenedHallowedKey"), ModContentUtils.NPCType("HallowedChestMimic") },
-                { ModContentUtils.ItemType("AwakenedJungleKey"), ModContentUtils.NPCType("JungleChestMimic") },
-            };
             Tile chestTile = Main.tile[chest.x, chest.y];
             int chestStyle = chestTile.TileFrameX / 36;
 

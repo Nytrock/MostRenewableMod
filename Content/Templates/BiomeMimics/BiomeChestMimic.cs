@@ -6,9 +6,10 @@ using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EverythingRenewableNow.Content.NPCs.BiomeChestMimics {
+namespace EverythingRenewableNow.Content.Templates.BiomeMimics {
     public class BiomeChestMimic(int projectileType, string biome) : ModNPC {
         public override string Name => $"{biome}ChestMimic";
+        public override string Texture => $"{Mod.Name}/Assets/BiomeMimic/{biome}/Mimic";
         protected override bool CloneNewInstances => true;
 
         public override void SetStaticDefaults() {

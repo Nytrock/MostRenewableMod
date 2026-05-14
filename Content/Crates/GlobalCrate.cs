@@ -1,18 +1,16 @@
-﻿using EverythingRenewableNow.Utils;
+﻿using DuckLib.Extensions;
+using EverythingRenewableNow.Utils;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EverythingRenewableNow.Content.Items.FishingCrates {
-    public class CavernCrate : BaseCrate {
-        protected override string _crateName => nameof(CavernCrate);
+namespace EverythingRenewableNow.Content.Crates {
+    internal class GlobalCrate : GlobalItem {
+        public override void RightClick(Item item, Player player) {
+            if (!item.IsType(CavernCrate.CrateType, CavernCrate.CrateTypeHardmode))
+                return;
 
-        public override void ModifyItemLoot(ItemLoot itemLoot) {
-            itemLoot.AddPreHardmodeFishingCrateLoot(LootUtils.GetCavernCrateRules());
-        }
-
-        public override void RightClick(Player player) {
             if (!Main.rand.NextBool(100))
                 return;
 
@@ -21,7 +19,7 @@ namespace EverythingRenewableNow.Content.Items.FishingCrates {
 
             SFXUtils.CreateExplosion(source, player.Center, 200, 200);
             player.QuickSpawnItem(source, ItemID.DeadMansSweater);
-            player.Hurt(deathReason, 200, 1);
+            player.Hurt(deathReason, Main.hardMode ? 350 : 200, 1);
         }
     }
 }

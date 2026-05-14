@@ -1,5 +1,6 @@
 ﻿using DuckLib;
 using DuckLib.Extensions;
+using DuckLib.ItemDropRules;
 using DuckLib.Utils;
 using EverythingRenewableNow.Content.Items;
 using EverythingRenewableNow.Content.Items.Boulder;
@@ -35,9 +36,9 @@ namespace EverythingRenewableNow.Common.NPCs {
                 npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ItemID.LihzahrdBrick, minimumDropped: 25, maximumDropped: 50));
 
             if (npc.type == NPCID.Plantera)
-                npcLoot.Add(ItemDropRule.ByCondition(new DuckLootCondition.NoTemple(), ModContent.ItemType<MiniTemple>()));
+                npcLoot.Add(new NoItemInWorldDropRule(DuckWorldObserver.TempleObserver, ModContent.ItemType<MiniTemple>()));
 
-            IItemDropRule miniDungeonRule = ItemDropRule.ByCondition(new DuckLootCondition.NoDungeon(), ModContent.ItemType<MiniDungeon>());
+            IItemDropRule miniDungeonRule = new NoItemInWorldDropRule(DuckWorldObserver.DungeonObserver, ModContent.ItemType<MiniDungeon>());
             if (npc.type == NPCID.BrainofCthulhu)
                 npcLoot.Add(miniDungeonRule);
 
@@ -54,13 +55,13 @@ namespace EverythingRenewableNow.Common.NPCs {
 
             if (npc.type == NPCID.EyeofCthulhu) {
                 LeadingConditionRule crimsonRule = new(new Conditions.IsCrimson());
-                crimsonRule.OnSuccess(ItemDropRule.ByCondition(new DuckLootCondition.NoDemonAltars(), ModContent.ItemType<CrimsonAltar>()));
-                crimsonRule.OnFailedConditions(ItemDropRule.ByCondition(new DuckLootCondition.NoDemonAltars(), ModContent.ItemType<CorruptionAltar>()));
+                crimsonRule.OnSuccess(new NoItemInWorldDropRule(DuckWorldObserver.DemonAltarsObserver, ModContent.ItemType<CrimsonAltar>()));
+                crimsonRule.OnFailedConditions(new NoItemInWorldDropRule(DuckWorldObserver.DemonAltarsObserver, ModContent.ItemType<CorruptionAltar>()));
                 npcLoot.Add(crimsonRule);
             }
 
             if (npc.type == NPCID.DemonEye || npc.type == NPCID.WanderingEye)
-                npcLoot.Add(ItemDropRule.ByCondition(new DuckLootCondition.NoDemonAltars(), ItemID.SuspiciousLookingEye, 50));
+                npcLoot.Add(new NoItemInWorldDropRule(DuckWorldObserver.DemonAltarsObserver, ItemID.SuspiciousLookingEye, 50, disableObserverOnSuccess: false));
         }
 
         // Boulder
@@ -97,11 +98,11 @@ namespace EverythingRenewableNow.Common.NPCs {
         }
 
         private static bool FossilSlimeDropCondition(NPC npc) {
-            return npc.netID == NPCID.SandSlime && Main.rand.NextBool(100) && !DuckWorldObserver.FossilObserver.HaveInWorld;
+            return npc.netID == NPCID.SandSlime && Main.rand.NextBool(100) && DuckWorldObserver.FossilObserver.NoInWorld;
         }
 
         private static bool LifeCrystalSlimeDropCondition(NPC npc) {
-            return Main.rand.NextBool(2000) && !DuckWorldObserver.LifeCrystalObserver.HaveInWorld;
+            return Main.rand.NextBool(2000) && DuckWorldObserver.LifeCrystalObserver.NoInWorld;
         }
     }
 }

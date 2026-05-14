@@ -203,7 +203,7 @@ Projectiles: {
 	DroppedCrimsonChest.DisplayName: Dropped Crimson Chest
 	DroppedDesertChest.DisplayName: Dropped Desert Chest
 	DroppedHallowedChest.DisplayName: Dropped Hallowed Chest
-	DroppedIceChest.DisplayName: Dropped Ice Chest
+	DroppedFrozenChest.DisplayName: Dropped Frozen Chest
 	DroppedJungleChest.DisplayName: Dropped Jungle Chest
 	IceGrenadeProjectile.DisplayName: Ice Grenade Projectile
 	PrettyMirrorProjectile.DisplayName: Pretty Mirror Projectile
@@ -217,7 +217,7 @@ NPCs: {
 	CrimsonChestMimic.DisplayName: Crimson Chest Mimic
 	DesertChestMimic.DisplayName: Desert Chest Mimic
 	HallowedChestMimic.DisplayName: Hallowed Chest Mimic
-	IceChestMimic.DisplayName: Ice Chest Mimic
+	FrozenChestMimic.DisplayName: Frozen Chest Mimic
 	JungleChestMimic.DisplayName: Jungle Chest Mimic
 	MossZombie.DisplayName: Moss Zombie
 	StatueMimic.DisplayName: Statue Mimic
@@ -233,7 +233,7 @@ Bestiary: {
 	CrimsonChestMimic: The awakened souls from the pulsating catacombs created this mimic from an ordinary chest
 	DesertChestMimic: The awakened souls from the barren canyons created this mimic from an ordinary chest
 	HallowedChestMimic: The awakened souls from the hallowed land created this mimic from an ordinary chest
-	IceChestMimic: The awakened souls from the permafrost caves created this mimic from an ordinary chest
+	FrozenChestMimic: The awakened souls from the permafrost caves created this mimic from an ordinary chest
 	JungleChestMimic: The awakened souls from the depths of the jungle created this mimic from an ordinary chest
 }
 

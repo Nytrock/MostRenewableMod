@@ -4,9 +4,10 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace EverythingRenewableNow.Content.Projectiles.DroppedBiomeChests {
+namespace EverythingRenewableNow.Content.Templates.BiomeMimics {
     public class DroppedBiomeChest(string biome, int chestTileStyle, int itemType, int chestTileType) : ModProjectile {
         public override string Name => $"Dropped{biome}Chest";
+        public override string Texture => $"{Mod.Name}/Assets/BiomeMimic/{biome}/Chest";
         protected override bool CloneNewInstances => true;
 
         public override void SetDefaults() {

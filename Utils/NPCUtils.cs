@@ -9,7 +9,7 @@ namespace EverythingRenewableNow.Utils {
                 return false;
 
             if (Main.netMode == NetmodeID.MultiplayerClient) {
-                NetMessage.SendData(61, -1, -1, null, playerIndex, -16f);
+                NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, -1, -1, null, playerIndex, -16f);
             } else {
                 NPC.mechQueen = -2;
                 NPC.SpawnOnPlayer(playerIndex, 127);

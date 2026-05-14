@@ -1,4 +1,5 @@
-﻿using EverythingRenewableNow.Content.Items.FishingCrates;
+﻿using DuckLib.Extensions;
+using EverythingRenewableNow.Content.Crates;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -44,13 +45,8 @@ namespace EverythingRenewableNow.Common.Players {
             bool inWater = !attempt.inLava && !attempt.inHoney;
             bool isBiomeCrateConditions = inWater && attempt.crate && !attempt.veryrare && !attempt.legendary && attempt.rare;
 
-            if (itemDrop == ItemID.JungleFishingCrate && Player.ZoneLihzhardTemple) {
-                itemDrop = ModContent.ItemType<TempleCrate>();
-                return;
-            }
-
-            if (itemDrop == ItemID.JungleFishingCrateHard && Player.ZoneLihzhardTemple) {
-                itemDrop = ModContent.ItemType<TempleCrateHardmode>();
+            if (itemDrop.IsType(ItemID.JungleFishingCrate, ItemID.JungleFishingCrateHard) && Player.ZoneLihzhardTemple) {
+                itemDrop = TempleCrate.CurrentCrateType;
                 return;
             }
 
@@ -60,25 +56,14 @@ namespace EverythingRenewableNow.Common.Players {
                 return;
             }
 
-            if (Player.ZoneLihzhardTemple) {
-                itemDrop = Main.hardMode ? ModContent.ItemType<TempleCrateHardmode>() : ModContent.ItemType<TempleCrate>();
-                return;
-            }
-
-            if (Player.ZoneGlowshroom) {
-                itemDrop = Main.hardMode ? ModContent.ItemType<MushroomCrateHardmode>() : ModContent.ItemType<MushroomCrate>();
-                return;
-            }
-
-            if (Player.ZoneNormalCaverns) {
-                itemDrop = Main.hardMode ? ModContent.ItemType<CavernCrateHardmode>() : ModContent.ItemType<CavernCrate>();
-                return;
-            }
-
-            if (Player.ZoneForest) {
-                itemDrop = Main.hardMode ? ModContent.ItemType<ForestCrateHardmode>() : ModContent.ItemType<ForestCrate>();
-                return;
-            }
+            if (Player.ZoneLihzhardTemple)
+                itemDrop = TempleCrate.CurrentCrateType;
+            else if (Player.ZoneGlowshroom)
+                itemDrop = MushroomCrate.CurrentCrateType;
+            else if (Player.ZoneNormalCaverns)
+                itemDrop = CavernCrate.CurrentCrateType;
+            else if (Player.ZoneForest)
+                itemDrop = ForestCrate.CurrentCrateType;
         }
     }
 }
