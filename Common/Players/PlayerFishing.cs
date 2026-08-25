@@ -46,7 +46,7 @@ namespace EverythingRenewableNow.Common.Players {
             bool isBiomeCrateConditions = inWater && attempt.crate && !attempt.veryrare && !attempt.legendary && attempt.rare;
 
             if (itemDrop.IsType(ItemID.JungleFishingCrate, ItemID.JungleFishingCrateHard) && Player.ZoneLihzhardTemple) {
-                itemDrop = TempleCrate.CurrentCrateType;
+                itemDrop = ModContent.GetInstance<TempleCrate>().CurrentCrateType;
                 return;
             }
 
@@ -57,13 +57,13 @@ namespace EverythingRenewableNow.Common.Players {
             }
 
             if (Player.ZoneLihzhardTemple)
-                itemDrop = TempleCrate.CurrentCrateType;
+                itemDrop = ModContent.GetInstance<TempleCrate>().CurrentCrateType;
             else if (Player.ZoneGlowshroom)
-                itemDrop = MushroomCrate.CurrentCrateType;
+                itemDrop = ModContent.GetInstance<MushroomCrate>().CurrentCrateType;
             else if (Player.ZoneNormalCaverns)
-                itemDrop = CavernCrate.CurrentCrateType;
+                itemDrop = ModContent.GetInstance<CavernCrate>().CurrentCrateType;
             else if (Player.ZoneForest)
-                itemDrop = ForestCrate.CurrentCrateType;
+                itemDrop = ModContent.GetInstance<ForestCrate>().CurrentCrateType;
         }
     }
 }

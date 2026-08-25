@@ -24,6 +24,9 @@
 	  <Folder Include="Assets\Skyblock\" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Reference Include="CalamityMod">
+	    <HintPath>D:\Projects\TerrariaMods\_Decompilations\_Sources\CalamityMod\CalamityMod.dll</HintPath>
+	  </Reference>
 	  <Reference Include="DuckLib">
 	    <HintPath>..\..\ModReader\DuckLib\DuckLib.dll</HintPath>
 	  </Reference>

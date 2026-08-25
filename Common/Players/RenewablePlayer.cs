@@ -1,16 +1,17 @@
 ﻿using DuckLib.Extensions;
 using EverythingRenewableNow.Content.Items.Boulder;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
 namespace EverythingRenewableNow.Common.Players {
-    // Boulder
-    public class PlayerLuck : ModPlayer {
+    public class RenewablePlayer : ModPlayer {
         private bool _brokenMirrorBadLuck;
         private double _brokenMirrorBadLuckTime = 0;
 
+        // Boulder
         public override void ModifyLuck(ref float luck) {
             if (Player.HaveBuff(BuffID.Stinky))
                 luck -= 0.25f;
@@ -26,7 +27,7 @@ namespace EverythingRenewableNow.Common.Players {
             float result = 0;
             bool useVoidBag = false;
 
-            for (int i = 0; i < 58; i++) {
+            for (int i = 0; i < Player.inventory.Length; i++) {
                 Item item = Player.inventory[i];
                 if (item.stack <= 0)
                     continue;
@@ -40,7 +41,7 @@ namespace EverythingRenewableNow.Common.Players {
             if (!useVoidBag)
                 return result;
 
-            for (int i = 0; i < 58; i++) {
+            for (int i = 0; i < Player.bank4.item.Length; i++) {
                 Item item = Player.bank4.item[i];
                 if (item.stack <= 0)
                     continue;
@@ -82,6 +83,10 @@ namespace EverythingRenewableNow.Common.Players {
             } else {
                 _brokenMirrorBadLuck = false;
             }
+        }
+
+        public override void ModifyStartingInventory(IReadOnlyDictionary<string, List<Item>> itemsByMod, bool mediumCoreDeath) {
+            itemsByMod["Terraria"].RemoveAll(item => item.type == ItemID.Carrot);
         }
     }
 }

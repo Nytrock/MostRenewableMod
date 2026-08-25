@@ -3,14 +3,12 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Templates.BiomeMimics {
-    public class AwakenedBiomeKey(int width, int height, string biome, int keyID) : ModItem {
+    public class AwakenedBiomeKey(string biome, int keyID) : ModItem {
         public override string Name => $"Awakened{biome}Key";
         public override string Texture => $"{Mod.Name}/Assets/BiomeMimic/{biome}/Key";
         protected override bool CloneNewInstances => true;
 
         public override void SetDefaults() {
-            Item.width = width;
-            Item.height = height;
             Item.maxStack = 9999;
         }
 

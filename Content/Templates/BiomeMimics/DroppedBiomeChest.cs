@@ -12,6 +12,7 @@ namespace EverythingRenewableNow.Content.Templates.BiomeMimics {
 
         public override void SetDefaults() {
             Projectile.aiStyle = -1;
+            DrawOriginOffsetX = -16;
         }
 
         public override void AI() {

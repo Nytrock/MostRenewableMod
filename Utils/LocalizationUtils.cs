@@ -13,6 +13,10 @@ namespace EverythingRenewableNow.Utils {
             return Language.GetTextValue(_modName + key);
         }
 
+        public static string GetCalamityText(string key) {
+            return Language.GetTextValue("Mods.CalamityMod." + key);
+        }
+
         public static NetworkText GetNetworkText(string key, params object[] substitutions) {
             return NetworkText.FromKey(_modName + key, substitutions);
         }

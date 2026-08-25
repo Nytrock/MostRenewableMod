@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using EverythingRenewableNow.Common.Systems;
+using EverythingRenewableNow.Content.Items.Calamity;
+using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -6,10 +8,10 @@ using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Common.Players {
     public class PlayerBiomeMimicSpawn : ModPlayer {
-        private static readonly Dictionary<int, int> keysAndMimics = [];
+        private static readonly Dictionary<int, int> _keysAndMimics = [];
 
         public static void AddMimicToSpawn(int key, int mimic) {
-            keysAndMimics.Add(key, mimic);
+            _keysAndMimics.Add(key, mimic);
         }
 
         public override void PreUpdate() {
@@ -49,9 +51,6 @@ namespace EverythingRenewableNow.Common.Players {
         }
 
         public static int WhichBiomeChestMimicCanSpawn(Chest chest) {
-            if (!NPC.downedPlantBoss)
-                return -1;
-
             Tile chestTile = Main.tile[chest.x, chest.y];
             int chestStyle = chestTile.TileFrameX / 36;
 
@@ -60,7 +59,8 @@ namespace EverythingRenewableNow.Common.Players {
                 return -1;
 
             int keyInChest = -1;
-            int[] keys = [.. keysAndMimics.Keys];
+            int[] keys = [.. _keysAndMimics.Keys];
+
             foreach (var item in chest.item) {
                 if (item == null) continue;
                 if (item.type <= ItemID.None) continue;
@@ -74,7 +74,13 @@ namespace EverythingRenewableNow.Common.Players {
 
             if (keyInChest == -1)
                 return -1;
-            return keysAndMimics[keyInChest];
+
+            if (CrossModSystem.Calamity != null && keyInChest == ModContent.ItemType<AstralKey>())
+                return _keysAndMimics[keyInChest];
+
+            if (!NPC.downedPlantBoss)
+                return -1;
+            return _keysAndMimics[keyInChest];
         }
     }
 }

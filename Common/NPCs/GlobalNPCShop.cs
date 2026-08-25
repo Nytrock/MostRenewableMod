@@ -1,4 +1,5 @@
-﻿using EverythingRenewableNow.Content.Items.Boulder;
+﻿using EverythingRenewableNow.Common.Systems;
+using EverythingRenewableNow.Content.Items.Boulder;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -9,6 +10,7 @@ namespace EverythingRenewableNow.Common.NPCs {
         public override void ModifyShop(NPCShop shop) {
             if (shop.NpcType == NPCID.Steampunker) {
                 shop.Add(ItemID.Clentaminator, Condition.RemixWorld);
+                shop.Add(ItemID.LihzahrdFurnace, Condition.InJungle, Condition.DownedGolem);
                 shop.Add(ItemID.BlueSolution, Condition.InHallow, Condition.RemixWorld);
                 shop.Add(ItemID.GreenSolution, Condition.NotEclipseAndNotBloodMoon, Condition.NotInHallow, Condition.RemixWorld);
                 shop.Add(ItemID.SandSolution, Condition.DownedMoonLord, Condition.RemixWorld);
@@ -75,13 +77,38 @@ namespace EverythingRenewableNow.Common.NPCs {
                 }
             }
 
+            if (CrossModSystem.Calamity != null)
+                ModifyCalamityShop(shop);
             ModifyBoulderShop(shop);
         }
 
-        private static void ModifyBoulderShop(NPCShop shop) {
-            if (shop.NpcType == NPCID.Clothier) {
-                shop.Add(ModContent.ItemType<PrettyMirror>(), Condition.InGraveyard);
+        [JITWhenModsEnabled("CalamityMod")]
+        private static void ModifyCalamityShop(NPCShop shop) {
+            Mod calamity = CrossModSystem.Calamity;
+
+            if (shop.NpcType == NPCID.Steampunker)
+                shop.Add(calamity.Find<ModItem>("AstralSolution").Type, Condition.RemixWorld);
+
+            if (shop.NpcType == calamity.Find<ModNPC>("ShadySalesman").Type) {
+                int logsPrice = Item.buyPrice(gold: 1);
+                Dictionary<int, Condition> logs = new() {
+                    {ModContent.ItemType<CalamityMod.Items.DraedonMisc.DraedonsLogHell>(), Condition.InUnderworld },
+                    {ModContent.ItemType<CalamityMod.Items.DraedonMisc.DraedonsLogJungle>(), Condition.InJungle },
+                    {ModContent.ItemType<CalamityMod.Items.DraedonMisc.DraedonsLogPlanetoid>(), Condition.InSpace },
+                    {ModContent.ItemType<CalamityMod.Items.DraedonMisc.DraedonsLogSnowBiome>(), Condition.InSnow },
+                    {ModContent.ItemType<CalamityMod.Items.DraedonMisc.DraedonsLogSunkenSea>(), CalamityMod.CalamityConditions.InSunken }
+                };
+
+                foreach (var log in logs) {
+                    shop.Add(new Item(log.Key) { shopCustomPrice = logsPrice }, log.Value);
+                    CalamityMod.Systems.Collections.CalamityItemSets.HasSalesmanText[log.Key] = true;
+                }
             }
+        }
+
+        private static void ModifyBoulderShop(NPCShop shop) {
+            if (shop.NpcType == NPCID.Stylist)
+                shop.Add(ModContent.ItemType<PrettyMirror>(), Condition.InGraveyard);
 
             if (shop.NpcType == NPCID.Demolitionist)
                 shop.Add(ModContent.ItemType<IceGrenade>(), Condition.TimeNight, Condition.DownedEyeOfCthulhu);

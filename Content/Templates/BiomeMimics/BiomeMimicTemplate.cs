@@ -1,32 +1,40 @@
 ﻿using DuckLib.Templates;
 using EverythingRenewableNow.Common.Players;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Templates.BiomeMimics {
     public abstract class BiomeMimicTemplate : BaseTemplate {
-        protected abstract int KeyType { get; }
-        protected abstract int WeaponType { get; }
-        protected abstract int KeyHeight { get; }
-        protected abstract int KeyWidth { get; }
         protected abstract int ChestStyle { get; }
         protected virtual int ChestType => TileID.Containers;
+        protected abstract int WeaponType { get; }
 
-        public static int MimicType { get; private set; }
-        public static int AwakenedKeyType { get; private set; }
+        protected abstract int BaseKeyType { get; }
+        protected virtual bool HaveAwakenedKey => true;
 
-        public override void Load(Mod mod) {
-            DroppedBiomeChest projectile = new(Name, ChestStyle, WeaponType, ChestType);
-            AwakenedBiomeKey key = new(KeyWidth, KeyHeight, Name, KeyType);
-            mod.AddContent(key);
-            mod.AddContent(projectile);
+        private int _keyType;
+        protected BiomeChestMimic _mimic;
 
-            BiomeChestMimic mimic = new(projectile.Type, Name);
-            mod.AddContent(mimic);
+        protected override void AddContent() {
+            DroppedBiomeChest projectile = new(TemplateName, ChestStyle, WeaponType, ChestType);
+            Mod.AddContent(projectile);
+            _mimic = new(projectile.Type, TemplateName);
+            Mod.AddContent(_mimic);
 
-            MimicType = mimic.Type;
-            AwakenedKeyType = key.Type;
-            PlayerBiomeMimicSpawn.AddMimicToSpawn(AwakenedKeyType, MimicType);
+            if (HaveAwakenedKey) {
+                AwakenedBiomeKey key = new(TemplateName, BaseKeyType);
+                Mod.AddContent(key);
+                _keyType = key.Type;
+            }
+        }
+
+        public override void PostSetupContent() {
+            if (_mimic == null)
+                return;
+
+            if (HaveAwakenedKey)
+                PlayerBiomeMimicSpawn.AddMimicToSpawn(_keyType, _mimic.Type);
+            else
+                PlayerBiomeMimicSpawn.AddMimicToSpawn(BaseKeyType, _mimic.Type);
         }
     }
 }

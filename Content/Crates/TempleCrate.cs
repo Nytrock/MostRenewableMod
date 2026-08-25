@@ -4,7 +4,7 @@ using Terraria.ID;
 
 namespace EverythingRenewableNow.Content.Crates {
     public class TempleCrate : CrateTemplate {
-        protected override string Name => "Temple";
+        protected override string TemplateName => "Temple";
 
         public override IItemDropRule[] AddNonStandardLoot() {
             IItemDropRule[] trapsRules = [

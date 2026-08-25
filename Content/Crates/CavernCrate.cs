@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Content.Crates {
     public class CavernCrate : CrateTemplate {
-        protected override string Name => "Cavern";
+        protected override string TemplateName => "Cavern";
 
         public override IItemDropRule[] AddNonStandardLoot() {
             int[] cavernLoot = [

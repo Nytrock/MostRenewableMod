@@ -1,0 +1,28 @@
+Items: {
+	DraedonItems: {
+		// DraedonsLogJungle.SalesPitch: "{$NPC.SalesmanLogPitch}"
+		// DraedonsLogPlanetoid.SalesPitch: "{$NPC.SalesmanLogPitch}"
+		// DraedonsLogHell.SalesPitch: "{$NPC.SalesmanLogPitch}"
+		// DraedonsLogSnowBiome.SalesPitch: "{$NPC.SalesmanLogPitch}"
+		// DraedonsLogSunkenSea.SalesPitch: "{$NPC.SalesmanLogPitch}"
+	}
+}
+
+NPC.SalesmanLogPitch:
+	'''
+	'Неподалёку отсюда я нашёл что-то вроде лаборатории с журналами некоего «Дрэйдона»'
+	'Крайне, КРАЙНЕ интересное чтиво, скажу я тебе! Уверен, любой настоящий эрудит захочет иметь что-то подобное у себя в коллекции!'
+	'Желаешь ли прикупить копию?'
+	'''
+
+DraedonDialogues: {
+	OnyxExcavatorKey: {
+		Question: Дай мне чёртов экскаватор
+		Response: Господи, какой же ты дебил
+	}
+
+	Murasama: {
+		Question: Дай мне сраный меч
+		Response: Боже, где таких рожают
+	}
+}

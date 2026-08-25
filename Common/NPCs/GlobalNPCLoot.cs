@@ -2,8 +2,11 @@
 using DuckLib.Extensions;
 using DuckLib.ItemDropRules;
 using DuckLib.Utils;
+using EverythingRenewableNow.Common.Systems;
 using EverythingRenewableNow.Content.Items;
 using EverythingRenewableNow.Content.Items.Boulder;
+using EverythingRenewableNow.Content.Items.Calamity;
+using EverythingRenewableNow.Utils;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
@@ -27,6 +30,9 @@ namespace EverythingRenewableNow.Common.NPCs {
         }
 
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot) {
+            if (CrossModSystem.Calamity != null)
+                ModifyCalamityNPCLoot(npc, npcLoot);
+
             AddBoulderNPCLoot(npc, npcLoot);
 
             if (npc.type == NPCID.WallCreeper || npc.type == NPCID.WallCreeperWall)
@@ -49,6 +55,27 @@ namespace EverythingRenewableNow.Common.NPCs {
             }
         }
 
+        public override void ModifyGlobalLoot(GlobalLoot globalLoot) {
+            if (CrossModSystem.Calamity != null)
+                ModifyCalamityGlobalLoot(globalLoot);
+        }
+
+        [JITWhenModsEnabled("CalamityMod")]
+        private static void ModifyCalamityGlobalLoot(GlobalLoot globalLoot) {
+            globalLoot.Add(ItemDropRule.ByCondition(
+                CalamityMod.DropHelper.If(info => info.player.InCalamityZone("astral")),
+                ModContent.ItemType<AstralKey>(), 2500)
+            );
+        }
+
+        private static void ModifyCalamityNPCLoot(NPC npc, NPCLoot npcLoot) {
+            if (CrossModSystem.Calamity.Find<ModNPC>("PrimordialWyrmHead").Type == npc.type)
+                npcLoot.Add(ItemDropRule.Common(CrossModSystem.Calamity.Find<ModItem>("Terminus").Type));
+
+            if (npc.type == NPCID.TheDestroyer)
+                npcLoot.Add(ItemDropRule.Common(CrossModSystem.Calamity.Find<ModItem>("IronBall").Type, 20));
+        }
+
         private static void AddBoulderNPCLoot(NPC npc, NPCLoot npcLoot) {
             if (npc.type == NPCID.Raven)
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RavenFeather>(), 10));
@@ -66,9 +93,9 @@ namespace EverythingRenewableNow.Common.NPCs {
 
         // Boulder
         private static void SetSlimeBodyDrops() {
+            SlimeBodyItemUtils.AddSlimeBodyItem(FossilSlimeDropCondition, 3, 13, ItemID.DesertFossil);
             SlimeBodyItemUtils.AddSlimeBodyItem(CavernSlimeDropCondition, 10, 25, ItemID.StoneBlock, ItemID.Granite, ItemID.Marble);
             SlimeBodyItemUtils.AddSlimeBodyItem(DartTrapSlimeDropCondition, items: ItemID.DartTrap);
-            SlimeBodyItemUtils.AddSlimeBodyItem(FossilSlimeDropCondition, 3, 13, ItemID.DesertFossil);
             SlimeBodyItemUtils.AddSlimeBodyItem(LifeCrystalSlimeDropCondition, items: ItemID.LifeCrystal);
         }
 

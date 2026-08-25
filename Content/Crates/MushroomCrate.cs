@@ -4,7 +4,7 @@ using Terraria.ID;
 
 namespace EverythingRenewableNow.Content.Crates {
     public class MushroomCrate : CrateTemplate {
-        protected override string Name => "Mushroom";
+        protected override string TemplateName => "Mushroom";
 
         public override IItemDropRule[] AddNonStandardLoot() {
             IItemDropRule clothRule = ItemDropRule.Common(ItemID.MushroomHat);

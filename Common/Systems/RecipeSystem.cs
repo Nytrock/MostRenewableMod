@@ -9,6 +9,9 @@ using Terraria.ModLoader;
 namespace EverythingRenewableNow.Common.Systems {
     public class RecipeSystem : ModSystem {
         public override void AddRecipes() {
+            if (CrossModSystem.Calamity != null)
+                AddCalamityRecipes();
+
             ChangeVanillaRecipes();
             AddFurnitureSetsRecipes();
             AddOtherRecipes();
@@ -17,9 +20,106 @@ namespace EverythingRenewableNow.Common.Systems {
         }
 
         public override void PostAddRecipes() {
-            AddShimmerTransmutations();
+            if (CrossModSystem.Calamity != null)
+                AddCalamityShimmerTransmutations();
 
+            AddShimmerTransmutations();
             AddBoulderShimmerTransmutations();
+        }
+
+        private static void AddCalamityRecipes() {
+            Mod calamity = CrossModSystem.Calamity;
+            ModItem circut = calamity.Find<ModItem>("MysteriousCircuitry");
+            ModItem plating = calamity.Find<ModItem>("DubiousPlating");
+
+            Recipe
+                .Create(calamity.Find<ModItem>("PowerCellFactoryItem").Type)
+                .AddIngredient(circut, 25)
+                .AddIngredient(plating, 25)
+                .AddRecipeGroup(RecipeGroupID.IronBar, 10)
+                .AddTile(TileID.Anvils)
+                .Register();
+
+            Recipe
+                .Create(calamity.Find<ModItem>("ChargingStationItem").Type)
+                .AddIngredient(circut, 15)
+                .AddIngredient(plating, 15)
+                .AddIngredient(calamity.Find<ModItem>("DraedonPowerCell").Type)
+                .AddTile(TileID.Anvils)
+                .Register();
+
+            Recipe
+                .Create(calamity.Find<ModItem>("AbyssTreasureChest").Type)
+                .AddIngredient(calamity.Find<ModItem>("PlantyMush").Type, 8)
+                .AddRecipeGroup(RecipeGroupID.IronBar, 2)
+                .AddTile(TileID.Anvils)
+                .Register();
+
+            Recipe
+                .Create(calamity.Find<ModItem>("AerialiteOreDisenchanted").Type)
+                .AddIngredient(calamity.Find<ModItem>("AerialiteOre").Type)
+                .AddCondition(Condition.InGraveyard)
+                .AddTile(TileID.Furnaces)
+                .DisableDecraft()
+                .Register();
+
+            Recipe
+                .Create(calamity.Find<ModItem>("PlasmaDriveCore").Type)
+                .AddIngredient(ItemID.SoulofFlight, 10)
+                .AddIngredient(calamity.Find<ModItem>("SuspiciousScrap").Type, 4)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+
+            Recipe
+                .Create(calamity.Find<ModItem>("NO").Type)
+                .AddIngredient(calamity.Find<ModItem>("LavaChickenBroth").Type)
+                .AddIngredient(calamity.Find<ModItem>("ColdheartIcicle").Type)
+                .AddTile(calamity.Find<ModTile>("YharonTrophyTile").Type)
+                .Register();
+
+            int brick = calamity.Find<ModItem>("ThrowingBrick").Type;
+            int squirrelStaff = calamity.Find<ModItem>("SquirrelSquireStaff").Type;
+            int lore = calamity.Find<ModItem>("LoreAwakening").Type;
+            int bag = calamity.Find<ModItem>("StarterBag").Type;
+
+            Recipe
+                .Create(bag)
+                .AddIngredient(ItemID.CopperBroadsword)
+                .AddIngredient(ItemID.CopperBow)
+                .AddIngredient(ItemID.CopperHammer)
+                .AddIngredient(ItemID.AmethystStaff)
+                .AddIngredient(ItemID.ManaCrystal)
+                .AddIngredient(brick, 150)
+                .AddIngredient(ItemID.WoodenArrow, 100)
+                .AddIngredient(ItemID.Rope, 50)
+                .AddIngredient(ItemID.Torch, 25)
+                .AddIngredient(ItemID.RecallPotion, 3)
+                .AddIngredient(squirrelStaff)
+                .AddIngredient(lore)
+                .AddIngredient(ItemID.GoldCoin)
+                .Register();
+
+            Recipe
+                .Create(bag)
+                .AddIngredient(ItemID.TinBroadsword)
+                .AddIngredient(ItemID.TinBow)
+                .AddIngredient(ItemID.TinHammer)
+                .AddIngredient(ItemID.TopazStaff)
+                .AddIngredient(ItemID.ManaCrystal)
+                .AddIngredient(brick, 150)
+                .AddIngredient(ItemID.WoodenArrow, 100)
+                .AddIngredient(ItemID.Rope, 50)
+                .AddIngredient(ItemID.Torch, 25)
+                .AddIngredient(ItemID.RecallPotion, 3)
+                .AddIngredient(squirrelStaff)
+                .AddIngredient(lore)
+                .AddIngredient(ItemID.GoldCoin)
+                .Register();
+        }
+
+        private static void AddCalamityShimmerTransmutations() {
+            Mod calamity = CrossModSystem.Calamity;
+            ShimmerUtils.AddLoop(calamity.Find<ModItem>("BrimstoneSlag").Type, calamity.Find<ModItem>("ScorchedRemains").Type);
         }
 
         private static void AddOtherRecipes() {

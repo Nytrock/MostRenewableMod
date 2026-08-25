@@ -1,4 +1,5 @@
 ﻿using DuckLib.ItemDropRules;
+using EverythingRenewableNow.Common.Systems;
 using EverythingRenewableNow.Content.Items.PaintingsBags;
 using System;
 using System.Linq;
@@ -10,6 +11,9 @@ using Terraria.ModLoader;
 namespace EverythingRenewableNow.Common.Items {
     public class GlobalItemLoot : GlobalItem {
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot) {
+            if (CrossModSystem.Calamity != null)
+                ModifyCalamityLoot(item, itemLoot);
+
             if (item.type == ItemID.GolemBossBag)
                 itemLoot.Add(ItemDropRule.Common(ItemID.LihzahrdBrick, 1, 35, 70));
 
@@ -181,6 +185,10 @@ namespace EverythingRenewableNow.Common.Items {
                     presentRule.rules = Array.FindAll(presentRule.rules, rule => !(rule is CommonDrop globeRule && globeRule.itemId == ItemID.SnowGlobe));
                 }
             }
+        }
+
+        private static void ModifyCalamityLoot(Item item, ItemLoot itemLoot) {
+
         }
     }
 }

@@ -51,7 +51,7 @@ namespace EverythingRenewableNow.Content.Projectiles.Boulder {
             int num10 = 150;
             rect.Inflate(num10, num10);
             if (Main.netMode != NetmodeID.Server && Main.LocalPlayer.getRect().Intersects(rect))
-                Main.LocalPlayer.GetModPlayer<PlayerLuck>().StartBadLuckFromMirror();
+                Main.LocalPlayer.GetModPlayer<RenewablePlayer>().StartBadLuckFromMirror();
         }
     }
 }

@@ -194,6 +194,11 @@ Items: {
 		DisplayName: Mini-Temple
 		Tooltip: I don't care, I WILL NOT give you picksaw
 	}
+
+	AstralKey: {
+		DisplayName: Astral Key
+		Tooltip: ""
+	}
 }
 
 Conditions.MechQueen.Died: Is Mechdusa died in not getfixedboi world
@@ -205,6 +210,7 @@ Projectiles: {
 	DroppedHallowedChest.DisplayName: Dropped Hallowed Chest
 	DroppedFrozenChest.DisplayName: Dropped Frozen Chest
 	DroppedJungleChest.DisplayName: Dropped Jungle Chest
+	DroppedAstralChest.DisplayName: Dropped Astral Chest
 	IceGrenadeProjectile.DisplayName: Ice Grenade Projectile
 	PrettyMirrorProjectile.DisplayName: Pretty Mirror Projectile
 }
@@ -219,12 +225,15 @@ NPCs: {
 	HallowedChestMimic.DisplayName: Hallowed Chest Mimic
 	FrozenChestMimic.DisplayName: Frozen Chest Mimic
 	JungleChestMimic.DisplayName: Jungle Chest Mimic
+	AstralChestMimic.DisplayName: Astral Chest Mimic
 	MossZombie.DisplayName: Moss Zombie
 	StatueMimic.DisplayName: Statue Mimic
 	WaterboltMimic.DisplayName: Waterbolt Mimic
+	AbyssSnail.DisplayName: Abyss Snail
 }
 
 Bestiary: {
+	AbyssSnail: Abyss Snail
 	SlushMerman: The habitat of the mermen population experienced a drastic climate change, forcing them to adapt to survival in the slush
 	MossZombie: They say a rolling stone gathers no moss... but they didn't say anything about zombies
 	StatueMimic: Is it your imagination, or are you being watched? You cannot seem to escape the foreboding feeling as you pass in front of this effigy - possessed by an ancient and unspeakable evil

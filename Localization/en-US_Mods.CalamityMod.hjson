@@ -1,0 +1,28 @@
+Items: {
+	DraedonItems: {
+		DraedonsLogJungle.SalesPitch: "{$NPC.SalesmanLogPitch}"
+		DraedonsLogPlanetoid.SalesPitch: "{$NPC.SalesmanLogPitch}"
+		DraedonsLogHell.SalesPitch: "{$NPC.SalesmanLogPitch}"
+		DraedonsLogSnowBiome.SalesPitch: "{$NPC.SalesmanLogPitch}"
+		DraedonsLogSunkenSea.SalesPitch: "{$NPC.SalesmanLogPitch}"
+	}
+}
+
+NPC.SalesmanLogPitch:
+	'''
+	'Nearby I found some sort of laboratory with the logs of somebody called "Draedon"'
+	'Really, REALLY interesting reading, I must say! Pretty sure any erudite would love to have something like this in their collection!'
+	'Do you want to buy a copy?'
+	'''
+
+DraedonDialogues: {
+	OnyxExcavatorKey: {
+		Question: Give me fucking excavator
+		Response: My God, you SO stupid
+	}
+
+	Murasama: {
+		Question: Give me fucking sword
+		Response: My God, you are idiot
+	}
+}

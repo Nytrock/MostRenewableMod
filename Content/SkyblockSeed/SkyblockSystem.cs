@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using EverythingRenewableNow.Common.Systems;
+using Microsoft.Xna.Framework.Graphics;
 using MonoMod.Cil;
 using ReLogic.Content;
 using System;
@@ -36,11 +37,12 @@ namespace EverythingRenewableNow.Content.SkyblockSeed {
 
         private static void BecomeSkyblock() {
             _isSkyblock = true;
+            if (CrossModSystem.Calamity != null)
+                UnlockCalamityItems();
             GenerateRandomSeed();
         }
 
         private static void BecomeZenithSkyblock() {
-            _isSkyblock = true;
             WorldGen.noTrapsWorldGen = true;
             WorldGen.notTheBees = true;
             WorldGen.getGoodWorldGen = true;
@@ -57,7 +59,7 @@ namespace EverythingRenewableNow.Content.SkyblockSeed {
             Main.remixWorld = true;
             Main.zenithWorld = true;
             Main.drunkWorld = true;
-            GenerateRandomSeed();
+            BecomeSkyblock();
         }
 
         private static void GenerateRandomSeed() {
@@ -67,6 +69,23 @@ namespace EverythingRenewableNow.Content.SkyblockSeed {
             WorldGen._genRand = new UnifiedRandom(seed);
             Main.rand = new UnifiedRandom(seed);
             Main.ActiveWorldFileData.SetSeed(WorldGen.currentWorldSeed);
+        }
+
+        [JITWhenModsEnabled("CalamityMod")]
+        private static void UnlockCalamityItems() {
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundSunkenSeaSchematic = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundPlanetoidSchematic = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundJungleSchematic = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundHellSchematic = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundIceSchematic = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundLuxorsGift = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundFungalSymbiote = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundTrinketOfChi = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundFrozenCube = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundGladiatorsLocket = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundUnstableGraniteCore = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundCrimsonEffigy = true;
+            CalamityMod.CustomRecipes.RecipeUnlockHandler.HasFoundCorruptionEffigy = true;
         }
 
         public override void SaveWorldData(TagCompound tag) {

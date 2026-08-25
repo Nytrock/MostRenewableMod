@@ -4,7 +4,7 @@ using Terraria.ID;
 
 namespace EverythingRenewableNow.Content.Crates {
     public class ForestCrate : CrateTemplate {
-        protected override string Name => "Forest";
+        protected override string TemplateName => "Forest";
 
         public override IItemDropRule[] AddNonStandardLoot() {
             int[] surfaceLoot = [

@@ -199,6 +199,11 @@ Items: {
 		DisplayName: Мини-Храм
 		Tooltip: Мне всё равно, НИКАКОГО КИРКОПИЛА
 	}
+
+	AstralKey: {
+		// DisplayName: Astral Key
+		// Tooltip: ""
+	}
 }
 
 Conditions.MechQueen.Died: Умерла ли Мехдуза не в мире "get fixed boi"
@@ -210,6 +215,7 @@ Projectiles: {
 	DroppedHallowedChest.DisplayName: Выпавший Освящённый сундук
 	DroppedFrozenChest.DisplayName: Выпавший Ледяной сундук
 	DroppedJungleChest.DisplayName: Выпавший Сундук Джунглей
+	// DroppedAstralChest.DisplayName: Dropped Astral Chest
 	IceGrenadeProjectile.DisplayName: Снаряд Ледяной Гранаты
 	PrettyMirrorProjectile.DisplayName: Снаряд Милого зеркала
 }
@@ -224,12 +230,15 @@ NPCs: {
 	HallowedChestMimic.DisplayName: Подражатель Освящённого сундука
 	FrozenChestMimic.DisplayName: Подражатель Ледяного сундука
 	JungleChestMimic.DisplayName: Подражатель Сундука Джунглей
+	// AstralChestMimic.DisplayName: Astral Chest Mimic
 	MossZombie.DisplayName: Моховый зомби
 	StatueMimic.DisplayName: Статуя
 	WaterboltMimic.DisplayName: Мимик Водяного выстрела
+	// AbyssSnail.DisplayName: Abyss Snail
 }
 
 Bestiary: {
+	// AbyssSnail: Abyss Snail
 	SlushMerman: В среде обитания популяции тритонов произошло резкое изменение климата, из-за чего им пришлось приспосабливаться к выживанию в слякоти
 	MossZombie: Говорят, мох растёт на севере... но никто не упоминал, что он растёт ещё и на зомби
 	StatueMimic: Вам кажется, или за вами наблюдают? Проходя перед этим изваянием, одержимым древним злом, вы не сможете избавиться от подобных ощущений

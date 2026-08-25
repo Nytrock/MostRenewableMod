@@ -7,7 +7,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EverythingRenewableNow.Common.Projectiles {
-    public class GlobalProjectileDirtBombs : GlobalProjectile {
+    public class RenewableProjectile : GlobalProjectile {
         private static Vector2 _dirtBombCenter;
         private static float _dirtBombRadius;
 

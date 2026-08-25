@@ -47,7 +47,10 @@ namespace EverythingRenewableNow.Content.NPCs.Boulder {
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-            if (!spawnInfo.Player.ZoneDungeon && !Main.rand.NextBool(8))
+            if (!spawnInfo.Player.ZoneDungeon)
+                return 0f;
+
+            if (!Main.rand.NextBool(8))
                 return 0f;
 
             if (FindNearbyBook(new Point(spawnInfo.SpawnTileX - 16, spawnInfo.SpawnTileY - 16), 32, 32, out Point bookPosition, closestBook: true, checkPlayerScreenRanges: true)) {
