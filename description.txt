@@ -12,6 +12,16 @@ Major Additions:
 — Golem now drops Lihzahrd Bricks
 — The Frost Legion is no longer Christmas-exclusive. Its summoning item can now be crafted
 
+Calamity compatability:
+- Power Cell Factories and Charging Stations now craftable, power cells extractinator loot buffed
+- Draedon questline and fight are possible on skyblock secret seed
+- Getfixedboi-exclusive bosses now can be summoned in any world
+- Mining armor set bonus was changed: cooldown was removed, but chance to duplicate mined ore was nerfed from 25% to 5%
+- Astral Infection enemies now can drop unstable astral key, that works like awakened biome key
+- Primordial Wyrm drops Terminus
+- You could ask Draedon for new Onyx Key or Murasama if you lost yours. Really
+- Lame crafts, transmutations, etc (for example, Brimstone Slag now have extractinator loot and Shady Salesman sell draedon logs in respective biomes)
+
 1.4.5 Backport:
 — All shimmer transmutations, including slime crown, which starts the slime rain
 — Hellstone and hellforge drop from lava crates, dungeon bricks drop from dungeon crates

@@ -197,7 +197,7 @@ Items: {
 
 	AstralKey: {
 		DisplayName: Astral Key
-		Tooltip: ""
+		Tooltip: The essence of many souls have been... oh God
 	}
 }
 
@@ -233,17 +233,18 @@ NPCs: {
 }
 
 Bestiary: {
-	AbyssSnail: Abyss Snail
-	SlushMerman: The habitat of the mermen population experienced a drastic climate change, forcing them to adapt to survival in the slush
-	MossZombie: They say a rolling stone gathers no moss... but they didn't say anything about zombies
-	StatueMimic: Is it your imagination, or are you being watched? You cannot seem to escape the foreboding feeling as you pass in front of this effigy - possessed by an ancient and unspeakable evil
-	WaterboltMimic: Appearing at first glance to be a magic tome of unspeakable power, this sneaky monster dines on the fingers of anyone foolish enough to attempt to decipher the runes within
-	CorruptionChestMimic: The awakened souls from the rotting crevices created this mimic from an ordinary chest
-	CrimsonChestMimic: The awakened souls from the pulsating catacombs created this mimic from an ordinary chest
-	DesertChestMimic: The awakened souls from the barren canyons created this mimic from an ordinary chest
-	HallowedChestMimic: The awakened souls from the hallowed land created this mimic from an ordinary chest
-	FrozenChestMimic: The awakened souls from the permafrost caves created this mimic from an ordinary chest
-	JungleChestMimic: The awakened souls from the depths of the jungle created this mimic from an ordinary chest
+	AbyssSnail: Despite the harshest conditions, some snails managed to adapt to the Abyss by using local treasure containers.
+	SlushMerman: The habitat of the mermen population experienced a drastic climate change, forcing them to adapt to survival in the slush.
+	MossZombie: They say a rolling stone gathers no moss... but they didn't say anything about zombies.
+	StatueMimic: Is it your imagination, or are you being watched? You cannot seem to escape the foreboding feeling as you pass in front of this effigy - possessed by an ancient and unspeakable evil.
+	WaterboltMimic: Appearing at first glance to be a magic tome of unspeakable power, this sneaky monster dines on the fingers of anyone foolish enough to attempt to decipher the runes within.
+	CorruptionChestMimic: The awakened souls from the rotting crevices created this mimic from an ordinary chest.
+	CrimsonChestMimic: The awakened souls from the pulsating catacombs created this mimic from an ordinary chest.
+	DesertChestMimic: The awakened souls from the barren canyons created this mimic from an ordinary chest.
+	HallowedChestMimic: The awakened souls from the hallowed land created this mimic from an ordinary chest.
+	FrozenChestMimic: The awakened souls from the permafrost caves created this mimic from an ordinary chest.
+	JungleChestMimic: The awakened souls from the depths of the jungle created this mimic from an ordinary chest.
+	AstralChestMimic: The cursed souls from the unholy infection gone after victims in the chest form.
 }
 
 Configs: {

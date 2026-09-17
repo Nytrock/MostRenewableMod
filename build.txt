@@ -1,6 +1,6 @@
 displayName = Most Renewable Mod
 author = Nytrock
-version = 1.1.7
+version = 1.2.1
 modReferences = DuckLib
 weakReferences = CalamityMod
 sortAfter = DuckLib

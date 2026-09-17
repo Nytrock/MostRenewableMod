@@ -17,12 +17,21 @@ NPC.SalesmanLogPitch:
 
 DraedonDialogues: {
 	OnyxExcavatorKey: {
-		Question: Give me fucking excavator
-		Response: My God, you SO stupid
+		Question: Ask for Onyx Drill
+		Response:
+			'''
+			An Onyx Drill? Didn�t expect such a lowly request from you, but it seems like, despite possessing such great power, your mind is still at a rather primitive level
+			�Onyx Drills�, as you call them, were mass-produced as part of a resource extraction program during the Crusade. Although their design is rather simple compared to my other creations, I must admit their effectiveness in their intended task. After years of excavation, the need for such drilling machines diminished, leaving most of them destroyed or gathering dust in storages. However, some of them could theoretically remain in an abandoned underground mining outpost
+			According to my data, you either failed to locate this place or lost the mechanism due to your own incompetence. But do not worry, the blueprints for this machine remain in the archives, and I will provide you an identical copy, as this will most likely accelerate your preparations for the battle with Yharim. And before you ask: yes, I am monitoring everything you do for my own safety
+			'''
 	}
 
 	Murasama: {
-		Question: Give me fucking sword
-		Response: My God, you are idiot
+		Question: Ask for Murasama
+		Response:
+			'''
+			Muramasa was an experimental weapon intended for the Yharim�s strongest of strongest warriors. The blade was forged from an alloy of Essences of Havoc and Unholy Cores using brimsone flame that had been reluctantly obtained from the Witch. Unfortunately, the first prototype, boasting remarkable precision thanks to the use of ultrasound, failed to impress Yharim due to its limited range. Shortly thereafter, Calamitas decided to leave the Godseeker, putting an end to further production of this weapon. The only existing copy was sealed away to prevent it from being used by an outside force and left in a research facility in the Underworld
+			Since you possess information about this blade, you must have managed to find it, and perhaps even unseal it, judging by the abilities you have demonstrated. All of this makes me wonder even more how you managed to lose such a valuable weapon. But do not worry; all weapons I have developed contain tracking systems, so locating the lost sword and returning it to you is a trivial task for my genius
+			'''
 	}
 }

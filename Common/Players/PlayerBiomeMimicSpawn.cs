@@ -75,7 +75,9 @@ namespace EverythingRenewableNow.Common.Players {
             if (keyInChest == -1)
                 return -1;
 
-            if (CrossModSystem.Calamity != null && keyInChest == ModContent.ItemType<AstralKey>())
+            if (CrossModSystem.Calamity != null
+                && keyInChest == ModContent.ItemType<AstralKey>()
+                && (bool)CrossModSystem.Calamity.Call("GetBossDowned", "astrumaureus"))
                 return _keysAndMimics[keyInChest];
 
             if (!NPC.downedPlantBoss)
